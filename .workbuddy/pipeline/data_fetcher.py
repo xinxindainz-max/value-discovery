@@ -47,21 +47,21 @@ DATA_SOURCES = {
     # === 国内免费渠道 ===
     "weibo": {
         "label": "微博热搜",
-        "url": "https://tophub.today/n/KqndgxeLl9",
+        "url": "https://uapis.cn/api/v1/misc/hotboard?type=weibo",
         "method": "GET",
-        "headers": {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+        "headers": {}
     },
     "baidu": {
         "label": "百度热搜",
-        "url": "https://tophub.today/n/Jb0vmloB1G",
+        "url": "https://uapis.cn/api/v1/misc/hotboard?type=baidu",
         "method": "GET",
-        "headers": {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+        "headers": {}
     },
     "zhihu": {
         "label": "知乎热榜",
-        "url": "https://tophub.today/n/mproPpoq6O",
+        "url": "https://uapis.cn/api/v1/misc/hotboard?type=zhihu",
         "method": "GET",
-        "headers": {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+        "headers": {}
     },
     "douyin": {
         "label": "抖音总榜",
@@ -71,15 +71,16 @@ DATA_SOURCES = {
     },
     "bilibili": {
         "label": "B站全站日榜",
-        "url": "https://tophub.today/n/74KvxwokxM",
+        "url": "https://uapis.cn/api/v1/misc/hotboard?type=bilibili",
         "method": "GET",
-        "headers": {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+        "headers": {}
     },
     "wechat": {
         "label": "微信热文",
-        "url": "https://tophub.today/n/WnBe01o371",
+        "url": "https://uapis.cn/api/v1/misc/hotboard?type=wechat",
         "method": "GET",
-        "headers": {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+        "headers": {},
+        "note": "UAPIs不支持微信热文，此源暂不可用"
     },
     "toutiao": {
         "label": "今日头条",
@@ -210,8 +211,8 @@ def fetch_one(key, cfg, timeout_sec, max_retries=3):
                     data = {"raw_text": resp.text[:10000]}
                 return ("ok", data, None, elapsed, attempt)
 
-            # 非200 → 如果是5xx则重试，4xx直接放弃
-            if resp.status_code >= 500 and attempt < max_retries - 1:
+            # 非200 → 5xx/429限流则重试，其他4xx直接放弃
+            if (resp.status_code >= 500 or resp.status_code == 429) and attempt < max_retries - 1:
                 wait = 2 ** attempt  # 1s, 2s, 4s
                 time.sleep(wait)
                 last_error = f"HTTP {resp.status_code} (重试 {attempt+1}/{max_retries})"

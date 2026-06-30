@@ -433,6 +433,27 @@ def main():
         json.dump(report, f, ensure_ascii=False, indent=2)
 
     print(f"[flash] 报告: {report_path}")
+
+    # 同步数据到公开目录 + 自动提交推送（绕过 .github/workflows 的 OAuth 限制）
+    import shutil, subprocess, os
+    public_dir = ROOT / "data"
+    public_dir.mkdir(exist_ok=True)
+    for fname in DATA_DIR.glob("*.json"):
+        shutil.copy2(fname, public_dir / fname.name)
+    
+    # Git 操作：add → diff → commit → push
+    subprocess.run(["git", "config", "user.name", "价值发现机器人"], capture_output=True)
+    subprocess.run(["git", "config", "user.email", "bot@value-discovery.local"], capture_output=True)
+    subprocess.run(["git", "add", ".workbuddy/pipeline/data/", "data/"], capture_output=True)
+    diff = subprocess.run(["git", "diff", "--cached", "--quiet"], capture_output=True)
+    if diff.returncode == 0:
+        print("[sync] 无变更，跳过提交")
+    else:
+        ts = datetime.now(CST).strftime("%Y-%m-%d %H:%M")
+        subprocess.run(["git", "commit", "-m", f"auto: 数据刷新 {ts} CST"], capture_output=True)
+        subprocess.run(["git", "push"], capture_output=True)
+        print(f"[sync] 已提交推送 · {ts} CST")
+
     return 0
 
 

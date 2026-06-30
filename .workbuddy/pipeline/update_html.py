@@ -135,6 +135,17 @@ def main():
     with open(meta_path, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
 
+    # 同步到公开 data/ 目录（GitHub Pages 无法读取 . 开头的隐藏文件夹）
+    import shutil
+    public_dir = os.path.join(PROJECT_DIR, "data")
+    os.makedirs(public_dir, exist_ok=True)
+    for fname in os.listdir(DATA_DIR):
+        if fname.endswith(".json"):
+            src = os.path.join(DATA_DIR, fname)
+            dst = os.path.join(public_dir, fname)
+            shutil.copy2(src, dst)
+    print(f"[sync] {DATA_DIR} → {public_dir}")
+
     print(f"[✓] page_meta.json · {ok_count}/{total} 源 · {len(stock_snapshot)} 只股票")
     return 0
 

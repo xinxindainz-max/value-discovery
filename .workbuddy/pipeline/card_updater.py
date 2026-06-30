@@ -322,43 +322,56 @@ def generate_flash_html(signals_data, total_titles, trends, ts_str):
     return '\n'.join(lines)
 
 
-def update_html(html_path, signals_data, total_titles, trends, ts_str):
-    """更新 HTML 中的自动快讯区"""
-    with open(html_path, "r", encoding="utf-8") as f:
-        html = f.read()
+def save_flash_data(signals_data, total_titles, trends, ts_str, ts_full):
+    """将快讯数据写入 JSON — 不再修改 HTML，彻底消除 git 冲突
+    HTML 通过 JS fetch() 客户端加载此文件"""
+    potential = [(n, s) for n, s in signals_data if s["category"] == "潜在信号"]
+    seasonal_list = [(n, s) for n, s in signals_data if s["category"] == "季节性"]
+    entertainment_list = [(n, s) for n, s in signals_data if s["category"] == "消遣"]
 
-    # 1. 更新时间戳
-    html = re.sub(
-        r'<div class="ts">[^<]*</div>',
-        f'<div class="ts">数据刷新：{ts_str} CST · 自动化管道 · GitHub Actions</div>',
-        html, count=1,
-    )
-
-    # 2. 生成快讯 HTML
+    # 生成 HTML 片段（JS 直接注入）
     flash_html = generate_flash_html(signals_data, total_titles, trends, ts_str)
 
-    # 3. 替换信号扫描区
-    marker = '<!-- ══════════════════ 信号扫描 · 自动生成 ══════════════════ -->'
-    scan_pattern = re.compile(
-        r'<!-- ═+ 信号扫描 · 自动生成 ═+ -->.*?(?=<!-- ═+ ZONE 1)',
-        re.DOTALL,
-    )
-
-    if scan_pattern.search(html):
-        html = scan_pattern.sub(marker + "\n" + flash_html + "\n\n", html, count=1)
+    # 摘要（一条短信看懂）
+    if potential:
+        top5 = [(name, sig["platform_count"]) for name, sig in potential[:5]]
+        top5_str = " · ".join(f"{name} {pc}平台" for name, pc in top5)
+        summary = f"🔥 {len(potential)} 组跨平台信号：{top5_str}"
     else:
-        zone1 = '<!-- ══════════════════ ZONE 1'
-        if zone1 in html:
-            html = html.replace(zone1, marker + "\n" + flash_html + "\n\n" + zone1, 1)
+        summary = "暂无跨平台信号"
 
-    # 4. 内容哈希
-    content_hash = compute_content_hash(html)
-    hash_file = DATA_DIR / ".content_hash.txt"
+    report = {
+        "scan_time": ts_full,
+        "display_time": ts_str,
+        "total_titles": total_titles,
+        "signal_count": len(potential),
+        "seasonal_count": len(seasonal_list),
+        "entertainment_count": len(entertainment_list),
+        "summary": summary,
+        "flash_html": flash_html,
+        "trends": trends,
+        "signals": [
+            {"name": name, "category": sig["category"],
+             "platform_count": sig["platform_count"],
+             "total_mentions": sig["total_mentions"],
+             "top_positions": sig["top_positions"],
+             "stocks": sig["stocks"],
+             "trend": trends.get(name, ("stable", "")),
+            }
+            for name, sig in signals_data
+        ],
+    }
+
+    flash_path = DATA_DIR / "auto_flash.json"
+    flash_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(flash_path, "w", encoding="utf-8") as f:
+        json.dump(report, f, ensure_ascii=False, indent=2)
+
+    # 内容哈希（用于判断是否有变化）
+    content_hash = hashlib.sha256(json.dumps(report, ensure_ascii=False).encode()).hexdigest()
+    hash_file = DATA_DIR / ".flash_hash.txt"
     old_hash = hash_file.read_text().strip() if hash_file.exists() else ""
     hash_file.write_text(content_hash)
-
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(html)
 
     is_fresh = old_hash != content_hash
     return is_fresh
@@ -391,13 +404,14 @@ def main():
         t = trends.get(name, ("stable", ""))
         print(f"  {t[0]:>6} {name} · {sig['platform_count']}平台/{sig['total_mentions']}条")
 
-    # 更新 HTML
+    # 写入 data/auto_flash.json（不再修改 HTML）
     now = datetime.now(CST)
     ts_str = now.strftime("%m-%d %H:%M")
-    is_fresh = update_html(HTML_PATH, signals, total_titles, trends, ts_str)
+    ts_full = now.strftime("%Y-%m-%dT%H:%M:%S+08:00")
+    is_fresh = save_flash_data(signals, total_titles, trends, ts_str, ts_full)
 
     status = "OK" if is_fresh else "WARN (no change)"
-    print(f"[flash] HTML updated · {status}")
+    print(f"[flash] auto_flash.json written · {status}")
 
     # 输出报告
     report = {

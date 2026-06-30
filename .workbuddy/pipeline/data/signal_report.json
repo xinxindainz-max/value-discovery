@@ -1,0 +1,39 @@
+{
+  "scan_time": "2026-06-30T12:06:06.955901+08:00",
+  "total_titles": 470,
+  "sources_ok": 22,
+  "sources_total": 22,
+  "signals_top5": [
+    {
+      "name": "空调/家电",
+      "platform_count": 9,
+      "category": "潜在信号",
+      "top": "IT之家#6"
+    },
+    {
+      "name": "足球",
+      "platform_count": 8,
+      "category": "消遣",
+      "top": "腾讯新闻#5"
+    },
+    {
+      "name": "AI/大模型",
+      "platform_count": 6,
+      "category": "潜在信号",
+      "top": "36氪#4"
+    },
+    {
+      "name": "手机/消费电子",
+      "platform_count": 5,
+      "category": "潜在信号",
+      "top": "IT之家#2"
+    },
+    {
+      "name": "高考",
+      "platform_count": 5,
+      "category": "季节性",
+      "top": "抖音总榜#1"
+    }
+  ],
+  "fresh": false
+}

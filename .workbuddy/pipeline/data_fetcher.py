@@ -77,10 +77,15 @@ DATA_SOURCES = {
     },
     "wechat": {
         "label": "微信热文",
-        "url": "https://uapis.cn/api/v1/misc/hotboard?type=wechat",
+        "url": "https://tophub.today/n/WnBe01o371",
         "method": "GET",
-        "headers": {},
-        "note": "UAPIs不支持微信热文，此源暂不可用"
+        "headers": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        },
+        "note": "tophub.today直连 · HTML正则解析",
+        "no_proxy": True
     },
     "toutiao": {
         "label": "今日头条",
@@ -189,6 +194,61 @@ DATA_SOURCES = {
 }
 
 
+def _parse_tophub_html(html_text):
+    """从 tophub.today HTML 中解析微信热文，返回 UAPIs 兼容格式"""
+    import re
+    from datetime import datetime, timezone, timedelta
+    cst = timezone(timedelta(hours=8))
+
+    items = []
+    # 匹配: <a href="..." target="_blank" rel="nofollow" itemid="123">标题</a>
+    # 其后紧跟 <td class="ws"> 中的阅读量（可选）
+    pattern = re.compile(
+        r'<a\s+href="([^"]+)"[^>]*?itemid="(\d+)"[^>]*?>\s*([^<]+?)\s*</a>',
+        re.DOTALL
+    )
+
+    for m in pattern.finditer(html_text):
+        url = m.group(1)
+        itemid = m.group(2)
+        title = m.group(3).strip()
+        # 过滤掉非文章链接（如导航、about、help等）
+        if not url.startswith("https://mp.weixin.qq.com"):
+            continue
+        if not title or len(title) < 3:
+            continue
+        items.append({
+            "title": title,
+            "url": url,
+            "itemid": itemid,
+        })
+
+    # 去重（按 itemid）
+    seen = set()
+    unique_items = []
+    for item in items:
+        if item["itemid"] not in seen:
+            seen.add(item["itemid"])
+            unique_items.append(item)
+
+    # 转为 UAPIs 兼容格式
+    result_list = []
+    for i, item in enumerate(unique_items[:30], 1):
+        result_list.append({
+            "index": i,
+            "title": item["title"],
+            "url": item["url"],
+            "hot_value": item["itemid"],
+            "extra": {},
+        })
+
+    return {
+        "type": "wechat",
+        "update_time": datetime.now(cst).strftime("%Y-%m-%d %H:%M:%S"),
+        "list": result_list,
+    }
+
+
 def fetch_one(key, cfg, timeout_sec, max_retries=3):
     """抓取单个数据源，含指数退避重试。返回 (status, data, error_msg, elapsed_ms, retries)"""
     t0 = time.time()
@@ -196,19 +256,28 @@ def fetch_one(key, cfg, timeout_sec, max_retries=3):
 
     for attempt in range(max_retries):
         try:
+            # 国内源不需要代理
+            session = requests.Session()
+            if cfg.get("no_proxy"):
+                session.trust_env = False
+
             if cfg["method"] == "GET":
-                resp = requests.get(cfg["url"], headers=cfg.get("headers", {}),
-                                    timeout=timeout_sec)
+                resp = session.get(cfg["url"], headers=cfg.get("headers", {}),
+                                   timeout=timeout_sec)
             else:  # POST
-                resp = requests.post(cfg["url"], headers=cfg.get("headers", {}),
-                                     json=cfg.get("body", {}), timeout=timeout_sec)
+                resp = session.post(cfg["url"], headers=cfg.get("headers", {}),
+                                    json=cfg.get("body", {}), timeout=timeout_sec)
 
             elapsed = int((time.time() - t0) * 1000)
             if resp.status_code == 200:
                 try:
                     data = resp.json()
                 except (json.JSONDecodeError, ValueError):
-                    data = {"raw_text": resp.text[:10000]}
+                    # 微信热文：tophub.today HTML → 解析为结构化数据
+                    if key == "wechat":
+                        data = _parse_tophub_html(resp.text)
+                    else:
+                        data = {"raw_text": resp.text[:10000]}
                 return ("ok", data, None, elapsed, attempt)
 
             # 非200 → 5xx/429限流则重试，其他4xx直接放弃

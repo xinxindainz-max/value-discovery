@@ -20,7 +20,7 @@ REGISTRY = {
     "zhihu":       {"label": "知乎热榜",     "group": "国内", "check_url": "https://uapis.cn/api/v1/misc/hotboard?type=zhihu"},
     "douyin":      {"label": "抖音总榜",     "group": "国内", "check_url": "https://uapis.cn/api/v1/misc/hotboard?type=douyin"},
     "bilibili":    {"label": "B站全站日榜",   "group": "国内", "check_url": "https://uapis.cn/api/v1/misc/hotboard?type=bilibili"},
-    "wechat":      {"label": "微信热文",     "group": "国内", "check_url": "https://uapis.cn/api/v1/misc/hotboard?type=wechat", "note": "⚠ UAPIs不支持·暂不可用"},
+    "wechat":      {"label": "微信热文",     "group": "国内", "check_url": "https://tophub.today/n/WnBe01o371", "note": "tophub.today直连·HTML正则解析"},
     "toutiao":     {"label": "今日头条",     "group": "国内", "check_url": "https://uapis.cn/api/v1/misc/hotboard?type=toutiao"},
     "smzdm":       {"label": "什么值得买",   "group": "国内", "check_url": "https://uapis.cn/api/v1/misc/hotboard?type=smzdm"},
     "xiaohongshu": {"label": "小红书",       "group": "国内", "check_url": "https://uapis.cn/api/v1/misc/hotboard?type=xiaohongshu"},

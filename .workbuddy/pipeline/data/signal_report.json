@@ -1,14 +1,22 @@
 {
-  "scan_time": "2026-06-30T12:23:32.833467+08:00",
+  "scan_time": "2026-06-30T12:24:19.772854+08:00",
   "total_titles": 701,
   "sources_ok": 21,
   "sources_total": 22,
   "signals": [
     {
-      "name": "空调/家电",
+      "name": "足球",
       "platform_count": 10,
-      "category": "潜在信号",
+      "category": "消遣",
       "trend": "stable",
+      "top": "知乎热榜#1",
+      "stocks": []
+    },
+    {
+      "name": "空调/家电",
+      "platform_count": 9,
+      "category": "潜在信号",
+      "trend": "down",
       "top": "IT之家#6",
       "stocks": [
         [
@@ -26,19 +34,11 @@
       ]
     },
     {
-      "name": "足球",
-      "platform_count": 10,
-      "category": "消遣",
-      "trend": "stable",
-      "top": "知乎热榜#1",
-      "stocks": []
-    },
-    {
       "name": "AI/大模型",
       "platform_count": 9,
       "category": "潜在信号",
       "trend": "stable",
-      "top": "B站全站日榜#2",
+      "top": "36氪#4",
       "stocks": [
         [
           "sz002230",
@@ -80,27 +80,6 @@
       "stocks": []
     },
     {
-      "name": "芯片/半导体",
-      "platform_count": 5,
-      "category": "潜在信号",
-      "trend": "stable",
-      "top": "什么值得买#8",
-      "stocks": [
-        [
-          "hk0981",
-          "中芯国际"
-        ],
-        [
-          "sz002371",
-          "北方华创"
-        ],
-        [
-          "sh603501",
-          "韦尔股份"
-        ]
-      ]
-    },
-    {
       "name": "新能源车",
       "platform_count": 5,
       "category": "潜在信号",
@@ -114,6 +93,27 @@
         [
           "sz300750",
           "宁德时代"
+        ]
+      ]
+    },
+    {
+      "name": "芯片/半导体",
+      "platform_count": 4,
+      "category": "潜在信号",
+      "trend": "down",
+      "top": "36氪#3",
+      "stocks": [
+        [
+          "hk0981",
+          "中芯国际"
+        ],
+        [
+          "sz002371",
+          "北方华创"
+        ],
+        [
+          "sh603501",
+          "韦尔股份"
         ]
       ]
     },
@@ -153,10 +153,10 @@
     },
     {
       "name": "游戏",
-      "platform_count": 2,
+      "platform_count": 3,
       "category": "消遣",
       "trend": "stable",
-      "top": "虎扑#18",
+      "top": "知乎热榜#16",
       "stocks": []
     }
   ]

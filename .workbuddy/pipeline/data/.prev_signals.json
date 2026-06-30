@@ -1,18 +1,18 @@
 {
-  "空调/家电": {
-    "platform_count": 10,
-    "total_mentions": 21,
-    "top_positions": "IT之家#6"
-  },
   "足球": {
     "platform_count": 10,
-    "total_mentions": 27,
+    "total_mentions": 26,
     "top_positions": "知乎热榜#1"
+  },
+  "空调/家电": {
+    "platform_count": 9,
+    "total_mentions": 22,
+    "top_positions": "IT之家#6"
   },
   "AI/大模型": {
     "platform_count": 9,
-    "total_mentions": 15,
-    "top_positions": "B站全站日榜#2"
+    "total_mentions": 19,
+    "top_positions": "36氪#4"
   },
   "手机/消费电子": {
     "platform_count": 6,
@@ -24,15 +24,15 @@
     "total_mentions": 8,
     "top_positions": "抖音总榜#1"
   },
-  "芯片/半导体": {
-    "platform_count": 5,
-    "total_mentions": 7,
-    "top_positions": "什么值得买#8"
-  },
   "新能源车": {
     "platform_count": 5,
     "total_mentions": 6,
     "top_positions": "网易新闻#1"
+  },
+  "芯片/半导体": {
+    "platform_count": 4,
+    "total_mentions": 5,
+    "top_positions": "36氪#3"
   },
   "黄金/贵金属": {
     "platform_count": 4,
@@ -45,18 +45,18 @@
     "top_positions": "网易新闻#1"
   },
   "游戏": {
-    "platform_count": 2,
-    "total_mentions": 2,
-    "top_positions": "虎扑#18"
+    "platform_count": 3,
+    "total_mentions": 3,
+    "top_positions": "知乎热榜#16"
   },
   "机器人": {
     "platform_count": 1,
     "total_mentions": 4,
-    "top_positions": "36氪#4"
+    "top_positions": "36氪#9"
   },
-  "降息/利率": {
+  "关税/贸易": {
     "platform_count": 1,
     "total_mentions": 1,
-    "top_positions": "36氪#21"
+    "top_positions": "微博热搜#35"
   }
 }

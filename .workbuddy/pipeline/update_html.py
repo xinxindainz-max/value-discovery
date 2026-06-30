@@ -25,8 +25,25 @@ def load_json(path):
         return json.load(f)
 
 
+CACHE_KEYS = ["wechat"]  # 支持缓存回退的数据源
+
+def _load_cache(key):
+    """加载缓存文件"""
+    path = os.path.join(DATA_DIR, f"{key}_cache.json")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return None
+
+def _save_cache(key, data):
+    """保存缓存文件"""
+    path = os.path.join(DATA_DIR, f"{key}_cache.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
 def build_source_status(latest_data):
-    """构建数据源状态映射 source_key → {label, ok, count}"""
+    """构建数据源状态映射 source_key → {label, ok, count}
+    CACHE_KEYS 列出的源如果抓取失败，回退到上次成功的缓存数据。"""
     if not latest_data or "sources" not in latest_data:
         return {}
     sources = {}
@@ -38,6 +55,24 @@ def build_source_status(latest_data):
             items = data.get("list", data.get("items", []))
             if isinstance(items, list):
                 count = len(items)
+
+        # 缓存回退：如果抓取失败且有缓存，用缓存数据
+        if not ok and key in CACHE_KEYS:
+            cached = _load_cache(key)
+            if cached and cached.get("list"):
+                count = len(cached["list"])
+                ok = True  # 标记为 ok，但加注来自缓存
+                print(f"  ↻ {key}: 抓取失败，回退缓存 ({count} 条)")
+            elif cached:
+                print(f"  ⚠ {key}: 抓取失败，缓存为空")
+
+        # 如果抓取成功且是缓存键，更新缓存
+        if src.get("status") == "ok" and key in CACHE_KEYS and isinstance(data, dict):
+            items = data.get("list", data.get("items", []))
+            if isinstance(items, list) and len(items) > 0:
+                _save_cache(key, {"list": items, "updated": src.get("update_time", "")})
+                print(f"  ✓ {key}: 缓存已更新 ({len(items)} 条)")
+
         sources[key] = {
             "label": src.get("label", key),
             "ok": ok,

@@ -256,17 +256,17 @@ def fetch_one(key, cfg, timeout_sec, max_retries=3):
 
     for attempt in range(max_retries):
         try:
-            # 国内源不需要代理
             session = requests.Session()
+            # no_proxy 源：显式禁用代理 + 跳过环境变量，防止 GitHub Actions 代理干扰
+            req_kwargs = {"headers": cfg.get("headers", {}), "timeout": timeout_sec}
             if cfg.get("no_proxy"):
                 session.trust_env = False
+                req_kwargs["proxies"] = {"http": None, "https": None}
 
             if cfg["method"] == "GET":
-                resp = session.get(cfg["url"], headers=cfg.get("headers", {}),
-                                   timeout=timeout_sec)
+                resp = session.get(cfg["url"], **req_kwargs)
             else:  # POST
-                resp = session.post(cfg["url"], headers=cfg.get("headers", {}),
-                                    json=cfg.get("body", {}), timeout=timeout_sec)
+                resp = session.post(cfg["url"], json=cfg.get("body", {}), **req_kwargs)
 
             elapsed = int((time.time() - t0) * 1000)
             if resp.status_code == 200:
@@ -280,8 +280,10 @@ def fetch_one(key, cfg, timeout_sec, max_retries=3):
                         data = {"raw_text": resp.text[:10000]}
                 return ("ok", data, None, elapsed, attempt)
 
-            # 非200 → 5xx/429限流则重试，其他4xx直接放弃
-            if (resp.status_code >= 500 or resp.status_code == 429) and attempt < max_retries - 1:
+            # 非200 → 5xx/429/400(Cloudflare WAF) 重试
+            retryable = (resp.status_code >= 500 or resp.status_code == 429 or
+                         (resp.status_code == 400 and cfg.get("no_proxy")))
+            if retryable and attempt < max_retries - 1:
                 wait = 2 ** attempt  # 1s, 2s, 4s
                 time.sleep(wait)
                 last_error = f"HTTP {resp.status_code} (重试 {attempt+1}/{max_retries})"

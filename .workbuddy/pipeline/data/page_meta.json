@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-30T13:18:49+08:00",
-  "display_ts": "2026-06-30 13:18 CST",
-  "sources_ok": 21,
+  "generated_at": "2026-06-30T13:36:53+08:00",
+  "display_ts": "2026-06-30 13:36 CST",
+  "sources_ok": 22,
   "sources_total": 22,
-  "source_bar_text": "21/22 源可用",
+  "source_bar_text": "22/22 源可用",
   "sources": {
     "google_trends": {
       "label": "Google Trends",
@@ -37,8 +37,8 @@
     },
     "wechat": {
       "label": "微信热文",
-      "ok": false,
-      "count": 0
+      "ok": true,
+      "count": 30
     },
     "toutiao": {
       "label": "今日头条",
@@ -48,7 +48,7 @@
     "smzdm": {
       "label": "什么值得买",
       "ok": true,
-      "count": 49
+      "count": 48
     },
     "xiaohongshu": {
       "label": "小红书",
@@ -88,7 +88,7 @@
     "thepaper": {
       "label": "澎湃新闻",
       "ok": true,
-      "count": 47
+      "count": 48
     },
     "tieba": {
       "label": "百度贴吧",

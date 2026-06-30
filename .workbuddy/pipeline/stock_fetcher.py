@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-价值发现 · 股票行情抓取 v1.0
+价值发现 · 股票行情抓取 v2.0
 使用腾讯自选股公开API获取A股实时行情，无依赖。
 API: https://qt.gtimg.cn/q=<codes>
 输出与 westock-data 相同格式的字段。
+v2.0: 指数退避重试(每批次3次)、分批容错
 """
 
 import json
@@ -100,16 +101,15 @@ def parse_tencent_line(line):
         return None
 
 
-def fetch_stocks(codes, timeout=10):
+def fetch_stocks(codes, timeout=10, max_retries=3):
     """
-    批量获取股票行情
+    批量获取股票行情，含指数退避重试。
     codes: ["sz000333", "sh600988", ...]
     返回: {code: {fields}}
     """
     if not codes:
         return {}
 
-    # 腾讯API每次最多约20只
     results = {}
     batch_size = 20
 
@@ -118,23 +118,56 @@ def fetch_stocks(codes, timeout=10):
         url_codes = ",".join(batch)
         url = f"https://qt.gtimg.cn/q={url_codes}"
 
-        try:
-            resp = requests.get(url, timeout=timeout,
-                               headers={"User-Agent": "Mozilla/5.0"})
-            resp.encoding = "gbk"
-            if resp.status_code != 200:
-                print(f"[STOCK] HTTP {resp.status_code} for {url_codes}")
-                continue
+        batch_ok = False
+        last_error = None
+        for attempt in range(max_retries):
+            try:
+                resp = requests.get(url, timeout=timeout,
+                                   headers={"User-Agent": "Mozilla/5.0"})
+                resp.encoding = "gbk"
+                if resp.status_code != 200:
+                    if resp.status_code >= 500 and attempt < max_retries - 1:
+                        time.sleep(2 ** attempt)
+                        last_error = f"HTTP {resp.status_code}"
+                        continue
+                    print(f"[STOCK] HTTP {resp.status_code} for batch {i}")
+                    break
 
-            for line in resp.text.strip().split("\n"):
-                if not line.strip() or "=" not in line:
+                parsed_count = 0
+                for line in resp.text.strip().split("\n"):
+                    if not line.strip() or "=" not in line:
+                        continue
+                    parsed = parse_tencent_line(line)
+                    if parsed:
+                        results[parsed["code"]] = parsed
+                        parsed_count += 1
+
+                if parsed_count > 0:
+                    batch_ok = True
+                    break
+                elif attempt < max_retries - 1:
+                    time.sleep(2 ** attempt)
+                    last_error = "返回数据为空"
                     continue
-                parsed = parse_tencent_line(line)
-                if parsed:
-                    results[parsed["code"]] = parsed
+                else:
+                    last_error = "返回数据为空"
 
-        except Exception as e:
-            print(f"[STOCK] 抓取失败 {url_codes}: {e}")
+            except requests.exceptions.Timeout:
+                if attempt < max_retries - 1:
+                    time.sleep(2 ** attempt)
+                    last_error = "超时"
+                    continue
+                last_error = f"重试{max_retries}次均超时"
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    time.sleep(2 ** attempt)
+                    last_error = str(e)[:80]
+                    continue
+                last_error = str(e)[:80]
+
+        if not batch_ok:
+            retries_note = f" (重试{max_retries}次)" if last_error else ""
+            print(f"[STOCK] 批次失败 {batch[0]}..{batch[-1]}: {last_error}{retries_note}")
 
     return results
 
@@ -159,7 +192,7 @@ WATCHLIST_CODES = [
 
 
 def main():
-    print("价值发现 · 股票行情抓取 v1.0")
+    print("价值发现 · 股票行情抓取 v2.0")
     print(f"时间: {datetime.now(CST).isoformat()}")
 
     results = fetch_stocks(WATCHLIST_CODES)

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-价值发现 · 数据抓取管道 v2.0
+价值发现 · 数据抓取管道 v3.0
 从23个数据源批量抓取热榜数据，输出结构化JSON。
 用法: python data_fetcher.py [--output data/latest.json] [--timeout 15]
 设计原则：
-- 每个源独立超时，单个失败不影响整体
-- 输出包含源状态(ok/fail/timeout)、抓取时间戳、原始数据
+- 每个源独立超时+指数退避重试(最多3次)，单个失败不影响整体
+- 输出包含源状态(ok/fail/timeout)、抓取时间戳、重试次数、原始数据
 - 所有路径使用绝对路径，适配自动化环境
+v3.0: 指数退避重试、retries追踪
 """
 
 import json
@@ -187,37 +188,65 @@ DATA_SOURCES = {
 }
 
 
-def fetch_one(key, cfg, timeout_sec):
-    """抓取单个数据源，返回 (status, data, error_msg, elapsed_ms)"""
+def fetch_one(key, cfg, timeout_sec, max_retries=3):
+    """抓取单个数据源，含指数退避重试。返回 (status, data, error_msg, elapsed_ms, retries)"""
     t0 = time.time()
-    try:
-        if cfg["method"] == "GET":
-            resp = requests.get(cfg["url"], headers=cfg.get("headers", {}),
-                                timeout=timeout_sec)
-        else:  # POST
-            resp = requests.post(cfg["url"], headers=cfg.get("headers", {}),
-                                 json=cfg.get("body", {}), timeout=timeout_sec)
+    last_error = None
 
-        elapsed = int((time.time() - t0) * 1000)
-        if resp.status_code == 200:
-            # 尝试解析JSON，如果失败则保存原始文本
-            try:
-                data = resp.json()
-            except (json.JSONDecodeError, ValueError):
-                data = {"raw_text": resp.text[:10000]}  # 截断长文本
-            return ("ok", data, None, elapsed)
-        else:
-            return ("fail", None, f"HTTP {resp.status_code}", elapsed)
+    for attempt in range(max_retries):
+        try:
+            if cfg["method"] == "GET":
+                resp = requests.get(cfg["url"], headers=cfg.get("headers", {}),
+                                    timeout=timeout_sec)
+            else:  # POST
+                resp = requests.post(cfg["url"], headers=cfg.get("headers", {}),
+                                     json=cfg.get("body", {}), timeout=timeout_sec)
 
-    except requests.exceptions.Timeout:
-        elapsed = int((time.time() - t0) * 1000)
-        return ("timeout", None, f"超时 ({timeout_sec}s)", elapsed)
-    except requests.exceptions.ConnectionError as e:
-        elapsed = int((time.time() - t0) * 1000)
-        return ("fail", None, f"连接失败: {str(e)[:100]}", elapsed)
-    except Exception as e:
-        elapsed = int((time.time() - t0) * 1000)
-        return ("fail", None, f"{type(e).__name__}: {str(e)[:100]}", elapsed)
+            elapsed = int((time.time() - t0) * 1000)
+            if resp.status_code == 200:
+                try:
+                    data = resp.json()
+                except (json.JSONDecodeError, ValueError):
+                    data = {"raw_text": resp.text[:10000]}
+                return ("ok", data, None, elapsed, attempt)
+
+            # 非200 → 如果是5xx则重试，4xx直接放弃
+            if resp.status_code >= 500 and attempt < max_retries - 1:
+                wait = 2 ** attempt  # 1s, 2s, 4s
+                time.sleep(wait)
+                last_error = f"HTTP {resp.status_code} (重试 {attempt+1}/{max_retries})"
+                continue
+            return ("fail", None, f"HTTP {resp.status_code}", elapsed, attempt)
+
+        except requests.exceptions.Timeout:
+            elapsed = int((time.time() - t0) * 1000)
+            if attempt < max_retries - 1:
+                wait = 2 ** attempt
+                time.sleep(wait)
+                last_error = f"超时 (重试 {attempt+1}/{max_retries})"
+                continue
+            return ("timeout", None, f"重试{max_retries}次均超时 ({timeout_sec}s/次)", elapsed, attempt)
+
+        except requests.exceptions.ConnectionError as e:
+            elapsed = int((time.time() - t0) * 1000)
+            if attempt < max_retries - 1:
+                wait = 2 ** attempt
+                time.sleep(wait)
+                last_error = f"连接失败 (重试 {attempt+1}/{max_retries})"
+                continue
+            return ("fail", None, f"连接失败: {str(e)[:100]}", elapsed, attempt)
+
+        except Exception as e:
+            elapsed = int((time.time() - t0) * 1000)
+            if attempt < max_retries - 1:
+                wait = 2 ** attempt
+                time.sleep(wait)
+                last_error = f"{type(e).__name__} (重试 {attempt+1}/{max_retries})"
+                continue
+            return ("fail", None, f"{type(e).__name__}: {str(e)[:100]}", elapsed, attempt)
+
+    elapsed = int((time.time() - t0) * 1000)
+    return ("fail", None, last_error or "未知错误", elapsed, max_retries - 1)
 
 
 def run_all(timeout_sec=15):
@@ -227,16 +256,17 @@ def run_all(timeout_sec=15):
             "fetched_at": datetime.now(CST).isoformat(),
             "fetched_at_unix": int(time.time()),
             "timeout_sec": timeout_sec,
-            "pipeline_version": "2.0",
+            "pipeline_version": "3.0",
         },
         "sources": {},
         "summary": {"total": len(DATA_SOURCES), "ok": 0, "fail": 0, "timeout": 0},
+        "retry_stats": {"total_retries": 0, "sources_retried": 0},
     }
 
     for key, cfg in DATA_SOURCES.items():
         label = cfg["label"]
         print(f"[{label}] 抓取中...", end=" ", flush=True)
-        status, data, error, elapsed = fetch_one(key, cfg, timeout_sec)
+        status, data, error, elapsed, retries = fetch_one(key, cfg, timeout_sec)
 
         results["sources"][key] = {
             "label": label,
@@ -244,15 +274,24 @@ def run_all(timeout_sec=15):
             "elapsed_ms": elapsed,
             "error": error,
             "data": data,
+            "retries": retries,
         }
         results["summary"][status] += 1
+        if retries > 0:
+            results["retry_stats"]["total_retries"] += retries
+            results["retry_stats"]["sources_retried"] += 1
 
         icon = {"ok": "✓", "fail": "✗", "timeout": "⏱"}[status]
-        print(f"{icon} {elapsed}ms" + (f" ({error})" if error else ""))
+        retry_note = f" (rt{retries})" if retries > 0 else ""
+        print(f"{icon} {elapsed}ms{retry_note}" + (f" {error}" if error else ""))
 
     print(f"\n{'='*50}")
+    retry_info = ""
+    if results["retry_stats"]["total_retries"] > 0:
+        retry_info = (f" | 重试: {results['retry_stats']['total_retries']}次 "
+                      f"({results['retry_stats']['sources_retried']}源)")
     print(f"完成: {results['summary']['ok']}/{results['summary']['total']} 成功, "
-          f"{results['summary']['fail']} 失败, {results['summary']['timeout']} 超时")
+          f"{results['summary']['fail']} 失败, {results['summary']['timeout']} 超时{retry_info}")
     return results
 
 
@@ -277,9 +316,9 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     output_path = args.output or os.path.join(script_dir, "data", "latest.json")
 
-    print(f"价值发现 · 数据抓取管道 v1.0")
+    print(f"价值发现 · 数据抓取管道 v3.0")
     print(f"输出: {output_path}")
-    print(f"超时: {args.timeout}s/源")
+    print(f"超时: {args.timeout}s/源 · 最多3次重试")
     print(f"{'='*50}")
 
     results = run_all(args.timeout)

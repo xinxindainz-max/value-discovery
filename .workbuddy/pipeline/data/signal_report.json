@@ -1,23 +1,15 @@
 {
-  "scan_time": "2026-06-30T12:24:19.772854+08:00",
-  "total_titles": 701,
+  "scan_time": "2026-06-30T12:24:57.900467+08:00",
+  "total_titles": 704,
   "sources_ok": 21,
   "sources_total": 22,
   "signals": [
     {
-      "name": "足球",
-      "platform_count": 10,
-      "category": "消遣",
-      "trend": "stable",
-      "top": "知乎热榜#1",
-      "stocks": []
-    },
-    {
       "name": "空调/家电",
-      "platform_count": 9,
+      "platform_count": 10,
       "category": "潜在信号",
-      "trend": "down",
-      "top": "IT之家#6",
+      "trend": "up",
+      "top": "网易新闻#5",
       "stocks": [
         [
           "sz000651",
@@ -34,10 +26,18 @@
       ]
     },
     {
-      "name": "AI/大模型",
-      "platform_count": 9,
-      "category": "潜在信号",
+      "name": "足球",
+      "platform_count": 10,
+      "category": "消遣",
       "trend": "stable",
+      "top": "知乎热榜#1",
+      "stocks": []
+    },
+    {
+      "name": "AI/大模型",
+      "platform_count": 8,
+      "category": "潜在信号",
+      "trend": "down",
       "top": "36氪#4",
       "stocks": [
         [
@@ -55,10 +55,18 @@
       ]
     },
     {
-      "name": "手机/消费电子",
-      "platform_count": 6,
-      "category": "潜在信号",
+      "name": "高考",
+      "platform_count": 7,
+      "category": "季节性",
       "trend": "stable",
+      "top": "抖音总榜#1",
+      "stocks": []
+    },
+    {
+      "name": "手机/消费电子",
+      "platform_count": 5,
+      "category": "潜在信号",
+      "trend": "down",
       "top": "IT之家#2",
       "stocks": [
         [
@@ -72,27 +80,19 @@
       ]
     },
     {
-      "name": "高考",
-      "platform_count": 6,
-      "category": "季节性",
-      "trend": "stable",
-      "top": "抖音总榜#1",
-      "stocks": []
-    },
-    {
-      "name": "新能源车",
+      "name": "黄金/贵金属",
       "platform_count": 5,
       "category": "潜在信号",
-      "trend": "stable",
-      "top": "网易新闻#1",
+      "trend": "up",
+      "top": "百度贴吧#5",
       "stocks": [
         [
-          "sz002594",
-          "比亚迪"
+          "sh601899",
+          "紫金矿业"
         ],
         [
-          "sz300750",
-          "宁德时代"
+          "sh600547",
+          "山东黄金"
         ]
       ]
     },
@@ -100,7 +100,7 @@
       "name": "芯片/半导体",
       "platform_count": 4,
       "category": "潜在信号",
-      "trend": "down",
+      "trend": "stable",
       "top": "36氪#3",
       "stocks": [
         [
@@ -118,19 +118,19 @@
       ]
     },
     {
-      "name": "黄金/贵金属",
+      "name": "新能源车",
       "platform_count": 4,
       "category": "潜在信号",
-      "trend": "stable",
-      "top": "百度贴吧#5",
+      "trend": "down",
+      "top": "网易新闻#1",
       "stocks": [
         [
-          "sh601899",
-          "紫金矿业"
+          "sz002594",
+          "比亚迪"
         ],
         [
-          "sh600547",
-          "山东黄金"
+          "sz300750",
+          "宁德时代"
         ]
       ]
     },

@@ -63,7 +63,15 @@ jobs:
         run: python .workbuddy/pipeline/update_html.py
 
       # ----------------------------------------------------------
-      # Step 4.5: 机械卡片更新（信号扫描+源位置+热度标签）
+      # Step 4.5: 复制数据到公开目录（修复 GitHub Pages 无法读取 . 开头隐藏文件夹）
+      # ----------------------------------------------------------
+      - name: 复制数据到公开目录
+        run: |
+          mkdir -p data
+          cp .workbuddy/pipeline/data/*.json data/
+
+      # ----------------------------------------------------------
+      # Step 4.6: 机械卡片更新（信号扫描+源位置+热度标签）
       # ----------------------------------------------------------
       - name: 信号扫描 · 卡片元数据更新
         id: scanner
@@ -85,8 +93,7 @@ jobs:
         run: |
           git config user.name "价值发现机器人"
           git config user.email "bot@value-discovery.local"
-                      git add .workbuddy/pipeline/data/ data/
-           git add .workbuddy/pipeline/data/ data/
+          git add .workbuddy/pipeline/data/ data/
           if git diff --cached --quiet; then
             echo "无变更，跳过推送"
           else

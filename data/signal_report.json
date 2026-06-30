@@ -1,0 +1,163 @@
+{
+  "scan_time": "2026-06-30T13:18:52.587314+08:00",
+  "total_titles": 704,
+  "sources_ok": 21,
+  "sources_total": 22,
+  "signals": [
+    {
+      "name": "空调/家电",
+      "platform_count": 10,
+      "category": "潜在信号",
+      "trend": "stable",
+      "top": "网易新闻#5",
+      "stocks": [
+        [
+          "sz000651",
+          "格力电器"
+        ],
+        [
+          "sz000333",
+          "美的集团"
+        ],
+        [
+          "sh600690",
+          "海尔智家"
+        ]
+      ]
+    },
+    {
+      "name": "足球",
+      "platform_count": 10,
+      "category": "消遣",
+      "trend": "stable",
+      "top": "知乎热榜#1",
+      "stocks": []
+    },
+    {
+      "name": "AI/大模型",
+      "platform_count": 8,
+      "category": "潜在信号",
+      "trend": "stable",
+      "top": "36氪#4",
+      "stocks": [
+        [
+          "sz002230",
+          "科大讯飞"
+        ],
+        [
+          "hk9888",
+          "百度"
+        ],
+        [
+          "sh688256",
+          "寒武纪"
+        ]
+      ]
+    },
+    {
+      "name": "高考",
+      "platform_count": 7,
+      "category": "季节性",
+      "trend": "stable",
+      "top": "抖音总榜#1",
+      "stocks": []
+    },
+    {
+      "name": "手机/消费电子",
+      "platform_count": 5,
+      "category": "潜在信号",
+      "trend": "stable",
+      "top": "IT之家#2",
+      "stocks": [
+        [
+          "sz002475",
+          "立讯精密"
+        ],
+        [
+          "sz002241",
+          "歌尔股份"
+        ]
+      ]
+    },
+    {
+      "name": "黄金/贵金属",
+      "platform_count": 5,
+      "category": "潜在信号",
+      "trend": "stable",
+      "top": "百度贴吧#5",
+      "stocks": [
+        [
+          "sh601899",
+          "紫金矿业"
+        ],
+        [
+          "sh600547",
+          "山东黄金"
+        ]
+      ]
+    },
+    {
+      "name": "芯片/半导体",
+      "platform_count": 4,
+      "category": "潜在信号",
+      "trend": "stable",
+      "top": "36氪#3",
+      "stocks": [
+        [
+          "hk0981",
+          "中芯国际"
+        ],
+        [
+          "sz002371",
+          "北方华创"
+        ],
+        [
+          "sh603501",
+          "韦尔股份"
+        ]
+      ]
+    },
+    {
+      "name": "新能源车",
+      "platform_count": 4,
+      "category": "潜在信号",
+      "trend": "stable",
+      "top": "网易新闻#1",
+      "stocks": [
+        [
+          "sz002594",
+          "比亚迪"
+        ],
+        [
+          "sz300750",
+          "宁德时代"
+        ]
+      ]
+    },
+    {
+      "name": "原油/能源",
+      "platform_count": 3,
+      "category": "潜在信号",
+      "trend": "stable",
+      "top": "网易新闻#1",
+      "stocks": [
+        [
+          "sh601857",
+          "中国石油"
+        ],
+        [
+          "sh600938",
+          "中国海油"
+        ]
+      ]
+    },
+    {
+      "name": "游戏",
+      "platform_count": 3,
+      "category": "消遣",
+      "trend": "stable",
+      "top": "知乎热榜#15",
+      "stocks": []
+    }
+  ]
+}

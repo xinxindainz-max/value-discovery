@@ -1,0 +1,261 @@
+{
+  "generated_at": "2026-06-30T13:36:53+08:00",
+  "display_ts": "2026-06-30 13:36 CST",
+  "sources_ok": 22,
+  "sources_total": 22,
+  "source_bar_text": "22/22 源可用",
+  "sources": {
+    "google_trends": {
+      "label": "Google Trends",
+      "ok": true,
+      "count": 0
+    },
+    "weibo": {
+      "label": "微博热搜",
+      "ok": true,
+      "count": 50
+    },
+    "baidu": {
+      "label": "百度热搜",
+      "ok": true,
+      "count": 51
+    },
+    "zhihu": {
+      "label": "知乎热榜",
+      "ok": true,
+      "count": 30
+    },
+    "douyin": {
+      "label": "抖音总榜",
+      "ok": true,
+      "count": 50
+    },
+    "bilibili": {
+      "label": "B站全站日榜",
+      "ok": true,
+      "count": 100
+    },
+    "wechat": {
+      "label": "微信热文",
+      "ok": true,
+      "count": 30
+    },
+    "toutiao": {
+      "label": "今日头条",
+      "ok": true,
+      "count": 50
+    },
+    "smzdm": {
+      "label": "什么值得买",
+      "ok": true,
+      "count": 48
+    },
+    "xiaohongshu": {
+      "label": "小红书",
+      "ok": true,
+      "count": 20
+    },
+    "kuaishou": {
+      "label": "快手",
+      "ok": true,
+      "count": 50
+    },
+    "36kr": {
+      "label": "36氪",
+      "ok": true,
+      "count": 30
+    },
+    "ithome": {
+      "label": "IT之家",
+      "ok": true,
+      "count": 12
+    },
+    "sina": {
+      "label": "新浪热榜",
+      "ok": true,
+      "count": 45
+    },
+    "qq_news": {
+      "label": "腾讯新闻",
+      "ok": true,
+      "count": 50
+    },
+    "netease_news": {
+      "label": "网易新闻",
+      "ok": true,
+      "count": 10
+    },
+    "thepaper": {
+      "label": "澎湃新闻",
+      "ok": true,
+      "count": 48
+    },
+    "tieba": {
+      "label": "百度贴吧",
+      "ok": true,
+      "count": 30
+    },
+    "hupu": {
+      "label": "虎扑",
+      "ok": true,
+      "count": 30
+    },
+    "trendsmcp_x": {
+      "label": "X/Twitter 热门",
+      "ok": true,
+      "count": 0
+    },
+    "trendsmcp_youtube": {
+      "label": "YouTube 热门",
+      "ok": true,
+      "count": 0
+    },
+    "trendsmcp_reddit": {
+      "label": "Reddit World News",
+      "ok": true,
+      "count": 0
+    }
+  },
+  "stocks": {
+    "sz000333": {
+      "name": "美的集团",
+      "price": 75.45,
+      "pe": 13.0,
+      "pb": 2.82,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sz000651": {
+      "name": "格力电器",
+      "price": 37.34,
+      "pe": 7.17,
+      "pb": 1.38,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sh600690": {
+      "name": "海尔智家",
+      "price": 20.26,
+      "pe": 10.15,
+      "pb": 1.52,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sh603128": {
+      "name": "华贸物流",
+      "price": 5.02,
+      "pe": 14.2,
+      "pb": 1.04,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sz300729": {
+      "name": "乐歌股份",
+      "price": 9.55,
+      "pe": 15.65,
+      "pb": 0.92,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sh600988": {
+      "name": "赤峰黄金",
+      "price": 25.75,
+      "pe": 13.64,
+      "pb": 3.58,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sh688981": {
+      "name": "中芯国际",
+      "price": 160.0,
+      "pe": 271.47,
+      "pb": 7.19,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sh603019": {
+      "name": "中科曙光",
+      "price": 105.7,
+      "pe": 69.74,
+      "pb": 7.03,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sz300750": {
+      "name": "宁德时代",
+      "price": 394.88,
+      "pe": 23.13,
+      "pb": 5.59,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sh600519": {
+      "name": "贵州茅台",
+      "price": 1176.3,
+      "pe": 17.78,
+      "pb": 6.31,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sh600036": {
+      "name": "招商银行",
+      "price": 35.55,
+      "pe": 5.95,
+      "pb": 0.79,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sz000858": {
+      "name": "五 粮 液",
+      "price": 72.59,
+      "pe": 22.36,
+      "pb": 2.2,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sz002475": {
+      "name": "立讯精密",
+      "price": 70.6,
+      "pe": 30.01,
+      "pb": 5.85,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    },
+    "sz300274": {
+      "name": "阳光电源",
+      "price": 157.78,
+      "pe": 27.43,
+      "pb": 6.92,
+      "chg_5d": null,
+      "chg_20d": null,
+      "chg_60d": null,
+      "market": ""
+    }
+  }
+}

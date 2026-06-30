@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-06-30T12:24:57.900467+08:00",
+  "scan_time": "2026-06-30T12:26:02.667861+08:00",
   "total_titles": 704,
   "sources_ok": 21,
   "sources_total": 22,
@@ -8,7 +8,7 @@
       "name": "空调/家电",
       "platform_count": 10,
       "category": "潜在信号",
-      "trend": "up",
+      "trend": "stable",
       "top": "网易新闻#5",
       "stocks": [
         [
@@ -37,7 +37,7 @@
       "name": "AI/大模型",
       "platform_count": 8,
       "category": "潜在信号",
-      "trend": "down",
+      "trend": "stable",
       "top": "36氪#4",
       "stocks": [
         [
@@ -66,7 +66,7 @@
       "name": "手机/消费电子",
       "platform_count": 5,
       "category": "潜在信号",
-      "trend": "down",
+      "trend": "stable",
       "top": "IT之家#2",
       "stocks": [
         [
@@ -83,7 +83,7 @@
       "name": "黄金/贵金属",
       "platform_count": 5,
       "category": "潜在信号",
-      "trend": "up",
+      "trend": "stable",
       "top": "百度贴吧#5",
       "stocks": [
         [
@@ -121,7 +121,7 @@
       "name": "新能源车",
       "platform_count": 4,
       "category": "潜在信号",
-      "trend": "down",
+      "trend": "stable",
       "top": "网易新闻#1",
       "stocks": [
         [
@@ -156,7 +156,7 @@
       "platform_count": 3,
       "category": "消遣",
       "trend": "stable",
-      "top": "知乎热榜#16",
+      "top": "知乎热榜#15",
       "stocks": []
     }
   ]

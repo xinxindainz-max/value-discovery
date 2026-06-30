@@ -1,7 +1,7 @@
 {
   "meta": {
-    "fetched_at": "2026-06-30T12:24:39.524201+08:00",
-    "fetched_at_unix": 1782793479,
+    "fetched_at": "2026-06-30T12:25:47.581144+08:00",
+    "fetched_at_unix": 1782793547,
     "timeout_sec": 15,
     "pipeline_version": "3.0"
   },
@@ -9,7 +9,7 @@
     "google_trends": {
       "label": "Google Trends",
       "status": "ok",
-      "elapsed_ms": 320,
+      "elapsed_ms": 258,
       "error": null,
       "data": {
         "statusCode": 200,
@@ -20,7 +20,7 @@
     "weibo": {
       "label": "微博热搜",
       "status": "ok",
-      "elapsed_ms": 708,
+      "elapsed_ms": 1170,
       "error": null,
       "data": {
         "type": "weibo",
@@ -383,7 +383,7 @@
     "baidu": {
       "label": "百度热搜",
       "status": "ok",
-      "elapsed_ms": 796,
+      "elapsed_ms": 571,
       "error": null,
       "data": {
         "type": "baidu",
@@ -957,17 +957,17 @@
     "zhihu": {
       "label": "知乎热榜",
       "status": "ok",
-      "elapsed_ms": 1697,
+      "elapsed_ms": 1670,
       "error": null,
       "data": {
         "type": "zhihu",
-        "update_time": "2026-06-30 12:15:24",
+        "update_time": "2026-06-30 12:25:51",
         "list": [
           {
             "index": 1,
             "title": "大冷门！德国点球大战 4-5 不敌巴拉圭遭淘汰，止步世界杯 32 强，如何评价本场比赛？",
             "url": "https://www.zhihu.com/question/2054885142036833997",
-            "hot_value": "3921 万热度",
+            "hot_value": "3997 万热度",
             "extra": {
               "desc": "北京时间 6 月 30 日，2026 美加墨世界杯 1/16 决赛，巴拉圭队点球大战战胜德国队，成功晋级 16 强。 第 42 分钟，巴拉圭队球员恩西索破门，德国 0-1 巴拉圭。 第 54 分钟，德",
               "image": "short-lived/2026/06/zhihu/a75ef8705664b26d4f362ea49aa9aa7f.png"
@@ -977,7 +977,7 @@
             "index": 2,
             "title": "Papi 酱自曝原生家庭创伤，心理学上所说的「代际创伤」是什么？真的会在普通人身上代代相传？",
             "url": "https://www.zhihu.com/question/2054710786757595233",
-            "hot_value": "708 万热度",
+            "hot_value": "724 万热度",
             "extra": {
               "desc": "Papi 酱在视频里自曝原生家庭，很多人分享了自己「发誓不要成为我妈那样的人，结果越来越像她」的痛苦经历。这让我想起一个观点：我们可能不是在重复父母，而是在跑一个从未选择过的「程序」。 听说这和心理学",
               "image": "short-lived/2026/06/zhihu/ae062ccc2701f37b6debe5f4600ee385.png"
@@ -987,7 +987,7 @@
             "index": 3,
             "title": "如何看待恋与深空对 731 等三大争议的回应？能挽回口碑吗？",
             "url": "https://www.zhihu.com/question/2055027543971815793",
-            "hot_value": "645 万热度",
+            "hot_value": "677 万热度",
             "extra": {
               "desc": "恋与深空制作组发文： 近日，我们关注到网络上流传着许多《恋与深空》游戏及宣传内容的相关讨论，由此给大家带来的误解和不佳体验我们深表歉意！感谢大家的持续关注，后续我们也会虚心接受来自各方的意见。 为避免",
               "image": "short-lived/2026/06/zhihu/96ad176401514776682915a64e28dc87.jpg"
@@ -997,7 +997,7 @@
             "index": 4,
             "title": "世界杯 1/16 决赛，巴西 2-1 绝杀日本，日本队史世界杯淘汰赛仍 0 胜，如何评价本场比赛？",
             "url": "https://www.zhihu.com/question/2054881323324651014",
-            "hot_value": "480 万热度",
+            "hot_value": "355 万热度",
             "extra": {
               "image": "short-lived/2026/06/zhihu/fd5586ac2e3b66fce2b6dcf8c6b5b472.webp"
             }
@@ -1006,7 +1006,7 @@
             "index": 5,
             "title": "网友吃半根变苦黄瓜后恶心呕吐，确诊葫芦素中毒致肝衰竭，黄瓜变苦真的会产生毒素吗？背后有什么科学依据吗？",
             "url": "https://www.zhihu.com/question/2054840001347547491",
-            "hot_value": "268 万热度",
+            "hot_value": "271 万热度",
             "extra": {
               "desc": "不少人吃到发苦的瓜果，切掉苦味部分就接着吃，以为仅仅是口感问题。殊不知这一丝苦味暗藏致命风险。近日，福建一名男子只吃了半根自家种的苦黄瓜，一小时内突发重病，就医结果令人心惊。 01 食用变苦黄瓜确诊葫",
               "image": "short-lived/2026/06/zhihu/05e6db88c32f3ba6c37554e8a464a16f.jpg"
@@ -1014,39 +1014,49 @@
           },
           {
             "index": 6,
+            "title": "爆冷！荷兰点球大战 3-4 遭摩洛哥淘汰，荷兰 3 人失点，如何评价本场比赛？",
+            "url": "https://www.zhihu.com/question/2054883065927939373",
+            "hot_value": "210 万热度",
+            "extra": {
+              "desc": "北京时间 9:00，世界杯 1/16 决赛荷兰 vs 摩洛哥，比赛在 BBVA 体育场打响！上半场，费布吕亨献神扑，范赫克头部遭遇一次肘击，又被鞋钉踩到头部后血染赛场。下半场，阿什拉夫抽射中横梁；加克",
+              "label": "新"
+            }
+          },
+          {
+            "index": 7,
             "title": "德国 4-5 爆冷输球巴拉圭，队史首输世界杯点球大战，连续 3 届无缘 16 强，你认为问题出在哪？",
             "url": "https://www.zhihu.com/question/2055193413058652116",
-            "hot_value": "199 万热度",
+            "hot_value": "195 万热度",
             "extra": {
               "desc": "6 月 30 日凌晨，世界杯 1/16 决赛德国队对阵巴拉圭队比赛上演。本场比赛双方激战到点球大战才分出胜负，巴拉圭队凭借着他们顽强的防守，点球大战 4-3 总比分 5-4 爆冷淘汰了德国队，成功闯入",
               "image": "short-lived/2026/06/zhihu/feb0cbb1f700d059fa095af3629f71df.jpg"
             }
           },
           {
-            "index": 7,
+            "index": 8,
             "title": "木叶三忍的称号明明是耻辱的称呼为什么他们反而出名了？",
             "url": "https://www.zhihu.com/question/654468093",
-            "hot_value": "178 万热度",
+            "hot_value": "181 万热度",
             "extra": {
               "desc": "自来也、大蛇丸、纲手的三忍称号，是在败给半藏后，被半藏放过而捡了一条命后，半藏给的称号。按理说这种称号是有侮辱性的，是耻辱，为什么他们三个反而成为木叶里名声响亮的忍者，而不是木叶的耻辱？",
               "image": "short-lived/2026/06/zhihu/e721654b922a9eb43193de8f4f5b0bfd.webp"
             }
           },
           {
-            "index": 8,
+            "index": 9,
             "title": "发明 Linux 、 Python 、 redis 、 nginx 、 sqlite 的人算不算天才？",
             "url": "https://www.zhihu.com/question/2027342725343721332",
-            "hot_value": "172 万热度",
+            "hot_value": "178 万热度",
             "extra": {
               "desc": "凭一己之力就开发出世界流行的软件，应该算是改变世界、造福人类了。",
               "image": "short-lived/2026/06/zhihu/f652aeb22aab56f9aa6a9dfc5aff9b0e.jpg"
             }
           },
           {
-            "index": 9,
+            "index": 10,
             "title": "蔚来回应「网友给 ES9 洗车时车漆被高压水枪冲掉」，称是操作不当导致，到底是操作不当还是质量问题？",
             "url": "https://www.zhihu.com/question/2054947373927888661",
-            "hot_value": "139 万热度",
+            "hot_value": "138 万热度",
             "extra": {
               "desc": "多位网友在社交平台发布视频和图文，称蔚来 es9 新车洗车时使用高压水枪会洗破车漆。 多位网友发布的帖文截图 6 月 29 日，@蔚来小喇叭 发布「关于高压水枪洗车的小提醒」的微博，内容如下： 针对近",
               "image": "short-lived/2026/06/zhihu/e153514feab770751d8afa6a48df9f62.png",
@@ -1054,19 +1064,10 @@
             }
           },
           {
-            "index": 10,
-            "title": "世界杯 1/16 决赛，摩洛哥点球大战淘汰荷兰，荷兰 3 人失点，如何评价本场比赛？",
-            "url": "https://www.zhihu.com/question/2054883065927939373",
-            "hot_value": "136 万热度",
-            "extra": {
-              "desc": "世界杯 1/16 决赛，荷兰 vs 摩洛哥，如何评价本场比赛？"
-            }
-          },
-          {
             "index": 11,
             "title": "日本 5 战世界杯倒在淘汰赛首轮， 3 次遭逆转绝杀，你认为队内现存最大问题是什么？",
             "url": "https://www.zhihu.com/question/2055187913390782220",
-            "hot_value": "132 万热度",
+            "hot_value": "136 万热度",
             "extra": {
               "desc": "世界杯 1/16 决赛，巴西淘汰日本，桑巴军团挺进世界杯 1/8 决赛，将面对科特迪瓦和挪威之间的胜者。日本则再度止步世界杯淘汰赛首战，他们至今仍未尝过世界杯淘汰赛胜利的滋味。 算上本届，日本是第 8",
               "image": "short-lived/2026/06/zhihu/97ef46b247a497bb9ab187ec01931d06.jpg",
@@ -1077,7 +1078,7 @@
             "index": 12,
             "title": "「置身 X 内」为什么批量出现？大厂都存在类似的「大厂病」吗？",
             "url": "https://www.zhihu.com/question/2053972383405552492",
-            "hot_value": "115 万热度",
+            "hot_value": "108 万热度",
             "extra": {
               "desc": "这段时间，互联网大厂们出现一个「奇观」。先是钉钉一个前 AI 产品经理发出 7.5 万字的离职长文《置身钉内》，接着是美团到餐基层前员工写下两千多字的《置身团内》，然后是一位校招入职的小米前员工抛出四",
               "image": "short-lived/2026/06/zhihu/0ea353cc58e7851a97d561a7ac5958cf.png",
@@ -1088,7 +1089,7 @@
             "index": 13,
             "title": "教育局通报核查河北任泽区让教师周末巡网吧台球厅，为何需要教师上街执勤？这是负责还是「甩锅」？",
             "url": "https://www.zhihu.com/question/2052711823577707174",
-            "hot_value": "109 万热度",
+            "hot_value": "105 万热度",
             "extra": {
               "desc": "6 月 22 日，河北省邢台市任泽区教育局发布情况通报： 6 月 22 日，《人民日报》读者来信板块反映我区存在基层教师周末参与巡查的情况。区委、区政府高度重视，第一时间启动核查处置，深刻检视工作偏差",
               "image": "short-lived/2026/06/zhihu/6938ebe3637b94048e76082f6545765c.jpg",
@@ -1099,7 +1100,7 @@
             "index": 14,
             "title": "韩国从世界杯出局后，韩便利店禁止主帅洪明甫入内，烤肉店拒绝为其提供服务，如何看待其体育生涯和此次争议？",
             "url": "https://www.zhihu.com/question/2054883842217992246",
-            "hot_value": "97 万热度",
+            "hot_value": "96 万热度",
             "extra": {
               "desc": "韩国从世界杯「耻辱性」出局后，韩国总统李在明将国家队出局归咎于韩国足协的制度性失败，批评韩国足协以「私人关系」聘请主帅洪明甫的决定，称「把无能之辈放到了指挥位置」。朝野政党也一致呼吁国会对韩国足协的运",
               "image": "short-lived/2026/06/zhihu/157aa9596e1a62a09caf9736c6039006.jpg"
@@ -1107,16 +1108,6 @@
           },
           {
             "index": 15,
-            "title": "外国人第一次来中国旅游是怎样的体验？",
-            "url": "https://www.zhihu.com/question/40924334",
-            "hot_value": "85 万热度",
-            "extra": {
-              "desc": "看了很多知乎友人去日本、去印度、去俄罗斯，看得出旅程很奇妙。但是不知道歪果仁第一次来中国是惊呆了呢，还是惊呆了呢？有木有三观尽毁的经历？",
-              "image": "short-lived/2026/06/zhihu/ba7f6f89b232d417726ca9706f9930bb.webp"
-            }
-          },
-          {
-            "index": 16,
             "title": "为什么《原神》哥伦比娅的人气这么高？",
             "url": "https://www.zhihu.com/question/1985225656687150210",
             "hot_value": "82 万热度",
@@ -1127,23 +1118,34 @@
             }
           },
           {
-            "index": 17,
+            "index": 16,
             "title": "为什么说「钓鱼佬除了鱼什么都能钓上来」？",
             "url": "https://www.zhihu.com/question/555424066",
-            "hot_value": "75 万热度",
+            "hot_value": "77 万热度",
             "extra": {
               "image": "short-lived/2026/06/zhihu/2e26bb543f7f63c5fcaf3462fe7db11a.jpg",
               "label": "新"
             }
           },
           {
-            "index": 18,
-            "title": "如何看待 NBA2026 年休赛期，媒体称勇士正试图同时获得詹姆斯和浓眉？这可能实现吗？",
-            "url": "https://www.zhihu.com/question/2054983701281481120",
-            "hot_value": "69 万热度",
+            "index": 17,
+            "title": "自己种菜比买菜贵多了，为什么还有人费劲巴力的去种呢？",
+            "url": "https://www.zhihu.com/question/2053884551424894176",
+            "hot_value": "75 万热度",
             "extra": {
-              "desc": "nba2026 年休赛期，美记 Kevin O『Connor6 月底撰文谈及了的休赛期动态。 Kevin O』Connor 表示：“据多位联盟消息人士透露，勇士正试图交易得到中锋安东尼戴维斯，然后再签",
-              "image": "short-lived/2026/06/zhihu/5bde3946a303f730e6ab4d2be2ff3826.jpg"
+              "desc": "自己种菜浇水、施肥、驱虫…每一步都不能省，花的功夫又多，买把青菜两、三块钱，何必呢？",
+              "image": "short-lived/2026/06/zhihu/3ed03ddb151660103b6f0bb05bf47ddf.jpg",
+              "label": "新"
+            }
+          },
+          {
+            "index": 18,
+            "title": "外国人第一次来中国旅游是怎样的体验？",
+            "url": "https://www.zhihu.com/question/40924334",
+            "hot_value": "71 万热度",
+            "extra": {
+              "desc": "看了很多知乎友人去日本、去印度、去俄罗斯，看得出旅程很奇妙。但是不知道歪果仁第一次来中国是惊呆了呢，还是惊呆了呢？有木有三观尽毁的经历？",
+              "image": "short-lived/2026/06/zhihu/ba7f6f89b232d417726ca9706f9930bb.webp"
             }
           },
           {
@@ -1170,7 +1172,7 @@
             "index": 21,
             "title": "如何看待张靓颖演唱会因清唱太多主办方被罚款？为啥清唱也会被罚？",
             "url": "https://www.zhihu.com/question/2052417668121092956",
-            "hot_value": "68 万热度",
+            "hot_value": "67 万热度",
             "extra": {
               "desc": "[图片]",
               "image": "short-lived/2026/06/zhihu/258cd2dc25794a4462d5495274d43756.webp"
@@ -1200,46 +1202,27 @@
           },
           {
             "index": 24,
-            "title": "如何看待在新款尊界 S800 发布之际江淮大股东大幅减持？会是什么原因？后续会有什么影响？",
-            "url": "https://www.zhihu.com/question/2054621567007602582",
-            "hot_value": "59 万热度",
+            "title": "你的出租屋楼下，有没有一个让你记了很久的小店或地方？",
+            "url": "https://www.zhihu.com/question/2048064760286012606",
+            "hot_value": "60 万热度",
             "extra": {
-              "desc": " ",
-              "image": "short-lived/2026/06/zhihu/449a2762fed33e71c6667aed245d14f0.jpg"
+              "desc": "很多人记住一间出租屋，不只是因为房间本身，也因为它周围的生活半径。 楼下的早餐摊、便利店、菜市场、打印店、药房、夜宵摊、快递点、小公园，可能构成了一个人在城市里的日常安全感。 你租房时，楼下或附近有没",
+              "image": "short-lived/2026/06/zhihu/e763dfa125a96cfcb4e4c52706e1c7e0.jpg",
+              "label": "新"
             }
           },
           {
             "index": 25,
-            "title": "你对《崩坏：星穹铁道》4.4 版本「鸣笛于归寂之时」前瞻特别节目有什么期待？",
-            "url": "https://www.zhihu.com/question/2055027259736642310",
+            "title": "如何看待 NBA2026 年休赛期，媒体称勇士正试图同时获得詹姆斯和浓眉？这可能实现吗？",
+            "url": "https://www.zhihu.com/question/2054983701281481120",
             "hot_value": "59 万热度",
             "extra": {
-              "desc": "《崩坏：星穹铁道》4.4 版本「鸣笛于归寂之时」前瞻特别节目将于 2026 年 7 月 3 日 19:30 正式播出。",
-              "image": "short-lived/2026/06/zhihu/63c7ca61f7057b220c2148ecb9c89a48.jpg"
+              "desc": "nba2026 年休赛期，美记 Kevin O『Connor6 月底撰文谈及了的休赛期动态。 Kevin O』Connor 表示：“据多位联盟消息人士透露，勇士正试图交易得到中锋安东尼戴维斯，然后再签",
+              "image": "short-lived/2026/06/zhihu/5bde3946a303f730e6ab4d2be2ff3826.jpg"
             }
           },
           {
             "index": 26,
-            "title": "高校青椒，非嫡系，单干还是进团队？",
-            "url": "https://www.zhihu.com/question/1988599523854029082",
-            "hot_value": "59 万热度",
-            "extra": {
-              "desc": "团队老板有自己的嫡系。都说现在科研是拼团队，但非嫡系好像在团队也是耗材，怎样选择。",
-              "image": "short-lived/2026/06/zhihu/af3067a3ec689069c32dda16f17e680c.webp"
-            }
-          },
-          {
-            "index": 27,
-            "title": "如何看待现在有学者用 AI 做数学科研？",
-            "url": "https://www.zhihu.com/question/2049420510811967937",
-            "hot_value": "59 万热度",
-            "extra": {
-              "desc": "用 ai 生成证明",
-              "image": "short-lived/2026/06/zhihu/191728aad5f184aa08558b35cd267848.webp"
-            }
-          },
-          {
-            "index": 28,
             "title": "警方通报「东鹏特饮创始人不喝自家饮料」，造谣者被刑拘，涉及哪些法律问题？谣言为啥能让其市值蒸发 70 亿？",
             "url": "https://www.zhihu.com/question/2054934053560607671",
             "hot_value": "59 万热度",
@@ -1249,23 +1232,43 @@
             }
           },
           {
-            "index": 29,
-            "title": "曹雪芹为什么写贾母痛批私定终身，才子佳人小说不是婚姻自主、人文觉醒的反封建文学吗？",
-            "url": "https://www.zhihu.com/question/1978386297254089270",
+            "index": 27,
+            "title": "如何看待在新款尊界 S800 发布之际江淮大股东大幅减持？会是什么原因？后续会有什么影响？",
+            "url": "https://www.zhihu.com/question/2054621567007602582",
+            "hot_value": "59 万热度",
+            "extra": {
+              "desc": " ",
+              "image": "short-lived/2026/06/zhihu/449a2762fed33e71c6667aed245d14f0.jpg"
+            }
+          },
+          {
+            "index": 28,
+            "title": "你对《崩坏：星穹铁道》4.4 版本「鸣笛于归寂之时」前瞻特别节目有什么期待？",
+            "url": "https://www.zhihu.com/question/2055027259736642310",
             "hot_value": "58 万热度",
             "extra": {
-              "desc": "贾母批才子佳人的依据是礼教，闺阁小姐与男人私定终身，是忘了父母、书礼，也就是「父母之命」和礼教约束。 曹雪芹不是反封建、支持婚姻自主吗？为什么会写才子佳人是「陈腐旧套」，借贾母之口，骂追求婚姻自主的女",
-              "image": "short-lived/2026/06/zhihu/d80f04ce46db997b4021cc993ffd48cd.jpg"
+              "desc": "《崩坏：星穹铁道》4.4 版本「鸣笛于归寂之时」前瞻特别节目将于 2026 年 7 月 3 日 19:30 正式播出。",
+              "image": "short-lived/2026/06/zhihu/63c7ca61f7057b220c2148ecb9c89a48.jpg"
+            }
+          },
+          {
+            "index": 29,
+            "title": "高校青椒，非嫡系，单干还是进团队？",
+            "url": "https://www.zhihu.com/question/1988599523854029082",
+            "hot_value": "58 万热度",
+            "extra": {
+              "desc": "团队老板有自己的嫡系。都说现在科研是拼团队，但非嫡系好像在团队也是耗材，怎样选择。",
+              "image": "short-lived/2026/06/zhihu/af3067a3ec689069c32dda16f17e680c.webp"
             }
           },
           {
             "index": 30,
-            "title": "汉语是世界上最言简意赅的语言吗？",
-            "url": "https://www.zhihu.com/question/652795747",
+            "title": "如何看待现在有学者用 AI 做数学科研？",
+            "url": "https://www.zhihu.com/question/2049420510811967937",
             "hot_value": "58 万热度",
             "extra": {
-              "desc": "象形文字是表达语意最简练的语言吗？",
-              "image": "short-lived/2026/06/zhihu/54ce0192b92b26d32b3d300d3d25ff2c.webp"
+              "desc": "用 ai 生成证明",
+              "image": "short-lived/2026/06/zhihu/191728aad5f184aa08558b35cd267848.webp"
             }
           }
         ]
@@ -1275,7 +1278,7 @@
     "douyin": {
       "label": "抖音总榜",
       "status": "ok",
-      "elapsed_ms": 3661,
+      "elapsed_ms": 855,
       "error": null,
       "data": {
         "type": "douyin",
@@ -1988,7 +1991,7 @@
     "bilibili": {
       "label": "B站全站日榜",
       "status": "ok",
-      "elapsed_ms": 805,
+      "elapsed_ms": 890,
       "error": null,
       "data": {
         "type": "bilibili",
@@ -5101,7 +5104,7 @@
     "wechat": {
       "label": "微信热文",
       "status": "fail",
-      "elapsed_ms": 1339,
+      "elapsed_ms": 874,
       "error": "HTTP 400",
       "data": null,
       "retries": 0
@@ -5109,7 +5112,7 @@
     "toutiao": {
       "label": "今日头条",
       "status": "ok",
-      "elapsed_ms": 504,
+      "elapsed_ms": 810,
       "error": null,
       "data": {
         "type": "toutiao",
@@ -5472,7 +5475,7 @@
     "smzdm": {
       "label": "什么值得买",
       "status": "ok",
-      "elapsed_ms": 757,
+      "elapsed_ms": 540,
       "error": null,
       "data": {
         "type": "smzdm",
@@ -6024,7 +6027,7 @@
     "xiaohongshu": {
       "label": "小红书",
       "status": "ok",
-      "elapsed_ms": 535,
+      "elapsed_ms": 449,
       "error": null,
       "data": {
         "type": "xiaohongshu",
@@ -6241,7 +6244,7 @@
     "kuaishou": {
       "label": "快手",
       "status": "ok",
-      "elapsed_ms": 526,
+      "elapsed_ms": 361,
       "error": null,
       "data": {
         "type": "kuaishou",
@@ -6604,7 +6607,7 @@
     "36kr": {
       "label": "36氪",
       "status": "ok",
-      "elapsed_ms": 455,
+      "elapsed_ms": 613,
       "error": null,
       "data": {
         "type": "36kr",
@@ -6827,7 +6830,7 @@
     "ithome": {
       "label": "IT之家",
       "status": "ok",
-      "elapsed_ms": 546,
+      "elapsed_ms": 382,
       "error": null,
       "data": {
         "type": "ithome",
@@ -6924,7 +6927,7 @@
     "sina": {
       "label": "新浪热榜",
       "status": "ok",
-      "elapsed_ms": 353,
+      "elapsed_ms": 544,
       "error": null,
       "data": {
         "type": "sina",
@@ -7252,7 +7255,7 @@
     "qq_news": {
       "label": "腾讯新闻",
       "status": "ok",
-      "elapsed_ms": 1476,
+      "elapsed_ms": 567,
       "error": null,
       "data": {
         "type": "qq-news",
@@ -7815,7 +7818,7 @@
     "netease_news": {
       "label": "网易新闻",
       "status": "ok",
-      "elapsed_ms": 672,
+      "elapsed_ms": 572,
       "error": null,
       "data": {
         "type": "netease-news",
@@ -7898,7 +7901,7 @@
     "thepaper": {
       "label": "澎湃新闻",
       "status": "ok",
-      "elapsed_ms": 724,
+      "elapsed_ms": 500,
       "error": null,
       "data": {
         "type": "thepaper",
@@ -8475,7 +8478,7 @@
     "tieba": {
       "label": "百度贴吧",
       "status": "ok",
-      "elapsed_ms": 396,
+      "elapsed_ms": 1032,
       "error": null,
       "data": {
         "type": "tieba",
@@ -8788,7 +8791,7 @@
     "hupu": {
       "label": "虎扑",
       "status": "ok",
-      "elapsed_ms": 353,
+      "elapsed_ms": 685,
       "error": null,
       "data": {
         "type": "hupu",
@@ -9011,7 +9014,7 @@
     "trendsmcp_x": {
       "label": "X/Twitter 热门",
       "status": "ok",
-      "elapsed_ms": 206,
+      "elapsed_ms": 205,
       "error": null,
       "data": {
         "statusCode": 200,
@@ -9022,7 +9025,7 @@
     "trendsmcp_youtube": {
       "label": "YouTube 热门",
       "status": "ok",
-      "elapsed_ms": 205,
+      "elapsed_ms": 214,
       "error": null,
       "data": {
         "statusCode": 200,
@@ -9033,7 +9036,7 @@
     "trendsmcp_reddit": {
       "label": "Reddit World News",
       "status": "ok",
-      "elapsed_ms": 163,
+      "elapsed_ms": 162,
       "error": null,
       "data": {
         "statusCode": 200,

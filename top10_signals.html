@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 10 Early Signals</title>
+<style>
+:root {
+  --bg: #f7f5f0;
+  --tx: #1a1a2e;
+  --tx2: #4a5568;
+  --tx3: #8899aa;
+  --accent: #1a1a2e;
+  --radius: 10px;
+  --green: #1a7a3a;
+  --blue: #2c5282;
+  --card-bg: #fff;
+  --card-shadow: 0 1px 4px rgba(0,0,0,.06);
+  --bar-bg: #e8e4db;
+  --bar-fill: #1a1a2e;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--tx);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* header */
+.header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #dfe0db;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.header .sub {
+  font-size: 12px;
+  color: var(--tx3);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mode-badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.mode-cold_start { background: #fed7d7; color: #9b2c2c; }
+.mode-transition { background: #fefcbf; color: #975a16; }
+.mode-normal     { background: #c6f6d5; color: #22543d; }
+
+/* card */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  transition: box-shadow .15s;
+}
+.card:hover { box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.rank {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tx3);
+  min-width: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.score-bar {
+  flex: 1;
+  height: 5px;
+  background: var(--bar-bg);
+  border-radius: 3px;
+  overflow: hidden;
+  max-width: 180px;
+}
+
+.score-fill {
+  height: 100%;
+  background: var(--bar-fill);
+  border-radius: 3px;
+  transition: width .3s;
+}
+
+.score-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tx);
+  font-variant-numeric: tabular-nums;
+  min-width: 36px;
+  text-align: right;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tx);
+  letter-spacing: -0.2px;
+}
+
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.tag {
+  font-size: 10px;
+  padding: 1px 7px;
+  border-radius: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.tag-new   { background: #c6f6d5; color: var(--green); }
+.tag-multi { background: #bee3f8; color: var(--blue); }
+
+.card-reason {
+  font-size: 12px;
+  color: var(--tx2);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.card-meta {
+  font-size: 11px;
+  color: var(--tx3);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.card-meta .sources-label {
+  color: var(--tx2);
+}
+
+.card-why {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #fafaf7;
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--tx2);
+  line-height: 1.5;
+  border-left: 2px solid #e8e4db;
+}
+
+/* empty / loading */
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--tx3);
+  font-size: 14px;
+}
+
+.empty a { color: var(--tx2); }
+
+.error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #9b2c2c;
+  font-size: 14px;
+}
+
+/* sub-scores inline */
+.sub-scores {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--tx3);
+  font-variant-numeric: tabular-nums;
+}
+
+.sub-scores span {
+  white-space: nowrap;
+}
+
+/* footer */
+.footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #dfe0db;
+  font-size: 11px;
+  color: var(--tx3);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer a { color: var(--tx3); text-decoration: underline; }
+
+@media (max-width: 600px) {
+  body { padding: 20px 12px 40px; }
+  .card { padding: 14px 14px; }
+  .card-top { flex-wrap: wrap; gap: 6px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Top 10 Early Signals</h1>
+  <div class="sub" id="header-meta">
+    <span id="mode-display">加载中...</span>
+    <span id="ts-display"></span>
+    <span id="summary-display"></span>
+  </div>
+</div>
+
+<div id="content">
+  <div class="empty">加载信号数据...</div>
+</div>
+
+<div class="footer">
+  <span>信号引擎 v1.0 · 规则驱动 · 禁止投资建议</span>
+  <span><a href="发现榜.html">价值发现主页</a></span>
+</div>
+
+<script>
+(function() {
+  var BASE = 'data';  // GitHub Pages 可读路径
+  var contentEl = document.getElementById('content');
+  var headerMeta = document.getElementById('header-meta');
+
+  function showError(msg) {
+    contentEl.innerHTML = '<div class="error">' + msg + '</div>';
+  }
+
+  function renderSignals(data) {
+    if (!data || !data.signals || data.signals.length === 0) {
+      contentEl.innerHTML = '<div class="empty">暂无可筛选的早期信号<br><small>异动稀疏是正常的</small></div>';
+      return;
+    }
+
+    // header
+    var mode = data.mode || 'cold_start';
+    var modeLabels = { cold_start: '冷启动', transition: '过渡期', normal: '正常运行' };
+    var modeClass = 'mode-' + mode;
+    document.getElementById('mode-display').innerHTML =
+      '<span class="mode-badge ' + modeClass + '">' + (modeLabels[mode] || mode) + '</span>' +
+      ' · 数据积累第 ' + (data.day_number || 1) + ' 天';
+
+    if (data.generated_at) {
+      document.getElementById('ts-display').textContent = data.generated_at.slice(0, 16).replace('T', ' ');
+    }
+    if (data.scan_summary) {
+      document.getElementById('summary-display').textContent =
+        '扫描 ' + data.scan_summary.total_items + ' 条热词 · 入围 ' + data.scan_summary.output_count + ' 条';
+    }
+
+    // cards
+    var html = '';
+    for (var i = 0; i < data.signals.length; i++) {
+      var s = data.signals[i];
+      var pct = s.final_score;
+      var sub = s.sub_scores || {};
+      var tagsHtml = '';
+      if (s.tags) {
+        for (var j = 0; j < s.tags.length; j++) {
+          tagsHtml += '<span class="tag tag-' + s.tags[j].toLowerCase() + '">' + s.tags[j] + '</span>';
+        }
+      }
+
+      html += '<div class="card">';
+
+      // top row: rank + score bar + title + tags
+      html += '<div class="card-top">';
+      html += '<span class="rank">#' + s.rank + '</span>';
+      html += '<div class="score-wrap">';
+      html += '<div class="score-bar"><div class="score-fill" style="width:' + pct + '%"></div></div>';
+      html += '<span class="score-num">' + pct.toFixed(1) + '</span>';
+      html += '</div>';
+      html += '<span class="card-title">' + escHtml(s.title) + '</span>';
+      html += '<div class="tags">' + tagsHtml + '</div>';
+      html += '</div>';
+
+      // signal_reason
+      html += '<div class="card-reason">' + escHtml(s.signal_reason || '') + '</div>';
+
+      // meta: sources + sub-scores
+      html += '<div class="card-meta">';
+      if (s.sources && s.sources.length > 0) {
+        html += '<span class="sources-label">' + s.sources.join(' · ') + '</span>';
+      }
+      html += '<span class="sub-scores">';
+      html += '<span>growth ' + (sub.growth || 0).toFixed(0) + '</span>';
+      html += '<span>accel ' + (sub.acceleration || 0).toFixed(0) + '</span>';
+      html += '<span>multi ' + (sub.multi_source || 0).toFixed(0) + '</span>';
+      html += '<span>novelty ' + (sub.novelty || 0).toFixed(0) + '</span>';
+      html += '</span>';
+      html += '</div>';
+
+      // why_this_appears
+      if (s.why_this_appears) {
+        html += '<div class="card-why">' + escHtml(s.why_this_appears) + '</div>';
+      }
+
+      html += '</div>';
+    }
+
+    contentEl.innerHTML = html;
+  }
+
+  function escHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // load
+  var url = BASE + '/top10_signals.json';
+  fetch(url)
+    .then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(renderSignals)
+    .catch(function(e) {
+      showError('无法加载信号数据: ' + e.message + '<br><small>请确保数据管道已运行</small>');
+    });
+})();
+</script>
+</body>
+</html>

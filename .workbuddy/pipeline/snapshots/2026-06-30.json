@@ -1,0 +1,244 @@
+{
+  "date": "2026-06-30",
+  "generated_at": "2026-06-30T14:39:17.423633+08:00",
+  "day_number": 1,
+  "source_meta": {
+    "total_items": 734,
+    "sources_ok": 22,
+    "sources_total": 22
+  },
+  "topics": {
+    "空调/家电": {
+      "total_mentions": 18,
+      "platform_count": 10,
+      "platforms": [
+        "B站全站日榜",
+        "IT之家",
+        "今日头条",
+        "微博热搜",
+        "新浪热榜",
+        "澎湃新闻",
+        "百度热搜",
+        "百度贴吧",
+        "网易新闻",
+        "腾讯新闻"
+      ],
+      "per_platform": {
+        "微博热搜": 2,
+        "百度热搜": 2,
+        "B站全站日榜": 4,
+        "今日头条": 2,
+        "IT之家": 1,
+        "新浪热榜": 1,
+        "腾讯新闻": 2,
+        "网易新闻": 1,
+        "澎湃新闻": 1,
+        "百度贴吧": 2
+      },
+      "is_seasonal": false,
+      "is_entertainment": false
+    },
+    "AI/大模型": {
+      "total_mentions": 18,
+      "platform_count": 6,
+      "platforms": [
+        "36氪",
+        "B站全站日榜",
+        "IT之家",
+        "抖音总榜",
+        "澎湃新闻",
+        "腾讯新闻"
+      ],
+      "per_platform": {
+        "抖音总榜": 2,
+        "B站全站日榜": 4,
+        "36氪": 5,
+        "IT之家": 2,
+        "腾讯新闻": 3,
+        "澎湃新闻": 2
+      },
+      "is_seasonal": false,
+      "is_entertainment": false
+    },
+    "芯片/半导体": {
+      "total_mentions": 5,
+      "platform_count": 3,
+      "platforms": [
+        "36氪",
+        "微博热搜",
+        "澎湃新闻"
+      ],
+      "per_platform": {
+        "微博热搜": 1,
+        "36氪": 2,
+        "澎湃新闻": 2
+      },
+      "is_seasonal": false,
+      "is_entertainment": false
+    },
+    "机器人": {
+      "total_mentions": 5,
+      "platform_count": 1,
+      "platforms": [
+        "36氪"
+      ],
+      "per_platform": {
+        "36氪": 5
+      },
+      "is_seasonal": false,
+      "is_entertainment": false
+    },
+    "新能源车": {
+      "total_mentions": 5,
+      "platform_count": 4,
+      "platforms": [
+        "抖音总榜",
+        "知乎热榜",
+        "网易新闻",
+        "腾讯新闻"
+      ],
+      "per_platform": {
+        "知乎热榜": 2,
+        "抖音总榜": 1,
+        "腾讯新闻": 1,
+        "网易新闻": 1
+      },
+      "is_seasonal": false,
+      "is_entertainment": false
+    },
+    "手机/消费电子": {
+      "total_mentions": 15,
+      "platform_count": 7,
+      "platforms": [
+        "36氪",
+        "B站全站日榜",
+        "IT之家",
+        "什么值得买",
+        "微信热文",
+        "微博热搜",
+        "快手"
+      ],
+      "per_platform": {
+        "微博热搜": 1,
+        "B站全站日榜": 1,
+        "微信热文": 1,
+        "什么值得买": 6,
+        "快手": 1,
+        "36氪": 1,
+        "IT之家": 4
+      },
+      "is_seasonal": false,
+      "is_entertainment": false
+    },
+    "黄金/贵金属": {
+      "total_mentions": 5,
+      "platform_count": 5,
+      "platforms": [
+        "什么值得买",
+        "新浪热榜",
+        "澎湃新闻",
+        "百度贴吧",
+        "腾讯新闻"
+      ],
+      "per_platform": {
+        "什么值得买": 1,
+        "新浪热榜": 1,
+        "腾讯新闻": 1,
+        "澎湃新闻": 1,
+        "百度贴吧": 1
+      },
+      "is_seasonal": false,
+      "is_entertainment": false
+    },
+    "原油/能源": {
+      "total_mentions": 4,
+      "platform_count": 3,
+      "platforms": [
+        "知乎热榜",
+        "网易新闻",
+        "腾讯新闻"
+      ],
+      "per_platform": {
+        "知乎热榜": 1,
+        "腾讯新闻": 1,
+        "网易新闻": 2
+      },
+      "is_seasonal": false,
+      "is_entertainment": false
+    },
+    "高考": {
+      "total_mentions": 14,
+      "platform_count": 8,
+      "platforms": [
+        "今日头条",
+        "微信热文",
+        "快手",
+        "抖音总榜",
+        "澎湃新闻",
+        "百度热搜",
+        "百度贴吧",
+        "知乎热榜"
+      ],
+      "per_platform": {
+        "百度热搜": 1,
+        "知乎热榜": 2,
+        "抖音总榜": 2,
+        "微信热文": 3,
+        "今日头条": 2,
+        "快手": 2,
+        "澎湃新闻": 1,
+        "百度贴吧": 1
+      },
+      "is_seasonal": true,
+      "is_entertainment": false
+    },
+    "足球": {
+      "total_mentions": 36,
+      "platform_count": 11,
+      "platforms": [
+        "B站全站日榜",
+        "今日头条",
+        "微信热文",
+        "抖音总榜",
+        "新浪热榜",
+        "澎湃新闻",
+        "百度热搜",
+        "百度贴吧",
+        "知乎热榜",
+        "腾讯新闻",
+        "虎扑"
+      ],
+      "per_platform": {
+        "百度热搜": 5,
+        "知乎热榜": 5,
+        "抖音总榜": 3,
+        "B站全站日榜": 1,
+        "微信热文": 1,
+        "今日头条": 3,
+        "新浪热榜": 2,
+        "腾讯新闻": 6,
+        "澎湃新闻": 8,
+        "百度贴吧": 1,
+        "虎扑": 1
+      },
+      "is_seasonal": false,
+      "is_entertainment": true
+    },
+    "游戏": {
+      "total_mentions": 3,
+      "platform_count": 3,
+      "platforms": [
+        "B站全站日榜",
+        "知乎热榜",
+        "虎扑"
+      ],
+      "per_platform": {
+        "知乎热榜": 1,
+        "B站全站日榜": 1,
+        "虎扑": 1
+      },
+      "is_seasonal": false,
+      "is_entertainment": true
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-06-30T14:39:17.426603+08:00",
+  "mode": "cold_start",
+  "day_number": 1,
+  "scan_summary": {
+    "total_items": 734,
+    "total_topics": 11,
+    "candidates_after_filter": 4,
+    "output_count": 4
+  },
+  "signals": [
+    {
+      "rank": 1,
+      "title": "新能源车",
+      "final_score": 30.0,
+      "sub_scores": {
+        "growth": 0,
+        "acceleration": 0,
+        "multi_source": 16.7,
+        "novelty": 50
+      },
+      "percentile_rank": 0.1,
+      "first_seen_time": "2026-06-30T14:39:17.426588+08:00",
+      "days_since_first_seen": null,
+      "sources": [
+        "抖音总榜",
+        "知乎热榜",
+        "网易新闻",
+        "腾讯新闻"
+      ],
+      "source_count": 4,
+      "platform_tier": "general_content",
+      "tags": [
+        "MULTI"
+      ],
+      "signal_reason": "跨4平台共振",
+      "why_this_appears": "抖音总榜, 知乎热榜, 网易新闻 新能源车相关讨论早期萌芽",
+      "raw_links": []
+    },
+    {
+      "rank": 2,
+      "title": "芯片/半导体",
+      "final_score": 27.0,
+      "sub_scores": {
+        "growth": 0,
+        "acceleration": 0,
+        "multi_source": 11.7,
+        "novelty": 50
+      },
+      "percentile_rank": 1.8,
+      "first_seen_time": "2026-06-30T14:39:17.426554+08:00",
+      "days_since_first_seen": null,
+      "sources": [
+        "36氪",
+        "微博热搜",
+        "澎湃新闻"
+      ],
+      "source_count": 3,
+      "platform_tier": "tech_verticals",
+      "tags": [
+        "MULTI"
+      ],
+      "signal_reason": "跨3平台共振",
+      "why_this_appears": "36氪, 微博热搜, 澎湃新闻 芯片/半导体相关讨论早期萌芽",
+      "raw_links": []
+    },
+    {
+      "rank": 3,
+      "title": "原油/能源",
+      "final_score": 27.0,
+      "sub_scores": {
+        "growth": 0,
+        "acceleration": 0,
+        "multi_source": 11.7,
+        "novelty": 50
+      },
+      "percentile_rank": 0.1,
+      "first_seen_time": "2026-06-30T14:39:17.426599+08:00",
+      "days_since_first_seen": null,
+      "sources": [
+        "知乎热榜",
+        "网易新闻",
+        "腾讯新闻"
+      ],
+      "source_count": 3,
+      "platform_tier": "general_content",
+      "tags": [
+        "MULTI"
+      ],
+      "signal_reason": "跨3平台共振",
+      "why_this_appears": "知乎热榜, 网易新闻, 腾讯新闻 原油/能源相关讨论早期萌芽",
+      "raw_links": []
+    },
+    {
+      "rank": 4,
+      "title": "机器人",
+      "final_score": 23.0,
+      "sub_scores": {
+        "growth": 0,
+        "acceleration": 0,
+        "multi_source": 5.0,
+        "novelty": 50
+      },
+      "percentile_rank": 0.3,
+      "first_seen_time": "2026-06-30T14:39:17.426574+08:00",
+      "days_since_first_seen": null,
+      "sources": [
+        "36氪"
+      ],
+      "source_count": 1,
+      "platform_tier": "tech_verticals",
+      "tags": [],
+      "signal_reason": "跨平台检测",
+      "why_this_appears": "36氪 机器人相关讨论早期萌芽",
+      "raw_links": []
+    }
+  ]
+}

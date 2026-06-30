@@ -85,7 +85,7 @@ jobs:
         run: |
           git config user.name "价值发现机器人"
           git config user.email "bot@value-discovery.local"
-          git add git add .workbuddy/pipeline/data/ .workbuddy/pipeline/data/
+           git add .workbuddy/pipeline/data/
           if git diff --cached --quiet; then
             echo "无变更，跳过推送"
           else

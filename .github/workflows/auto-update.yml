@@ -1,0 +1,108 @@
+name: 价值发现 · 自动更新
+
+on:
+  schedule:
+    # 凌晨刷新 6:30 CST = 前一天 22:30 UTC
+    - cron: "30 22 * * *"
+    # 上午刷新 10:00 CST = 02:00 UTC
+    - cron: "0 2 * * *"
+  # 手动触发（测试用）
+  workflow_dispatch:
+
+# 确保同一时间只有一个实例在运行
+concurrency:
+  group: auto-update
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 抓取热榜数据
+        run: |
+          python .workbuddy/pipeline/data_fetcher.py --timeout 15 --output .workbuddy/pipeline/data/latest.json
+          echo "=== 数据源摘要 ==="
+          python -c "
+          import json
+          with open('.workbuddy/pipeline/data/latest.json','r') as f:
+              d = json.load(f)
+          print(f'成功: {d[\"summary\"][\"ok\"]}/{d[\"summary\"][\"total\"]}')
+          for k,v in d['sources'].items():
+              s = 'OK' if v['status']=='ok' else 'FAIL'
+              print(f'  [{s}] {v[\"label\"]}')
+          "
+
+      - name: 抓取股票行情
+        run: |
+          python .workbuddy/pipeline/stock_fetcher.py
+          echo "=== 行情摘要 ==="
+          python -c "
+          import json
+          with open('.workbuddy/pipeline/data/stocks.json','r') as f:
+              d = json.load(f)
+          for code, s in d['stocks'].items():
+              pe = f'PE:{s[\"pe_ratio\"]:.1f}' if s['pe_ratio'] else 'PE:N/A'
+              print(f'{s[\"name\"]:8s} {s[\"price\"]:>8.2f} {pe}')
+          "
+
+      - name: 更新HTML
+        run: python .workbuddy/pipeline/update_html.py
+
+      - name: 提交并推送
+        run: |
+          git config user.name "价值发现机器人"
+          git config user.email "bot@value-discovery.local"
+          git add 发现榜.html index.html .workbuddy/pipeline/data/
+          if git diff --cached --quiet; then
+            echo "无变更，跳过提交"
+          else
+            git commit -m "auto: 数据刷新 $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M')"
+            git push
+            echo "已推送"
+          fi
+
+      - name: 部署到 GitHub Pages
+        uses: actions/configure-pages@v5
+        if: success()
+
+      - name: 上传 Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+        if: success()
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    if: success()
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# WorkBuddy (不需要推送到GitHub)
+.workbuddy/memory/
+.workbuddy/automations/
+
+# 临时文件
+*.tmp
+*.log
+价值发现_v5.html

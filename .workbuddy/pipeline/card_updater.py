@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-card_updater.py — 机械卡片更新器 v1.0
-在 GitHub Actions 中运行，自动刷新卡片元数据和信号扫描区。
-纯规则驱动，不需要 AI。
+card_updater.py v2.0 — 自动快讯引擎
+在 GitHub Actions 中运行，自动识别热点信号并生成推送摘要。
+纯规则驱动，不需要 AI，不需要 WorkBuddy。
 
 功能：
-1. 从 latest.json 读取所有热词
+1. 从 latest.json 读取全平台热词
 2. 按关键词聚类，检测跨平台共振
-3. 更新 HTML 中"今日信号扫描"区（新信号摘要）
-4. 更新"数据概览"区的热榜摘要
-5. 新鲜度自检：对比今日数据与昨日快照
+3. 行业映射 → 候选股票提示
+4. 趋势检测：对比上次扫描，判断新信号/增长/稳定/衰退
+5. 输出 HTML"自动快讯"区 + signal_report.json
 """
 import json
 import re
@@ -23,39 +23,69 @@ ROOT = Path(__file__).parent.parent.parent
 DATA_DIR = ROOT / ".workbuddy" / "pipeline" / "data"
 HTML_PATH = ROOT / "发现榜.html"
 
-
 # ── 关键词聚类字典 ──
-# keyword → [platform_count, platforms, sample_titles]
-# 在 latest.json 的所有热词中搜索这些关键词
 SIGNAL_PATTERNS = {
-    # 科技/半导体
-    "芯片": ["芯片", "半导体", "存储", "NAND", "DRAM", "HBM"],
-    "AI/大模型": ["AI", "大模型", "GPT", "LLM", "人工智能", "DeepSeek"],
-    "机器人": ["机器人", "人形", "宇树", "Figure", "Optimus"],
-    # 消费/零售
-    "空调/家电": ["空调", "格力", "美的", "海尔", "家电"],
-    "手机/消费电子": ["手机", "iPhone", "华为", "小米", "折叠"],
-    # 金融/大宗
-    "黄金/贵金属": ["黄金", "金价", "贵金属", "Gold"],
-    "原油/能源": ["原油", "油价", "石油", "能源"],
-    # 汽车
-    "新能源车": ["电动车", "新能源", "比亚迪", "蔚来", "理想", "宁德", "TSLA", "特斯拉"],
-    # 宏观
-    "关税/贸易": ["关税", "贸易", "出口管制", "制裁"],
-    "降息/利率": ["降息", "利率", "Fed", "央行", "PBOC"],
-    # 季节性
-    "高考": ["高考", "志愿"],
-    "618/促销": ["618", "促销", "大促"],
-    # 娱乐/消遣（无投资信号，仅标记）
-    "足球": ["世界杯", "足球", "英超", "欧冠"],
-    "游戏": ["游戏", "原神", "王者", "黑神话"],
+    "空调/家电":    ["空调", "格力", "美的", "海尔", "家电", "热浪"],
+    "AI/大模型":    ["AI", "大模型", "GPT", "LLM", "人工智能", "DeepSeek", "ChatGPT"],
+    "芯片/半导体":  ["芯片", "半导体", "存储", "NAND", "DRAM", "HBM", "光刻"],
+    "机器人":      ["机器人", "人形", "宇树", "Figure", "Optimus", "具身智能"],
+    "新能源车":    ["电动车", "新能源", "比亚迪", "蔚来", "理想", "宁德", "特斯拉", "TSLA"],
+    "手机/消费电子": ["手机", "iPhone", "华为", "小米", "折叠", "鸿蒙"],
+    "黄金/贵金属":  ["黄金", "金价", "贵金属", "Gold"],
+    "原油/能源":    ["原油", "油价", "石油", "能源"],
+    "关税/贸易":    ["关税", "贸易", "出口管制", "制裁", "加税"],
+    "降息/利率":    ["降息", "利率", "Fed", "央行", "PBOC", "加息"],
+    "高考":         ["高考", "志愿", "查分", "录取"],
+    "618/促销":     ["618", "促销", "大促", "双11"],
+    "足球":         ["世界杯", "足球", "英超", "欧冠", "欧洲杯"],
+    "游戏":         ["原神", "王者", "黑神话", "Steam"],
 }
 
-# 消遣类话题（不产生投资信号）
-ENTERTAINMENT_KEYWORDS = {"足球", "游戏"}
+# 消遣类 → 无投资信号
+ENTERTAINMENT = {"足球", "游戏"}
+# 季节性 → 非信息差
+SEASONAL = {"高考", "618/促销"}
 
-# 季节性话题（标"非信息差"）
-SEASONAL_KEYWORDS = {"高考", "618/促销"}
+# ── 行业 → 候选股票映射（静态，仅作提示）──
+# 格式: (代码, 名称, 市场, 一句话关联逻辑)
+INDUSTRY_STOCKS = {
+    "空调/家电": [
+        ("sz000651", "格力电器", "A股", "空调龙头·欧洲出口增量"),
+        ("sz000333", "美的集团", "A股", "家电龙头·海外占20%"),
+        ("sh600690", "海尔智家", "A港股通", "海外营收占比52%"),
+    ],
+    "AI/大模型": [
+        ("sz002230", "科大讯飞", "A股", "星火大模型"),
+        ("hk9888", "百度", "港股通", "文心大模型"),
+        ("sh688256", "寒武纪", "A股", "AI芯片"),
+    ],
+    "芯片/半导体": [
+        ("hk0981", "中芯国际", "港股通", "晶圆代工龙头"),
+        ("sz002371", "北方华创", "A股", "半导体设备"),
+        ("sh603501", "韦尔股份", "A股", "CIS芯片"),
+    ],
+    "机器人": [
+        ("sz300124", "汇川技术", "A股", "伺服电机·机器人关节"),
+        ("sh688017", "绿的谐波", "A股", "谐波减速器"),
+        ("sz002747", "埃斯顿", "A股", "工业机器人"),
+    ],
+    "新能源车": [
+        ("sz002594", "比亚迪", "A港股通", "新能源车龙头"),
+        ("sz300750", "宁德时代", "A股", "动力电池龙头"),
+    ],
+    "黄金/贵金属": [
+        ("sh601899", "紫金矿业", "A港股通", "金铜龙头"),
+        ("sh600547", "山东黄金", "A港股通", "纯黄金标的"),
+    ],
+    "手机/消费电子": [
+        ("sz002475", "立讯精密", "A股", "苹果链龙头"),
+        ("sz002241", "歌尔股份", "A股", "VR/声学"),
+    ],
+    "原油/能源": [
+        ("sh601857", "中国石油", "A股", "上游开采"),
+        ("sh600938", "中国海油", "A股", "海上油气"),
+    ],
+}
 
 
 def load_json(path):
@@ -68,15 +98,13 @@ def scan_signals(latest_path):
     data = load_json(latest_path)
     sources = data.get("sources", {})
 
-    # 收集所有热词标题
-    all_titles = []  # [(platform_label, position, title), ...]
+    all_titles = []
     for key, src in sources.items():
         if src.get("status") != "ok":
             continue
         label = src.get("label", key)
         src_data = src.get("data", {})
         items = src_data.get("list", []) if isinstance(src_data, dict) else []
-
         for item in items:
             if isinstance(item, dict):
                 title = item.get("title") or item.get("word") or ""
@@ -84,7 +112,6 @@ def scan_signals(latest_path):
                 if title:
                     all_titles.append((label, pos, title[:100]))
 
-    # 按 SIGNAL_PATTERNS 聚类
     signals = {}
     for sig_name, keywords in SIGNAL_PATTERNS.items():
         matches = []
@@ -99,261 +126,300 @@ def scan_signals(latest_path):
 
         if matches:
             sorted_matches = sorted(matches, key=lambda x: x[1] if x[1] else 999)
-
-            # 取 Top3 标题示例
             sample_titles = [m[2] for m in sorted_matches[:5]]
-
             signals[sig_name] = {
                 "platform_count": len(seen_platforms),
                 "total_mentions": len(matches),
                 "platforms": sorted(seen_platforms),
                 "top_positions": f"{sorted_matches[0][0]}#{sorted_matches[0][1]}" if sorted_matches else "",
                 "sample": sample_titles[:3],
-                "is_seasonal": sig_name in SEASONAL_KEYWORDS,
-                "is_entertainment": sig_name in ENTERTAINMENT_KEYWORDS,
+                "is_seasonal": sig_name in SEASONAL,
+                "is_entertainment": sig_name in ENTERTAINMENT,
                 "category": (
-                    "消遣" if sig_name in ENTERTAINMENT_KEYWORDS
-                    else "季节性" if sig_name in SEASONAL_KEYWORDS
+                    "消遣" if sig_name in ENTERTAINMENT
+                    else "季节性" if sig_name in SEASONAL
                     else "潜在信号"
                 ),
+                "stocks": INDUSTRY_STOCKS.get(sig_name, []),
             }
 
-    # 按跨平台数排序
     ranked = sorted(signals.items(), key=lambda x: -x[1]["platform_count"])
-    return ranked, len(all_titles), sources
+    return ranked, len(all_titles)
+
+
+def detect_trends(signals_data):
+    """对比上次扫描，检测趋势：新信号/增长/稳定/衰退"""
+    prev_path = DATA_DIR / ".prev_signals.json"
+    prev_signals = {}
+    if prev_path.exists():
+        prev_signals = load_json(prev_path)
+
+    trends = {}
+    now_signals = {name: sig for name, sig in signals_data
+                   if sig["category"] == "潜在信号"}
+
+    # 保存当前扫描供下次对比
+    slim = {name: {
+        "platform_count": sig["platform_count"],
+        "total_mentions": sig["total_mentions"],
+        "top_positions": sig["top_positions"],
+    } for name, sig in signals_data}
+    with open(prev_path, "w", encoding="utf-8") as f:
+        json.dump(slim, f, ensure_ascii=False, indent=2)
+
+    for name, sig in now_signals.items():
+        prev = prev_signals.get(name)
+        if not prev:
+            trends[name] = ("new", "新增异动")
+        else:
+            old_pc = prev.get("platform_count", 0)
+            new_pc = sig["platform_count"]
+            if new_pc > old_pc + 1:
+                trends[name] = ("up", f"平台 +{new_pc - old_pc} · 加速扩散")
+            elif new_pc > old_pc:
+                trends[name] = ("up", f"平台 +{new_pc - old_pc}")
+            elif new_pc == old_pc:
+                trends[name] = ("stable", "持平")
+            else:
+                trends[name] = ("down", f"平台 -{old_pc - new_pc}")
+
+    return trends
 
 
 def compute_content_hash(html_text):
-    """计算 HTML 中卡片内容区的哈希（排除时间戳和价格）"""
-    # 移除时间戳行、价格数字
-    cleaned = re.sub(r'\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}', 'TIMESTAMP', html_text)
+    cleaned = re.sub(r'\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}', 'TS', html_text)
     cleaned = re.sub(r'¥[\d,]+\.\d+', 'PRICE', cleaned)
     cleaned = re.sub(r'PE:[\d.-]+', 'PE:VAL', cleaned)
     return hashlib.sha256(cleaned.encode()).hexdigest()
 
 
-def update_html(html_path, signals_data, total_titles, source_summary):
-    """更新 HTML 中的信号扫描区和数据概览"""
+def generate_flash_html(signals_data, total_titles, trends, ts_str):
+    """生成自动快讯 HTML — 更像新闻推送"""
+    lines = []
+    potential = [(n, s) for n, s in signals_data if s["category"] == "潜在信号"]
+    seasonal = [(n, s) for n, s in signals_data if s["category"] == "季节性"]
+    entertainment = [(n, s) for n, s in signals_data if s["category"] == "消遣"]
+    total_platforms = max((s["platform_count"] for _, s in potential), default=0)
+
+    # ── Section header ──
+    lines.append('<div class="flash-section" style="margin:10px 0 16px;'
+                 'padding:16px 20px;background:linear-gradient(135deg,#f9fafb,#f0f4f8);'
+                 'border:1px solid #dfe6e9;border-radius:var(--radius);'
+                 'font-size:13px;line-height:1.6">')
+
+    # 标题行
+    lines.append('<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">')
+    lines.append('<span style="font-size:15px;font-weight:700;color:var(--tx)">'
+                 '自动快讯</span>')
+    lines.append(f'<span style="font-size:11px;color:var(--tx3);font-weight:400">'
+                 f'{ts_str} CST · 全自动采集 · 本次扫描 {total_titles} 条热词</span>')
+    lines.append(f'<span style="font-size:11px;color:var(--accent);margin-left:auto">'
+                 f'{len(potential)} 组跨平台信号</span>')
+    lines.append('</div>')
+
+    # 分类条
+    lines.append('<div style="font-size:11px;color:var(--tx3);margin-bottom:12px;'
+                 'display:flex;gap:14px;flex-wrap:wrap">')
+    for name, sig in potential[:5]:
+        trend = trends.get(name, ("stable", ""))
+        trend_icon = {"new": "+", "up": "↑", "stable": "→", "down": "↓"}.get(trend[0], "")
+        trend_color = {"new": "#c0392b", "up": "#c0392b", "stable": "#636e72",
+                       "down": "#1a7a3a"}.get(trend[0], "#636e72")
+        lines.append(f'<span style="color:{trend_color}">'
+                     f'{trend_icon} {name} · {sig["platform_count"]}平台'
+                     f'</span>')
+    lines.append('</div>')
+
+    # ── 各信号卡片 ──
+    if not potential:
+        lines.append('<div style="padding:20px;text-align:center;color:var(--tx3)">'
+                     '本次扫描未检测到跨平台消费信号 · 异动稀疏是正常的</div>')
+    else:
+        for name, sig in potential[:8]:
+            pc = sig["platform_count"]
+            tm = sig["total_mentions"]
+            trend = trends.get(name, ("stable", ""))
+            trend_label = trend[1] if trend else ""
+
+            # 热度级别
+            if pc >= 6:
+                heat_icon, heat_label = "●", "全平台共振"
+            elif pc >= 3:
+                heat_icon, heat_label = "●", "多平台扩散"
+            elif pc >= 2:
+                heat_icon, heat_label = "◉", "双平台萌芽"
+            else:
+                heat_icon, heat_label = "○", "单平台早期"
+
+            # 趋势颜色
+            tc = {"new": "#c0392b", "up": "#c0392b", "stable": "#636e72",
+                  "down": "#1a7a3a"}.get(trend[0], "#636e72")
+
+            # 候选股票
+            stocks = sig.get("stocks", [])
+            stock_str = " · ".join(
+                f'{s[1]} {s[2]}' for s in stocks[:3]
+            ) if stocks else "待分析映射"
+
+            lines.append(
+                f'<div style="padding:10px 14px;margin:6px 0;'
+                f'background:#fff;border-radius:6px;'
+                f'border-left:3px solid {tc};'
+                f'box-shadow:0 1px 3px rgba(0,0,0,.04)">'
+                # 第一行：信号名 + 热度 + 趋势
+                f'<div style="display:flex;align-items:center;gap:8px;'
+                f'flex-wrap:wrap;margin-bottom:4px">'
+                f'<span style="font-weight:700;font-size:14px;color:var(--tx)">{name}</span>'
+                f'<span style="font-size:11px;padding:1px 6px;border-radius:3px;'
+                f'background:{tc}15;color:{tc};font-weight:600">{trend_label if trend_label else heat_label}</span>'
+                f'<span style="font-size:11px;color:var(--tx3)">'
+                f'{pc}平台 · {tm}条 · Top: {sig["top_positions"]}</span>'
+                f'</div>'
+                # 第二行：平台
+                f'<div style="font-size:11px;color:var(--tx3);margin-bottom:3px">'
+                f'平台: {", ".join(sig["platforms"][:6])}'
+                f'{" +" + str(len(sig["platforms"]) - 6) + "更多" if len(sig["platforms"]) > 6 else ""}'
+                f'</div>'
+                # 第三行：标题样本
+                f'<div style="font-size:12px;color:var(--tx2);margin-bottom:4px;'
+                f'max-height:36px;overflow:hidden">'
+                f'{"; ".join(sig["sample"][:3])[:200]}'
+                f'</div>'
+                # 第四行：候选股票
+                f'<div style="font-size:11px;color:var(--tx3)">'
+                f'候选: {stock_str}'
+                f'</div>'
+                f'</div>'
+            )
+
+    # ── 季节性 ──
+    if seasonal:
+        lines.append('<div style="margin-top:10px;padding:8px 12px;'
+                     'background:#fef9e7;border-radius:4px;font-size:12px">'
+                     '<span style="color:#c0a050;font-weight:600">'
+                     '季节性提醒 · 非信息差</span> · '
+                     + ' · '.join(f'{n} ({s["platform_count"]}平台)' for n, s in seasonal)
+                     + '</div>')
+
+    # ── 消遣折叠 ──
+    if entertainment:
+        lines.append('<details style="margin-top:4px;font-size:11px;color:var(--tx3)">'
+                     f'<summary style="cursor:pointer">消遣资讯 '
+                     f'· {len(entertainment)} 组 · 无投资信号</summary>')
+        for name, sig in entertainment:
+            lines.append(f'<span style="margin-left:12px">{name} '
+                         f'{sig["platform_count"]}平台</span> · ')
+        lines.append('</details>')
+
+    # ── 底部说明 ──
+    lines.append('<div style="margin-top:12px;padding-top:8px;border-top:1px solid #dfe6e9;'
+                 'font-size:11px;color:var(--tx3)">'
+                 '以上为规则引擎自动扫描结果，候选股票为静态映射仅供提示。'
+                 '深度投资分析请使用 WorkBuddy 说"今天有什么新信号"。'
+                 '</div>')
+
+    lines.append('</div>')
+    return '\n'.join(lines)
+
+
+def update_html(html_path, signals_data, total_titles, trends, ts_str):
+    """更新 HTML 中的自动快讯区"""
     with open(html_path, "r", encoding="utf-8") as f:
         html = f.read()
 
-    now = datetime.now(CST)
-    ts_str = now.strftime("%Y-%m-%d %H:%M")
-    date_str = now.strftime("%Y-%m-%d")
-
-    # 1. 更新页面时间戳
+    # 1. 更新时间戳
     html = re.sub(
         r'<div class="ts">[^<]*</div>',
-        f'<div class="ts">数据刷新：{ts_str} CST · 自动化管道（GitHub Actions）· 下次刷新 10:00</div>',
-        html,
-        count=1,
+        f'<div class="ts">数据刷新：{ts_str} CST · 自动化管道 · GitHub Actions</div>',
+        html, count=1,
     )
 
-    # 2. 生成信号扫描 HTML
-    scan_html = generate_scan_html(signals_data, total_titles, ts_str)
+    # 2. 生成快讯 HTML
+    flash_html = generate_flash_html(signals_data, total_titles, trends, ts_str)
 
-    # 3. 替换或插入信号扫描区
-    scan_marker = '<!-- ══════════════════ 信号扫描 · 自动生成 ══════════════════ -->'
+    # 3. 替换信号扫描区
+    marker = '<!-- ══════════════════ 信号扫描 · 自动生成 ══════════════════ -->'
     scan_pattern = re.compile(
         r'<!-- ═+ 信号扫描 · 自动生成 ═+ -->.*?(?=<!-- ═+ ZONE 1)',
         re.DOTALL,
     )
 
     if scan_pattern.search(html):
-        html = scan_pattern.sub(scan_marker + "\n" + scan_html + "\n\n", html, count=1)
+        html = scan_pattern.sub(marker + "\n" + flash_html + "\n\n", html, count=1)
     else:
-        # 在 ZONE 1 之前插入
-        zone1_marker = '<!-- ══════════════════ ZONE 1'
-        if zone1_marker in html:
-            html = html.replace(
-                zone1_marker,
-                scan_marker + "\n" + scan_html + "\n\n" + zone1_marker,
-                1,
-            )
-        else:
-            # 在 sparse note 之后插入
-            sparse_pos = html.rfind('</div>\n\n<!-- ═')
-            if sparse_pos > 0:
-                insert_pos = html.index('\n', sparse_pos) + 1
-                html = (html[:insert_pos]
-                        + scan_marker + "\n" + scan_html + "\n\n"
-                        + html[insert_pos:])
+        zone1 = '<!-- ══════════════════ ZONE 1'
+        if zone1 in html:
+            html = html.replace(zone1, marker + "\n" + flash_html + "\n\n" + zone1, 1)
 
-    # 4. 更新内容哈希（用于后续新鲜度检测）
+    # 4. 内容哈希
     content_hash = compute_content_hash(html)
     hash_file = DATA_DIR / ".content_hash.txt"
-    hash_file.parent.mkdir(parents=True, exist_ok=True)
+    old_hash = hash_file.read_text().strip() if hash_file.exists() else ""
+    hash_file.write_text(content_hash)
 
-    old_hash = ""
-    if hash_file.exists():
-        old_hash = hash_file.read_text().strip()
-
-    with open(hash_file, "w") as f:
-        f.write(content_hash)
-
-    # 5. 写入 HTML
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html)
 
-    # 返回新鲜度信息
     is_fresh = old_hash != content_hash
-    return is_fresh, old_hash, content_hash
-
-
-def generate_scan_html(signals_data, total_titles, ts_str):
-    """生成信号扫描区 HTML"""
-    lines = []
-
-    # 分类统计
-    potential = [(n, s) for n, s in signals_data if s["category"] == "潜在信号"]
-    seasonal = [(n, s) for n, s in signals_data if s["category"] == "季节性"]
-    entertainment = [(n, s) for n, s in signals_data if s["category"] == "消遣"]
-
-    lines.append('<div class="scan-section" style="margin:12px 0;padding:14px 18px;'
-                 'background:#faf9f6;border:1px solid var(--border);'
-                 'border-radius:var(--radius);font-size:13px">')
-    lines.append(f'<div style="font-size:14px;font-weight:700;margin-bottom:8px;'
-                 f'color:var(--tx)">'
-                 f'今日信号扫描 · {ts_str}</div>')
-    lines.append(f'<div style="font-size:12px;color:var(--tx3);margin-bottom:10px">'
-                 f'全平台热词总数 {total_titles} · '
-                 f'跨平台信号 {len(potential)} 组 · '
-                 f'季节性 {len(seasonal)} 组 · '
-                 f'消遣 {len(entertainment)} 组'
-                 f'</div>')
-
-    # 潜在信号
-    if potential:
-        lines.append('<div style="font-weight:600;font-size:13px;margin:8px 0 4px;'
-                     'color:var(--accent)">'
-                     '潜在信号</div>')
-        lines.append('<div style="display:flex;flex-direction:column;gap:4px">')
-        for name, sig in potential:
-            pc = sig["platform_count"]
-            # 扩散度图标
-            if pc >= 3:
-                diff = "●●●"
-                diff_label = "已扩散"
-            elif pc >= 2:
-                diff = "●●○"
-                diff_label = "扩散中"
-            else:
-                diff = "●○○"
-                diff_label = "早期"
-
-            heat_class = "heat-burst" if pc >= 3 else ("heat-rising" if pc >= 2 else "heat-steady")
-
-            lines.append(
-                f'<div style="padding:6px 10px;background:#fff;border-radius:4px;'
-                f'border-left:3px solid var(--accent);display:flex;'
-                f'align-items:center;gap:8px;flex-wrap:wrap">'
-                f'<span style="font-weight:600;min-width:70px">{name}</span>'
-                f'<span style="font-size:11px;color:var(--tx3)">'
-                f'扩散度 {diff} {diff_label}</span>'
-                f'<span class="{heat_class}" style="font-size:11px">'
-                f'{pc}平台 · {sig["total_mentions"]}条</span>'
-                f'<span style="font-size:11px;color:var(--tx2)">'
-                f'Top: {sig["top_positions"]}</span>'
-                f'<span style="font-size:11px;color:var(--tx3);flex-basis:100%">'
-                f'{"; ".join(sig["sample"][:2])}</span>'
-                f'</div>'
-            )
-        lines.append('</div>')
-
-    # 季节性
-    if seasonal:
-        lines.append('<div style="font-weight:600;font-size:13px;margin:10px 0 4px;'
-                     'color:#c0a050">'
-                     '季节性提醒 · 非信息差</div>')
-        for name, sig in seasonal:
-            lines.append(
-                f'<div style="padding:3px 10px;font-size:12px;color:var(--tx2)">'
-                f'{name} · {sig["platform_count"]}平台 · '
-                f'{"; ".join(sig["sample"][:2])}'
-                f'</div>'
-            )
-
-    # 消遣
-    if entertainment and len(entertainment) > 0:
-        lines.append('<details style="margin-top:6px"><summary style="font-size:12px;'
-                     'color:var(--tx3);cursor:pointer">消遣资讯（'
-                     f'{len(entertainment)} 组 · 无投资信号）</summary>')
-        for name, sig in entertainment:
-            lines.append(
-                f'<div style="padding:2px 10px;font-size:11px;color:var(--tx3)">'
-                f'{name} · {sig["platform_count"]}平台 · '
-                f'{"; ".join(sig["sample"][:2])}'
-                f'</div>'
-            )
-        lines.append('</details>')
-
-    lines.append('</div>')
-    return '\n'.join(lines)
+    return is_fresh
 
 
 def main():
     latest_path = DATA_DIR / "latest.json"
-
     if not latest_path.exists():
-        print("[card_updater] latest.json 不存在，跳过")
+        print("[flash] latest.json 不存在，跳过")
         return 0
 
-    print("[card_updater] 扫描热词信号...")
-    signals, total_titles, sources = scan_signals(latest_path)
+    print("[flash] 扫描热词信号...")
+    signals, total_titles = scan_signals(latest_path)
 
-    # 统计各源
+    # 分类统计
+    potential = [(n, s) for n, s in signals if s["category"] == "潜在信号"]
+    seasonal = [(n, s) for n, s in signals if s["category"] == "季节性"]
+    entertainment = [(n, s) for n, s in signals if s["category"] == "消遣"]
+
+    # 趋势检测
+    trends = detect_trends(signals)
+
+    # 源统计
+    data = load_json(latest_path)
+    sources = data.get("sources", {})
     ok_count = sum(1 for s in sources.values() if s.get("status") == "ok")
-    total_sources = len(sources)
 
-    print(f"[card_updater] 热词总数: {total_titles} · 源: {ok_count}/{total_sources}")
-
-    # 生成源摘要
-    source_summary = {}
-    for key, src in sources.items():
-        label = src.get("label", key)
-        status = src.get("status", "fail")
-        source_summary[label] = status
-
-    # 打印 Top 5 信号
-    print("[card_updater] 跨平台信号:")
-    for name, sig in signals[:10]:
-        cat = sig["category"]
-        pc = sig["platform_count"]
-        tm = sig["total_mentions"]
-        top = sig["top_positions"]
-        print(f"  [{cat}] {name} · {pc}平台/{tm}条 · Top: {top}")
+    print(f"[flash] 热词 {total_titles} · 信号 {len(potential)} ({len(seasonal)}季/{len(entertainment)}娱)")
+    for name, sig in potential[:5]:
+        t = trends.get(name, ("stable", ""))
+        print(f"  {t[0]:>6} {name} · {sig['platform_count']}平台/{sig['total_mentions']}条")
 
     # 更新 HTML
-    print("[card_updater] 更新 HTML...")
-    is_fresh, old_hash, new_hash = content_update = update_html(
-        HTML_PATH, signals, total_titles, source_summary
-    )
+    now = datetime.now(CST)
+    ts_str = now.strftime("%m-%d %H:%M")
+    is_fresh = update_html(HTML_PATH, signals, total_titles, trends, ts_str)
 
-    # 输出新鲜度
-    if is_fresh:
-        print("[card_updater] OK - content updated (signal change)")
-    else:
-        print("[card_updater] WARN - no content change (same as last scan)")
+    status = "OK" if is_fresh else "WARN (no change)"
+    print(f"[flash] HTML updated · {status}")
 
-    # 输出 JSON 供 workflow 使用
+    # 输出报告
     report = {
-        "scan_time": datetime.now(CST).isoformat(),
+        "scan_time": now.isoformat(),
         "total_titles": total_titles,
         "sources_ok": ok_count,
-        "sources_total": total_sources,
-        "signals_top5": [
+        "sources_total": len(sources),
+        "signals": [
             {"name": n, "platform_count": s["platform_count"],
-             "category": s["category"], "top": s["top_positions"]}
-            for n, s in signals[:5]
+             "category": s["category"],
+             "trend": trends.get(n, ("stable", ""))[0],
+             "top": s["top_positions"],
+             "stocks": [list(ss[:2]) for ss in s.get("stocks", [])]}
+            for n, s in signals[:10]
         ],
-        "fresh": is_fresh,
     }
     report_path = DATA_DIR / "signal_report.json"
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 
-    print(f"[card_updater] 报告已保存: {report_path}")
-    return 0 if is_fresh else 1
+    print(f"[flash] 报告: {report_path}")
+    return 0
 
 
 if __name__ == "__main__":

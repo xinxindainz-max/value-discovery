@@ -1,118 +1,50 @@
 {
-  "generated_at": "2026-06-30T14:39:17.426603+08:00",
-  "mode": "cold_start",
-  "day_number": 1,
-  "scan_summary": {
-    "total_items": 734,
-    "total_topics": 11,
-    "candidates_after_filter": 4,
-    "output_count": 4
-  },
-  "signals": [
+  "generated_at": "2026-07-01T16:41:36.739751+08:00",
+  "behavior_shifts": [
     {
-      "rank": 1,
-      "title": "新能源车",
-      "final_score": 30.0,
-      "sub_scores": {
-        "growth": 0,
-        "acceleration": 0,
-        "multi_source": 16.7,
-        "novelty": 50
-      },
-      "percentile_rank": 0.1,
-      "first_seen_time": "2026-06-30T14:39:17.426588+08:00",
-      "days_since_first_seen": null,
+      "behavior_shift": "People are evaluating and comparing 真零 有机酸奶 for purchase on social commerce platforms",
+      "evidence": "Increase in L3 purchase-intent activity on 什么值得买 with 4 related discussions",
+      "why_early": "Not yet present in L5/L6 media, still confined to early adopters",
+      "confidence": "Medium",
       "sources": [
-        "抖音总榜",
-        "知乎热榜",
-        "网易新闻",
-        "腾讯新闻"
+        "什么值得买"
       ],
-      "source_count": 4,
-      "platform_tier": "general_content",
-      "tags": [
-        "MULTI"
+      "layers": [
+        3
       ],
-      "signal_reason": "跨4平台共振",
-      "why_this_appears": "抖音总榜, 知乎热榜, 网易新闻 新能源车相关讨论早期萌芽",
-      "raw_links": []
+      "mentions": 4
     },
     {
-      "rank": 2,
-      "title": "芯片/半导体",
-      "final_score": 27.0,
-      "sub_scores": {
-        "growth": 0,
-        "acceleration": 0,
-        "multi_source": 11.7,
-        "novelty": 50
-      },
-      "percentile_rank": 1.8,
-      "first_seen_time": "2026-06-30T14:39:17.426554+08:00",
-      "days_since_first_seen": null,
+      "behavior_shift": "People are evaluating and comparing 酷态科 for purchase on social commerce platforms",
+      "evidence": "Increase in L3 purchase-intent activity on 什么值得买 with 3 related discussions (百亿补贴：酷态科 65W 2C1A 氮化镓充电器 AD653C · 88VIP：奥睿科 GN30 30W氮化镓充电器+1米双C线)",
+      "why_early": "Not yet present in L5/L6 media, still confined to early adopters",
+      "confidence": "Medium",
       "sources": [
-        "36氪",
-        "微博热搜",
-        "澎湃新闻"
+        "什么值得买"
       ],
-      "source_count": 3,
-      "platform_tier": "tech_verticals",
-      "tags": [
-        "MULTI"
+      "layers": [
+        3
       ],
-      "signal_reason": "跨3平台共振",
-      "why_this_appears": "36氪, 微博热搜, 澎湃新闻 芯片/半导体相关讨论早期萌芽",
-      "raw_links": []
+      "mentions": 3
     },
     {
-      "rank": 3,
-      "title": "原油/能源",
-      "final_score": 27.0,
-      "sub_scores": {
-        "growth": 0,
-        "acceleration": 0,
-        "multi_source": 11.7,
-        "novelty": 50
-      },
-      "percentile_rank": 0.1,
-      "first_seen_time": "2026-06-30T14:39:17.426599+08:00",
-      "days_since_first_seen": null,
+      "behavior_shift": "People are evaluating and comparing 1号会员店 精选进口原切牛肋条肉 for purchase on social commerce platforms",
+      "evidence": "Increase in L3 purchase-intent activity on 什么值得买 with 3 related discussions (今日必买：1号会员店 精选进口原切牛肋条肉1kg · 今日必买：1号会员店 精选整根和牛 牛腱子1kg)",
+      "why_early": "Not yet present in L5/L6 media, still confined to early adopters",
+      "confidence": "Medium",
       "sources": [
-        "知乎热榜",
-        "网易新闻",
-        "腾讯新闻"
+        "什么值得买"
       ],
-      "source_count": 3,
-      "platform_tier": "general_content",
-      "tags": [
-        "MULTI"
+      "layers": [
+        3
       ],
-      "signal_reason": "跨3平台共振",
-      "why_this_appears": "知乎热榜, 网易新闻, 腾讯新闻 原油/能源相关讨论早期萌芽",
-      "raw_links": []
-    },
-    {
-      "rank": 4,
-      "title": "机器人",
-      "final_score": 23.0,
-      "sub_scores": {
-        "growth": 0,
-        "acceleration": 0,
-        "multi_source": 5.0,
-        "novelty": 50
-      },
-      "percentile_rank": 0.3,
-      "first_seen_time": "2026-06-30T14:39:17.426574+08:00",
-      "days_since_first_seen": null,
-      "sources": [
-        "36氪"
-      ],
-      "source_count": 1,
-      "platform_tier": "tech_verticals",
-      "tags": [],
-      "signal_reason": "跨平台检测",
-      "why_this_appears": "36氪 机器人相关讨论早期萌芽",
-      "raw_links": []
+      "mentions": 3
     }
-  ]
+  ],
+  "meta": {
+    "total_scanned": 801,
+    "non_behavior_filtered": 104,
+    "action_verb_matched": 30,
+    "total_clusters": 20
+  }
 }

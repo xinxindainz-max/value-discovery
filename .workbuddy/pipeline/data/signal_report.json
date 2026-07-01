@@ -1,23 +1,15 @@
 {
-  "scan_time": "2026-07-01T16:44:25.081855+08:00",
-  "total_titles": 736,
+  "scan_time": "2026-07-01T18:58:12.089346+08:00",
+  "total_titles": 735,
   "sources_ok": 22,
   "sources_total": 22,
   "signals": [
     {
-      "name": "足球",
-      "platform_count": 11,
-      "category": "消遣",
-      "trend": "stable",
-      "top": "微信热文#3",
-      "stocks": []
-    },
-    {
       "name": "空调/家电",
-      "platform_count": 9,
+      "platform_count": 12,
       "category": "潜在信号",
-      "trend": "new",
-      "top": "微博热搜#2",
+      "trend": "up",
+      "top": "抖音总榜#1",
       "stocks": [
         [
           "sz000651",
@@ -34,23 +26,44 @@
       ]
     },
     {
-      "name": "机器人",
+      "name": "足球",
+      "platform_count": 11,
+      "category": "消遣",
+      "trend": "stable",
+      "top": "今日头条#1",
+      "stocks": []
+    },
+    {
+      "name": "手机/消费电子",
       "platform_count": 8,
       "category": "潜在信号",
-      "trend": "new",
-      "top": "新浪热榜#1",
+      "trend": "up",
+      "top": "微博热搜#1",
       "stocks": [
         [
-          "sz300124",
-          "汇川技术"
+          "sz002475",
+          "立讯精密"
         ],
         [
-          "sh688017",
-          "绿的谐波"
+          "sz002241",
+          "歌尔股份"
+        ]
+      ]
+    },
+    {
+      "name": "黄金/贵金属",
+      "platform_count": 7,
+      "category": "潜在信号",
+      "trend": "up",
+      "top": "微信热文#5",
+      "stocks": [
+        [
+          "sh601899",
+          "紫金矿业"
         ],
         [
-          "sz002747",
-          "埃斯顿"
+          "sh600547",
+          "山东黄金"
         ]
       ]
     },
@@ -58,8 +71,8 @@
       "name": "AI/大模型",
       "platform_count": 6,
       "category": "潜在信号",
-      "trend": "new",
-      "top": "36氪#3",
+      "trend": "stable",
+      "top": "知乎热榜#6",
       "stocks": [
         [
           "sz002230",
@@ -76,33 +89,8 @@
       ]
     },
     {
-      "name": "手机/消费电子",
-      "platform_count": 6,
-      "category": "潜在信号",
-      "trend": "new",
-      "top": "什么值得买#1",
-      "stocks": [
-        [
-          "sz002475",
-          "立讯精密"
-        ],
-        [
-          "sz002241",
-          "歌尔股份"
-        ]
-      ]
-    },
-    {
-      "name": "高考",
-      "platform_count": 6,
-      "category": "季节性",
-      "trend": "stable",
-      "top": "B站全站日榜#6",
-      "stocks": []
-    },
-    {
       "name": "芯片/半导体",
-      "platform_count": 4,
+      "platform_count": 6,
       "category": "潜在信号",
       "trend": "up",
       "top": "什么值得买#1",
@@ -122,19 +110,40 @@
       ]
     },
     {
-      "name": "黄金/贵金属",
-      "platform_count": 4,
+      "name": "机器人",
+      "platform_count": 6,
       "category": "潜在信号",
-      "trend": "new",
-      "top": "澎湃新闻#13",
+      "trend": "down",
+      "top": "知乎热榜#12",
       "stocks": [
         [
-          "sh601899",
-          "紫金矿业"
+          "sz300124",
+          "汇川技术"
         ],
         [
-          "sh600547",
-          "山东黄金"
+          "sh688017",
+          "绿的谐波"
+        ],
+        [
+          "sz002747",
+          "埃斯顿"
+        ]
+      ]
+    },
+    {
+      "name": "原油/能源",
+      "platform_count": 4,
+      "category": "潜在信号",
+      "trend": "up",
+      "top": "36氪#4",
+      "stocks": [
+        [
+          "sh601857",
+          "中国石油"
+        ],
+        [
+          "sh600938",
+          "中国海油"
         ]
       ]
     },
@@ -142,7 +151,7 @@
       "name": "新能源车",
       "platform_count": 3,
       "category": "潜在信号",
-      "trend": "new",
+      "trend": "stable",
       "top": "网易新闻#2",
       "stocks": [
         [
@@ -156,11 +165,11 @@
       ]
     },
     {
-      "name": "游戏",
+      "name": "高考",
       "platform_count": 3,
-      "category": "消遣",
+      "category": "季节性",
       "trend": "stable",
-      "top": "虎扑#20",
+      "top": "新浪热榜#8",
       "stocks": []
     }
   ]

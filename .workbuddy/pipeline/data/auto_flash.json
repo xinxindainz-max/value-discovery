@@ -1,65 +1,53 @@
 {
-  "scan_time": "2026-07-01T16:44:25+08:00",
-  "display_time": "07-01 16:44",
-  "total_titles": 736,
+  "scan_time": "2026-07-01T18:58:12+08:00",
+  "display_time": "07-01 18:58",
+  "total_titles": 735,
   "signal_count": 8,
   "seasonal_count": 2,
   "entertainment_count": 2,
-  "summary": "🔥 8 组跨平台信号：空调/家电 9平台 · 机器人 8平台 · AI/大模型 6平台 · 手机/消费电子 6平台 · 芯片/半导体 4平台",
-  "flash_html": "<div class=\"flash-section\" style=\"margin:10px 0 16px;padding:16px 20px;background:linear-gradient(135deg,#f9fafb,#f0f4f8);border:1px solid #dfe6e9;border-radius:var(--radius);font-size:13px;line-height:1.6\">\n<div style=\"display:flex;align-items:center;gap:10px;margin-bottom:10px\">\n<span style=\"font-size:15px;font-weight:700;color:var(--tx)\">自动快讯</span>\n<span style=\"font-size:11px;color:var(--tx3);font-weight:400\">07-01 16:44 CST · 全自动采集 · 本次扫描 736 条热词</span>\n<span style=\"font-size:11px;color:var(--accent);margin-left:auto\">8 组跨平台信号</span>\n</div>\n<div style=\"font-size:11px;color:var(--tx3);margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap\">\n<span style=\"color:#c0392b\">+ 空调/家电 · 9平台</span>\n<span style=\"color:#c0392b\">+ 机器人 · 8平台</span>\n<span style=\"color:#c0392b\">+ AI/大模型 · 6平台</span>\n<span style=\"color:#c0392b\">+ 手机/消费电子 · 6平台</span>\n<span style=\"color:#c0392b\">↑ 芯片/半导体 · 4平台</span>\n</div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">空调/家电</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">新增异动</span><span style=\"font-size:11px;color:var(--tx3)\">9平台 · 14条 · Top: 微博热搜#2</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: B站全站日榜, IT之家, 今日头条, 微博热搜, 快手, 新浪热榜 +3更多</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">欧洲人自豪举报20户邻居用空调; 让国外网友“破防”系列：欧洲多地出现创纪录高温，中国猪圈装空调视频海外爆火; 欧洲人自豪举报20户邻居用空调</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 格力电器 A股 · 美的集团 A股 · 海尔智家 A港股通</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">机器人</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">新增异动</span><span style=\"font-size:11px;color:var(--tx3)\">8平台 · 11条 · Top: 新浪热榜#1</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, IT之家, 今日头条, 微博热搜, 快手, 新浪热榜 +2更多</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">机器人伴侣价格11.98万至99万; 11.98~99 万元，优必选首款全尺寸超仿生人形机器人优世界 U1 系列发布; 机器人伴侣价格11.98万至99万</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 汇川技术 A股 · 绿的谐波 A股 · 埃斯顿 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">AI/大模型</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">新增异动</span><span style=\"font-size:11px;color:var(--tx3)\">6平台 · 14条 · Top: 36氪#3</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, 微博热搜, 新浪热榜, 澎湃新闻, 知乎热榜, 腾讯新闻</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">中昊芯英正式发布新一代高性能TPU AI专用算力芯片“须臾®”; 香港演员吴启华卖 20 岁肖像权拍 AI 电影，如何看待这一选择？对行业意味着什么？; 西门子将在德国投资3亿欧元，扩大用于AI数据中心等的技术产能</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 科大讯飞 A股 · 百度 港股通 · 寒武纪 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">手机/消费电子</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">新增异动</span><span style=\"font-size:11px;color:var(--tx3)\">6平台 · 20条 · Top: 什么值得买#1</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, IT之家, 什么值得买, 微博热搜, 新浪热榜, 知乎热榜</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">小米 智能存储 4T版（2Tx2）; 小米 REDMI K90 至尊版手机发布：骁龙 8 至尊版 + 主动散热风扇，首销到手价 2799 元起; 国家补贴、PLUS会员：小米 14 Ultra 5G手机 16GB+1TB 黑色 第三代骁龙8</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 立讯精密 A股 · 歌尔股份 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">芯片/半导体</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">平台 +3 · 加速扩散</span><span style=\"font-size:11px;color:var(--tx3)\">4平台 · 6条 · Top: 什么值得买#1</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, IT之家, 什么值得买, 微信热文</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">小米 智能存储 4T版（2Tx2）; 中昊芯英正式发布新一代高性能TPU AI专用算力芯片“须臾®”; 华天科技：公司有存储芯片封测业务，但不涉及基板业务</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 中芯国际 港股通 · 北方华创 A股 · 韦尔股份 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">黄金/贵金属</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">新增异动</span><span style=\"font-size:11px;color:var(--tx3)\">4平台 · 4条 · Top: 澎湃新闻#13</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 什么值得买, 快手, 澎湃新闻, 百度热搜</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">国际金价半年回撤近三成，黄金牛市逻辑是否终结？; 从5600跌到3950 黄金牛市结束了吗; 金价较历史高点回落约28%</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 紫金矿业 A港股通 · 山东黄金 A港股通</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">新能源车</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">新增异动</span><span style=\"font-size:11px;color:var(--tx3)\">3平台 · 3条 · Top: 网易新闻#2</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, 网易新闻, 腾讯新闻</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">成都32岁女司机撞电动车后撞桥墩视频流出 连同两名路人身亡; 宁德时代增资至约45.6亿; 新能源汽车6月销量出炉：蔚来交付40597辆汽车，小鹏交付40126辆</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 比亚迪 A港股通 · 宁德时代 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">原油/能源</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">平台 +1</span><span style=\"font-size:11px;color:var(--tx3)\">2平台 · 2条 · Top: 腾讯新闻#21</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 微信热文, 腾讯新闻</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">新能源汽车6月销量出炉：蔚来交付40597辆汽车，小鹏交付40126辆; A股盘前速览：美股高开，半导体板块普涨；白银、原油价格纷纷走高；港股休市；伊朗：暂时没有与美方会晤计划；寒武纪提示股票风险</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 中国石油 A股 · 中国海油 A股</div></div>\n<div style=\"margin-top:10px;padding:8px 12px;background:#fef9e7;border-radius:4px;font-size:12px\"><span style=\"color:#c0a050;font-weight:600\">季节性提醒 · 非信息差</span> · 高考 (6平台) · 618/促销 (2平台)</div>\n<details style=\"margin-top:4px;font-size:11px;color:var(--tx3)\"><summary style=\"cursor:pointer\">消遣资讯 · 2 组 · 无投资信号</summary>\n<span style=\"margin-left:12px\">足球 11平台</span> · \n<span style=\"margin-left:12px\">游戏 3平台</span> · \n</details>\n<div style=\"margin-top:12px;padding-top:8px;border-top:1px solid #dfe6e9;font-size:11px;color:var(--tx3)\">以上为规则引擎自动扫描结果，候选股票为静态映射仅供提示。深度投资分析请使用 WorkBuddy 说\"今天有什么新信号\"。</div>\n</div>",
+  "summary": "🔥 8 组跨平台信号：空调/家电 12平台 · 手机/消费电子 8平台 · 黄金/贵金属 7平台 · AI/大模型 6平台 · 芯片/半导体 6平台",
+  "flash_html": "<div class=\"flash-section\" style=\"margin:10px 0 16px;padding:16px 20px;background:linear-gradient(135deg,#f9fafb,#f0f4f8);border:1px solid #dfe6e9;border-radius:var(--radius);font-size:13px;line-height:1.6\">\n<div style=\"display:flex;align-items:center;gap:10px;margin-bottom:10px\">\n<span style=\"font-size:15px;font-weight:700;color:var(--tx)\">自动快讯</span>\n<span style=\"font-size:11px;color:var(--tx3);font-weight:400\">07-01 18:58 CST · 全自动采集 · 本次扫描 735 条热词</span>\n<span style=\"font-size:11px;color:var(--accent);margin-left:auto\">8 组跨平台信号</span>\n</div>\n<div style=\"font-size:11px;color:var(--tx3);margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap\">\n<span style=\"color:#c0392b\">↑ 空调/家电 · 12平台</span>\n<span style=\"color:#c0392b\">↑ 手机/消费电子 · 8平台</span>\n<span style=\"color:#c0392b\">↑ 黄金/贵金属 · 7平台</span>\n<span style=\"color:#636e72\">→ AI/大模型 · 6平台</span>\n<span style=\"color:#c0392b\">↑ 芯片/半导体 · 6平台</span>\n</div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">空调/家电</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">平台 +3 · 加速扩散</span><span style=\"font-size:11px;color:var(--tx3)\">12平台 · 18条 · Top: 抖音总榜#1</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: B站全站日榜, IT之家, 今日头条, 微博热搜, 快手, 抖音总榜 +6更多</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">下半年也要去看更美的风景; 欧洲人自豪举报20户邻居用空调; 让国外网友“破防”系列：欧洲多地出现创纪录高温，中国猪圈装空调视频海外爆火</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 格力电器 A股 · 美的集团 A股 · 海尔智家 A港股通</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">手机/消费电子</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">平台 +2 · 加速扩散</span><span style=\"font-size:11px;color:var(--tx3)\">8平台 · 26条 · Top: 微博热搜#1</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: IT之家, 什么值得买, 微博热搜, 快手, 新浪热榜, 百度热搜 +2更多</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">小米高层重大调整; 小米 智能存储 4T版（2Tx2）; 小米 REDMI K90 至尊版手机发布：骁龙 8 至尊版 + 主动散热风扇，首销到手价 2799 元起</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 立讯精密 A股 · 歌尔股份 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">黄金/贵金属</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">平台 +3 · 加速扩散</span><span style=\"font-size:11px;color:var(--tx3)\">7平台 · 8条 · Top: 微信热文#5</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 什么值得买, 今日头条, 微信热文, 微博热搜, 澎湃新闻, 百度热搜 +1更多</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">【早报】多只A股公司业绩大增；美股存储概念半年涨超3倍；黄金、原油收跌；法国、挪威晋级世界杯16强; 国际金价半年回撤近三成，黄金牛市逻辑是否终结？; 黄金创13年来最大暴跌</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 紫金矿业 A港股通 · 山东黄金 A港股通</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #636e72;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">AI/大模型</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#636e7215;color:#636e72;font-weight:600\">持平</span><span style=\"font-size:11px;color:var(--tx3)\">6平台 · 14条 · Top: 知乎热榜#6</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, B站全站日榜, 今日头条, 微博热搜, 知乎热榜, 腾讯新闻</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">香港演员吴启华卖 20 岁肖像权拍 AI 电影，如何看待这一选择？对行业意味着什么？; 美团开源万亿参数大模型 longcat-2.0，将对大模型领域和 AI 行业产生哪些影响？; AI漫剧 降维打击</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 科大讯飞 A股 · 百度 港股通 · 寒武纪 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">芯片/半导体</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">平台 +2 · 加速扩散</span><span style=\"font-size:11px;color:var(--tx3)\">6平台 · 9条 · Top: 什么值得买#1</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, IT之家, 什么值得买, 微信热文, 知乎热榜, 腾讯新闻</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">小米 智能存储 4T版（2Tx2）; 【早报】多只A股公司业绩大增；美股存储概念半年涨超3倍；黄金、原油收跌；法国、挪威晋级世界杯16强; 小米首款智能存储开启众筹：不到 1 小时超万人支持，所有版本均已缺货</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 中芯国际 港股通 · 北方华创 A股 · 韦尔股份 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #1a7a3a;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">机器人</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#1a7a3a15;color:#1a7a3a;font-weight:600\">平台 -2</span><span style=\"font-size:11px;color:var(--tx3)\">6平台 · 8条 · Top: 知乎热榜#12</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, 今日头条, 百度热搜, 百度贴吧, 知乎热榜, 虎扑</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">如何评价优必选情感陪伴超仿生机器人正式亮相？看完后，你会购买吗？; 订单破万!机器人伴侣卖爆; 优必选超仿生机器人首发订单破万，最高售价99万元｜最前线</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 汇川技术 A股 · 绿的谐波 A股 · 埃斯顿 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #c0392b;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">原油/能源</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#c0392b15;color:#c0392b;font-weight:600\">平台 +2 · 加速扩散</span><span style=\"font-size:11px;color:var(--tx3)\">4平台 · 4条 · Top: 36氪#4</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, 今日头条, 微信热文, 腾讯新闻</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">比亚迪：6月新能源汽车销量40.35万辆，上年同期38.26万辆; 【早报】多只A股公司业绩大增；美股存储概念半年涨超3倍；黄金、原油收跌；法国、挪威晋级世界杯16强; 新能源汽车6月销量出炉：比亚迪销量达403472辆，零跑交付93376辆</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 中国石油 A股 · 中国海油 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #636e72;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">新能源车</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#636e7215;color:#636e72;font-weight:600\">持平</span><span style=\"font-size:11px;color:var(--tx3)\">3平台 · 3条 · Top: 网易新闻#2</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 36氪, 网易新闻, 腾讯新闻</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">成都32岁女司机撞电动车后撞桥墩视频流出 连同两名路人身亡; 比亚迪：6月新能源汽车销量40.35万辆，上年同期38.26万辆; 新能源汽车6月销量出炉：比亚迪销量达403472辆，零跑交付93376辆</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 比亚迪 A港股通 · 宁德时代 A股</div></div>\n<div style=\"margin-top:10px;padding:8px 12px;background:#fef9e7;border-radius:4px;font-size:12px\"><span style=\"color:#c0a050;font-weight:600\">季节性提醒 · 非信息差</span> · 高考 (3平台) · 618/促销 (1平台)</div>\n<details style=\"margin-top:4px;font-size:11px;color:var(--tx3)\"><summary style=\"cursor:pointer\">消遣资讯 · 2 组 · 无投资信号</summary>\n<span style=\"margin-left:12px\">足球 11平台</span> · \n<span style=\"margin-left:12px\">游戏 3平台</span> · \n</details>\n<div style=\"margin-top:12px;padding-top:8px;border-top:1px solid #dfe6e9;font-size:11px;color:var(--tx3)\">以上为规则引擎自动扫描结果，候选股票为静态映射仅供提示。深度投资分析请使用 WorkBuddy 说\"今天有什么新信号\"。</div>\n</div>",
   "trends": {
     "空调/家电": [
-      "new",
-      "新增异动"
-    ],
-    "机器人": [
-      "new",
-      "新增异动"
-    ],
-    "AI/大模型": [
-      "new",
-      "新增异动"
-    ],
-    "手机/消费电子": [
-      "new",
-      "新增异动"
-    ],
-    "芯片/半导体": [
       "up",
       "平台 +3 · 加速扩散"
     ],
-    "黄金/贵金属": [
-      "new",
-      "新增异动"
+    "手机/消费电子": [
+      "up",
+      "平台 +2 · 加速扩散"
     ],
-    "新能源车": [
-      "new",
-      "新增异动"
+    "黄金/贵金属": [
+      "up",
+      "平台 +3 · 加速扩散"
+    ],
+    "AI/大模型": [
+      "stable",
+      "持平"
+    ],
+    "芯片/半导体": [
+      "up",
+      "平台 +2 · 加速扩散"
+    ],
+    "机器人": [
+      "down",
+      "平台 -2"
     ],
     "原油/能源": [
       "up",
-      "平台 +1"
+      "平台 +2 · 加速扩散"
+    ],
+    "新能源车": [
+      "stable",
+      "持平"
     ]
   },
   "signals": [
     {
-      "name": "足球",
-      "category": "消遣",
-      "platform_count": 11,
-      "total_mentions": 21,
-      "top_positions": "微信热文#3",
-      "stocks": [],
-      "trend": [
-        "stable",
-        ""
-      ]
-    },
-    {
       "name": "空调/家电",
       "category": "潜在信号",
-      "platform_count": 9,
-      "total_mentions": 14,
-      "top_positions": "微博热搜#2",
+      "platform_count": 12,
+      "total_mentions": 18,
+      "top_positions": "抖音总榜#1",
       "stocks": [
         [
           "sz000651",
@@ -81,39 +69,70 @@
         ]
       ],
       "trend": [
-        "new",
-        "新增异动"
+        "up",
+        "平台 +3 · 加速扩散"
       ]
     },
     {
-      "name": "机器人",
+      "name": "足球",
+      "category": "消遣",
+      "platform_count": 11,
+      "total_mentions": 28,
+      "top_positions": "今日头条#1",
+      "stocks": [],
+      "trend": [
+        "stable",
+        ""
+      ]
+    },
+    {
+      "name": "手机/消费电子",
       "category": "潜在信号",
       "platform_count": 8,
-      "total_mentions": 11,
-      "top_positions": "新浪热榜#1",
+      "total_mentions": 26,
+      "top_positions": "微博热搜#1",
       "stocks": [
         [
-          "sz300124",
-          "汇川技术",
+          "sz002475",
+          "立讯精密",
           "A股",
-          "伺服电机·机器人关节"
+          "苹果链龙头"
         ],
         [
-          "sh688017",
-          "绿的谐波",
+          "sz002241",
+          "歌尔股份",
           "A股",
-          "谐波减速器"
-        ],
-        [
-          "sz002747",
-          "埃斯顿",
-          "A股",
-          "工业机器人"
+          "VR/声学"
         ]
       ],
       "trend": [
-        "new",
-        "新增异动"
+        "up",
+        "平台 +2 · 加速扩散"
+      ]
+    },
+    {
+      "name": "黄金/贵金属",
+      "category": "潜在信号",
+      "platform_count": 7,
+      "total_mentions": 8,
+      "top_positions": "微信热文#5",
+      "stocks": [
+        [
+          "sh601899",
+          "紫金矿业",
+          "A港股通",
+          "金铜龙头"
+        ],
+        [
+          "sh600547",
+          "山东黄金",
+          "A港股通",
+          "纯黄金标的"
+        ]
+      ],
+      "trend": [
+        "up",
+        "平台 +3 · 加速扩散"
       ]
     },
     {
@@ -121,7 +140,7 @@
       "category": "潜在信号",
       "platform_count": 6,
       "total_mentions": 14,
-      "top_positions": "36氪#3",
+      "top_positions": "知乎热榜#6",
       "stocks": [
         [
           "sz002230",
@@ -143,52 +162,15 @@
         ]
       ],
       "trend": [
-        "new",
-        "新增异动"
-      ]
-    },
-    {
-      "name": "手机/消费电子",
-      "category": "潜在信号",
-      "platform_count": 6,
-      "total_mentions": 20,
-      "top_positions": "什么值得买#1",
-      "stocks": [
-        [
-          "sz002475",
-          "立讯精密",
-          "A股",
-          "苹果链龙头"
-        ],
-        [
-          "sz002241",
-          "歌尔股份",
-          "A股",
-          "VR/声学"
-        ]
-      ],
-      "trend": [
-        "new",
-        "新增异动"
-      ]
-    },
-    {
-      "name": "高考",
-      "category": "季节性",
-      "platform_count": 6,
-      "total_mentions": 7,
-      "top_positions": "B站全站日榜#6",
-      "stocks": [],
-      "trend": [
         "stable",
-        ""
+        "持平"
       ]
     },
     {
       "name": "芯片/半导体",
       "category": "潜在信号",
-      "platform_count": 4,
-      "total_mentions": 6,
+      "platform_count": 6,
+      "total_mentions": 9,
       "top_positions": "什么值得买#1",
       "stocks": [
         [
@@ -212,32 +194,63 @@
       ],
       "trend": [
         "up",
-        "平台 +3 · 加速扩散"
+        "平台 +2 · 加速扩散"
       ]
     },
     {
-      "name": "黄金/贵金属",
+      "name": "机器人",
       "category": "潜在信号",
-      "platform_count": 4,
-      "total_mentions": 4,
-      "top_positions": "澎湃新闻#13",
+      "platform_count": 6,
+      "total_mentions": 8,
+      "top_positions": "知乎热榜#12",
       "stocks": [
         [
-          "sh601899",
-          "紫金矿业",
-          "A港股通",
-          "金铜龙头"
+          "sz300124",
+          "汇川技术",
+          "A股",
+          "伺服电机·机器人关节"
         ],
         [
-          "sh600547",
-          "山东黄金",
-          "A港股通",
-          "纯黄金标的"
+          "sh688017",
+          "绿的谐波",
+          "A股",
+          "谐波减速器"
+        ],
+        [
+          "sz002747",
+          "埃斯顿",
+          "A股",
+          "工业机器人"
         ]
       ],
       "trend": [
-        "new",
-        "新增异动"
+        "down",
+        "平台 -2"
+      ]
+    },
+    {
+      "name": "原油/能源",
+      "category": "潜在信号",
+      "platform_count": 4,
+      "total_mentions": 4,
+      "top_positions": "36氪#4",
+      "stocks": [
+        [
+          "sh601857",
+          "中国石油",
+          "A股",
+          "上游开采"
+        ],
+        [
+          "sh600938",
+          "中国海油",
+          "A股",
+          "海上油气"
+        ]
+      ],
+      "trend": [
+        "up",
+        "平台 +2 · 加速扩散"
       ]
     },
     {
@@ -261,15 +274,27 @@
         ]
       ],
       "trend": [
-        "new",
-        "新增异动"
+        "stable",
+        "持平"
+      ]
+    },
+    {
+      "name": "高考",
+      "category": "季节性",
+      "platform_count": 3,
+      "total_mentions": 6,
+      "top_positions": "新浪热榜#8",
+      "stocks": [],
+      "trend": [
+        "stable",
+        ""
       ]
     },
     {
       "name": "游戏",
       "category": "消遣",
       "platform_count": 3,
-      "total_mentions": 5,
+      "total_mentions": 6,
       "top_positions": "虎扑#20",
       "stocks": [],
       "trend": [
@@ -278,36 +303,11 @@
       ]
     },
     {
-      "name": "原油/能源",
-      "category": "潜在信号",
-      "platform_count": 2,
-      "total_mentions": 2,
-      "top_positions": "腾讯新闻#21",
-      "stocks": [
-        [
-          "sh601857",
-          "中国石油",
-          "A股",
-          "上游开采"
-        ],
-        [
-          "sh600938",
-          "中国海油",
-          "A股",
-          "海上油气"
-        ]
-      ],
-      "trend": [
-        "up",
-        "平台 +1"
-      ]
-    },
-    {
       "name": "618/促销",
       "category": "季节性",
-      "platform_count": 2,
-      "total_mentions": 2,
-      "top_positions": "什么值得买#32",
+      "platform_count": 1,
+      "total_mentions": 1,
+      "top_positions": "什么值得买#30",
       "stocks": [],
       "trend": [
         "stable",

@@ -1,62 +1,62 @@
 {
+  "空调/家电": {
+    "platform_count": 12,
+    "total_mentions": 18,
+    "top_positions": "抖音总榜#1"
+  },
   "足球": {
     "platform_count": 11,
-    "total_mentions": 21,
-    "top_positions": "微信热文#3"
+    "total_mentions": 28,
+    "top_positions": "今日头条#1"
   },
-  "空调/家电": {
-    "platform_count": 9,
-    "total_mentions": 14,
-    "top_positions": "微博热搜#2"
-  },
-  "机器人": {
+  "手机/消费电子": {
     "platform_count": 8,
-    "total_mentions": 11,
-    "top_positions": "新浪热榜#1"
+    "total_mentions": 26,
+    "top_positions": "微博热搜#1"
+  },
+  "黄金/贵金属": {
+    "platform_count": 7,
+    "total_mentions": 8,
+    "top_positions": "微信热文#5"
   },
   "AI/大模型": {
     "platform_count": 6,
     "total_mentions": 14,
-    "top_positions": "36氪#3"
-  },
-  "手机/消费电子": {
-    "platform_count": 6,
-    "total_mentions": 20,
-    "top_positions": "什么值得买#1"
-  },
-  "高考": {
-    "platform_count": 6,
-    "total_mentions": 7,
-    "top_positions": "B站全站日榜#6"
+    "top_positions": "知乎热榜#6"
   },
   "芯片/半导体": {
-    "platform_count": 4,
-    "total_mentions": 6,
+    "platform_count": 6,
+    "total_mentions": 9,
     "top_positions": "什么值得买#1"
   },
-  "黄金/贵金属": {
+  "机器人": {
+    "platform_count": 6,
+    "total_mentions": 8,
+    "top_positions": "知乎热榜#12"
+  },
+  "原油/能源": {
     "platform_count": 4,
     "total_mentions": 4,
-    "top_positions": "澎湃新闻#13"
+    "top_positions": "36氪#4"
   },
   "新能源车": {
     "platform_count": 3,
     "total_mentions": 3,
     "top_positions": "网易新闻#2"
   },
+  "高考": {
+    "platform_count": 3,
+    "total_mentions": 6,
+    "top_positions": "新浪热榜#8"
+  },
   "游戏": {
     "platform_count": 3,
-    "total_mentions": 5,
+    "total_mentions": 6,
     "top_positions": "虎扑#20"
   },
-  "原油/能源": {
-    "platform_count": 2,
-    "total_mentions": 2,
-    "top_positions": "腾讯新闻#21"
-  },
   "618/促销": {
-    "platform_count": 2,
-    "total_mentions": 2,
-    "top_positions": "什么值得买#32"
+    "platform_count": 1,
+    "total_mentions": 1,
+    "top_positions": "什么值得买#30"
   }
 }

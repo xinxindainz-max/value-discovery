@@ -1,15 +1,111 @@
 {
-  "scan_time": "2026-07-01T16:43:03.296086+08:00",
-  "total_titles": 30,
-  "sources_ok": 1,
+  "scan_time": "2026-07-01T16:44:25.081855+08:00",
+  "total_titles": 736,
+  "sources_ok": 22,
   "sources_total": 22,
   "signals": [
     {
-      "name": "芯片/半导体",
-      "platform_count": 1,
+      "name": "足球",
+      "platform_count": 11,
+      "category": "消遣",
+      "trend": "stable",
+      "top": "微信热文#3",
+      "stocks": []
+    },
+    {
+      "name": "空调/家电",
+      "platform_count": 9,
       "category": "潜在信号",
-      "trend": "down",
-      "top": "微信热文#27",
+      "trend": "new",
+      "top": "微博热搜#2",
+      "stocks": [
+        [
+          "sz000651",
+          "格力电器"
+        ],
+        [
+          "sz000333",
+          "美的集团"
+        ],
+        [
+          "sh600690",
+          "海尔智家"
+        ]
+      ]
+    },
+    {
+      "name": "机器人",
+      "platform_count": 8,
+      "category": "潜在信号",
+      "trend": "new",
+      "top": "新浪热榜#1",
+      "stocks": [
+        [
+          "sz300124",
+          "汇川技术"
+        ],
+        [
+          "sh688017",
+          "绿的谐波"
+        ],
+        [
+          "sz002747",
+          "埃斯顿"
+        ]
+      ]
+    },
+    {
+      "name": "AI/大模型",
+      "platform_count": 6,
+      "category": "潜在信号",
+      "trend": "new",
+      "top": "36氪#3",
+      "stocks": [
+        [
+          "sz002230",
+          "科大讯飞"
+        ],
+        [
+          "hk9888",
+          "百度"
+        ],
+        [
+          "sh688256",
+          "寒武纪"
+        ]
+      ]
+    },
+    {
+      "name": "手机/消费电子",
+      "platform_count": 6,
+      "category": "潜在信号",
+      "trend": "new",
+      "top": "什么值得买#1",
+      "stocks": [
+        [
+          "sz002475",
+          "立讯精密"
+        ],
+        [
+          "sz002241",
+          "歌尔股份"
+        ]
+      ]
+    },
+    {
+      "name": "高考",
+      "platform_count": 6,
+      "category": "季节性",
+      "trend": "stable",
+      "top": "B站全站日榜#6",
+      "stocks": []
+    },
+    {
+      "name": "芯片/半导体",
+      "platform_count": 4,
+      "category": "潜在信号",
+      "trend": "up",
+      "top": "什么值得买#1",
       "stocks": [
         [
           "hk0981",
@@ -26,28 +122,45 @@
       ]
     },
     {
-      "name": "原油/能源",
-      "platform_count": 1,
+      "name": "黄金/贵金属",
+      "platform_count": 4,
       "category": "潜在信号",
-      "trend": "down",
-      "top": "微信热文#27",
+      "trend": "new",
+      "top": "澎湃新闻#13",
       "stocks": [
         [
-          "sh601857",
-          "中国石油"
+          "sh601899",
+          "紫金矿业"
         ],
         [
-          "sh600938",
-          "中国海油"
+          "sh600547",
+          "山东黄金"
         ]
       ]
     },
     {
-      "name": "足球",
-      "platform_count": 1,
+      "name": "新能源车",
+      "platform_count": 3,
+      "category": "潜在信号",
+      "trend": "new",
+      "top": "网易新闻#2",
+      "stocks": [
+        [
+          "sz002594",
+          "比亚迪"
+        ],
+        [
+          "sz300750",
+          "宁德时代"
+        ]
+      ]
+    },
+    {
+      "name": "游戏",
+      "platform_count": 3,
       "category": "消遣",
       "trend": "stable",
-      "top": "微信热文#3",
+      "top": "虎扑#20",
       "stocks": []
     }
   ]

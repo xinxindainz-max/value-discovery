@@ -1,6 +1,6 @@
 {
-  "scan_time": "2026-07-01T18:58:12.089346+08:00",
-  "total_titles": 735,
+  "scan_time": "2026-07-01T20:21:40.815692+08:00",
+  "total_titles": 736,
   "sources_ok": 22,
   "sources_total": 22,
   "signals": [
@@ -8,7 +8,7 @@
       "name": "空调/家电",
       "platform_count": 12,
       "category": "潜在信号",
-      "trend": "up",
+      "trend": "stable",
       "top": "抖音总榜#1",
       "stocks": [
         [
@@ -30,49 +30,15 @@
       "platform_count": 11,
       "category": "消遣",
       "trend": "stable",
-      "top": "今日头条#1",
+      "top": "微信热文#3",
       "stocks": []
     },
     {
-      "name": "手机/消费电子",
-      "platform_count": 8,
-      "category": "潜在信号",
-      "trend": "up",
-      "top": "微博热搜#1",
-      "stocks": [
-        [
-          "sz002475",
-          "立讯精密"
-        ],
-        [
-          "sz002241",
-          "歌尔股份"
-        ]
-      ]
-    },
-    {
-      "name": "黄金/贵金属",
-      "platform_count": 7,
-      "category": "潜在信号",
-      "trend": "up",
-      "top": "微信热文#5",
-      "stocks": [
-        [
-          "sh601899",
-          "紫金矿业"
-        ],
-        [
-          "sh600547",
-          "山东黄金"
-        ]
-      ]
-    },
-    {
       "name": "AI/大模型",
-      "platform_count": 6,
+      "platform_count": 9,
       "category": "潜在信号",
-      "trend": "stable",
-      "top": "知乎热榜#6",
+      "trend": "up",
+      "top": "微博热搜#2",
       "stocks": [
         [
           "sz002230",
@@ -89,11 +55,62 @@
       ]
     },
     {
-      "name": "芯片/半导体",
-      "platform_count": 6,
+      "name": "手机/消费电子",
+      "platform_count": 9,
       "category": "潜在信号",
       "trend": "up",
-      "top": "什么值得买#1",
+      "top": "什么值得买#2",
+      "stocks": [
+        [
+          "sz002475",
+          "立讯精密"
+        ],
+        [
+          "sz002241",
+          "歌尔股份"
+        ]
+      ]
+    },
+    {
+      "name": "新能源车",
+      "platform_count": 7,
+      "category": "潜在信号",
+      "trend": "up",
+      "top": "今日头条#1",
+      "stocks": [
+        [
+          "sz002594",
+          "比亚迪"
+        ],
+        [
+          "sz300750",
+          "宁德时代"
+        ]
+      ]
+    },
+    {
+      "name": "黄金/贵金属",
+      "platform_count": 7,
+      "category": "潜在信号",
+      "trend": "stable",
+      "top": "新浪热榜#4",
+      "stocks": [
+        [
+          "sh601899",
+          "紫金矿业"
+        ],
+        [
+          "sh600547",
+          "山东黄金"
+        ]
+      ]
+    },
+    {
+      "name": "芯片/半导体",
+      "platform_count": 5,
+      "category": "潜在信号",
+      "trend": "down",
+      "top": "36氪#3",
       "stocks": [
         [
           "hk0981",
@@ -111,10 +128,10 @@
     },
     {
       "name": "机器人",
-      "platform_count": 6,
+      "platform_count": 5,
       "category": "潜在信号",
       "trend": "down",
-      "top": "知乎热榜#12",
+      "top": "知乎热榜#9",
       "stocks": [
         [
           "sz300124",
@@ -134,8 +151,8 @@
       "name": "原油/能源",
       "platform_count": 4,
       "category": "潜在信号",
-      "trend": "up",
-      "top": "36氪#4",
+      "trend": "stable",
+      "top": "今日头条#1",
       "stocks": [
         [
           "sh601857",
@@ -144,23 +161,6 @@
         [
           "sh600938",
           "中国海油"
-        ]
-      ]
-    },
-    {
-      "name": "新能源车",
-      "platform_count": 3,
-      "category": "潜在信号",
-      "trend": "stable",
-      "top": "网易新闻#2",
-      "stocks": [
-        [
-          "sz002594",
-          "比亚迪"
-        ],
-        [
-          "sz300750",
-          "宁德时代"
         ]
       ]
     },

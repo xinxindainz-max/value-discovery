@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-07-01T18:58:11.941261+08:00",
-  "fetched_at_unix": 1782903491,
+  "fetched_at": "2026-07-01T20:21:40.674090+08:00",
+  "fetched_at_unix": 1782908500,
   "stocks": {
     "sz000333": {
       "code": "sz000333",
@@ -87,7 +87,7 @@
       "pe_ratio": 16.04,
       "pb_ratio": 0.94,
       "total_market_cap": 33.44,
-      "circulating_market_cap": 32.2,
+      "circulating_market_cap": 32.12,
       "high_52week": 9.92,
       "low_52week": 9.5,
       "change_pct": 1.77

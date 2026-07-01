@@ -6,43 +6,43 @@
   },
   "足球": {
     "platform_count": 11,
-    "total_mentions": 28,
-    "top_positions": "今日头条#1"
+    "total_mentions": 27,
+    "top_positions": "微信热文#3"
+  },
+  "AI/大模型": {
+    "platform_count": 9,
+    "total_mentions": 15,
+    "top_positions": "微博热搜#2"
   },
   "手机/消费电子": {
-    "platform_count": 8,
-    "total_mentions": 26,
-    "top_positions": "微博热搜#1"
+    "platform_count": 9,
+    "total_mentions": 25,
+    "top_positions": "什么值得买#2"
+  },
+  "新能源车": {
+    "platform_count": 7,
+    "total_mentions": 11,
+    "top_positions": "今日头条#1"
   },
   "黄金/贵金属": {
     "platform_count": 7,
-    "total_mentions": 8,
-    "top_positions": "微信热文#5"
-  },
-  "AI/大模型": {
-    "platform_count": 6,
-    "total_mentions": 14,
-    "top_positions": "知乎热榜#6"
+    "total_mentions": 7,
+    "top_positions": "新浪热榜#4"
   },
   "芯片/半导体": {
-    "platform_count": 6,
-    "total_mentions": 9,
-    "top_positions": "什么值得买#1"
+    "platform_count": 5,
+    "total_mentions": 8,
+    "top_positions": "36氪#3"
   },
   "机器人": {
-    "platform_count": 6,
-    "total_mentions": 8,
-    "top_positions": "知乎热榜#12"
+    "platform_count": 5,
+    "total_mentions": 6,
+    "top_positions": "知乎热榜#9"
   },
   "原油/能源": {
     "platform_count": 4,
     "total_mentions": 4,
-    "top_positions": "36氪#4"
-  },
-  "新能源车": {
-    "platform_count": 3,
-    "total_mentions": 3,
-    "top_positions": "网易新闻#2"
+    "top_positions": "今日头条#1"
   },
   "高考": {
     "platform_count": 3,
@@ -50,13 +50,13 @@
     "top_positions": "新浪热榜#8"
   },
   "游戏": {
-    "platform_count": 3,
-    "total_mentions": 6,
+    "platform_count": 2,
+    "total_mentions": 4,
     "top_positions": "虎扑#20"
   },
   "618/促销": {
     "platform_count": 1,
     "total_mentions": 1,
-    "top_positions": "什么值得买#30"
+    "top_positions": "什么值得买#28"
   }
 }

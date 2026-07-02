@@ -1,5 +1,5 @@
 {
-  "scan_time": "2026-07-02T12:24:06.159270+08:00",
+  "scan_time": "2026-07-02T12:24:27.536236+08:00",
   "total_titles": 733,
   "sources_ok": 22,
   "sources_total": 22,
@@ -16,7 +16,7 @@
       "name": "空调/家电",
       "platform_count": 10,
       "category": "潜在信号",
-      "trend": "up",
+      "trend": "stable",
       "top": "百度贴吧#4",
       "stocks": [
         [
@@ -37,7 +37,7 @@
       "name": "AI/大模型",
       "platform_count": 7,
       "category": "潜在信号",
-      "trend": "up",
+      "trend": "stable",
       "top": "腾讯新闻#4",
       "stocks": [
         [
@@ -58,7 +58,7 @@
       "name": "手机/消费电子",
       "platform_count": 7,
       "category": "潜在信号",
-      "trend": "up",
+      "trend": "stable",
       "top": "IT之家#1",
       "stocks": [
         [
@@ -75,7 +75,7 @@
       "name": "芯片/半导体",
       "platform_count": 6,
       "category": "潜在信号",
-      "trend": "up",
+      "trend": "stable",
       "top": "微信热文#6",
       "stocks": [
         [
@@ -96,7 +96,7 @@
       "name": "机器人",
       "platform_count": 5,
       "category": "潜在信号",
-      "trend": "down",
+      "trend": "stable",
       "top": "知乎热榜#1",
       "stocks": [
         [
@@ -117,7 +117,7 @@
       "name": "新能源车",
       "platform_count": 4,
       "category": "潜在信号",
-      "trend": "up",
+      "trend": "stable",
       "top": "抖音总榜#4",
       "stocks": [
         [
@@ -134,7 +134,7 @@
       "name": "黄金/贵金属",
       "platform_count": 3,
       "category": "潜在信号",
-      "trend": "down",
+      "trend": "stable",
       "top": "微信热文#3",
       "stocks": [
         [

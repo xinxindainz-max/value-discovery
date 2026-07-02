@@ -1,7 +1,7 @@
 {
   "meta": {
-    "fetched_at": "2026-07-02T12:23:40.226507+08:00",
-    "fetched_at_unix": 1782966220,
+    "fetched_at": "2026-07-02T12:23:52.509506+08:00",
+    "fetched_at_unix": 1782966232,
     "timeout_sec": 15,
     "pipeline_version": "3.0"
   },
@@ -9,7 +9,7 @@
     "google_trends": {
       "label": "Google Trends",
       "status": "ok",
-      "elapsed_ms": 12056,
+      "elapsed_ms": 4345,
       "error": null,
       "data": {
         "statusCode": 200,
@@ -20,7 +20,7 @@
     "weibo": {
       "label": "微博热搜",
       "status": "ok",
-      "elapsed_ms": 144,
+      "elapsed_ms": 129,
       "error": null,
       "data": {
         "type": "weibo",
@@ -383,7 +383,7 @@
     "baidu": {
       "label": "百度热搜",
       "status": "ok",
-      "elapsed_ms": 116,
+      "elapsed_ms": 135,
       "error": null,
       "data": {
         "type": "baidu",
@@ -957,7 +957,7 @@
     "zhihu": {
       "label": "知乎热榜",
       "status": "ok",
-      "elapsed_ms": 116,
+      "elapsed_ms": 136,
       "error": null,
       "data": {
         "type": "zhihu",
@@ -1278,7 +1278,7 @@
     "douyin": {
       "label": "抖音总榜",
       "status": "ok",
-      "elapsed_ms": 128,
+      "elapsed_ms": 103,
       "error": null,
       "data": {
         "type": "douyin",
@@ -1991,7 +1991,7 @@
     "bilibili": {
       "label": "B站全站日榜",
       "status": "ok",
-      "elapsed_ms": 175,
+      "elapsed_ms": 1251,
       "error": null,
       "data": {
         "type": "bilibili",
@@ -5099,16 +5099,16 @@
           }
         ]
       },
-      "retries": 0
+      "retries": 1
     },
     "wechat": {
       "label": "微信热文",
       "status": "ok",
-      "elapsed_ms": 941,
+      "elapsed_ms": 825,
       "error": null,
       "data": {
         "type": "wechat",
-        "update_time": "2026-07-02 12:23:53",
+        "update_time": "2026-07-02 12:23:59",
         "list": [
           {
             "index": 1,
@@ -5327,7 +5327,7 @@
     "toutiao": {
       "label": "今日头条",
       "status": "ok",
-      "elapsed_ms": 117,
+      "elapsed_ms": 116,
       "error": null,
       "data": {
         "type": "toutiao",
@@ -5690,7 +5690,7 @@
     "smzdm": {
       "label": "什么值得买",
       "status": "ok",
-      "elapsed_ms": 134,
+      "elapsed_ms": 120,
       "error": null,
       "data": {
         "type": "smzdm",
@@ -6231,7 +6231,7 @@
     "xiaohongshu": {
       "label": "小红书",
       "status": "ok",
-      "elapsed_ms": 114,
+      "elapsed_ms": 122,
       "error": null,
       "data": {
         "type": "xiaohongshu",
@@ -6448,7 +6448,7 @@
     "kuaishou": {
       "label": "快手",
       "status": "ok",
-      "elapsed_ms": 119,
+      "elapsed_ms": 117,
       "error": null,
       "data": {
         "type": "kuaishou",
@@ -6811,7 +6811,7 @@
     "36kr": {
       "label": "36氪",
       "status": "ok",
-      "elapsed_ms": 118,
+      "elapsed_ms": 129,
       "error": null,
       "data": {
         "type": "36kr",
@@ -7034,7 +7034,7 @@
     "ithome": {
       "label": "IT之家",
       "status": "ok",
-      "elapsed_ms": 130,
+      "elapsed_ms": 114,
       "error": null,
       "data": {
         "type": "ithome",
@@ -7131,7 +7131,7 @@
     "sina": {
       "label": "新浪热榜",
       "status": "ok",
-      "elapsed_ms": 147,
+      "elapsed_ms": 1227,
       "error": null,
       "data": {
         "type": "sina",
@@ -7454,12 +7454,12 @@
           }
         ]
       },
-      "retries": 0
+      "retries": 1
     },
     "qq_news": {
       "label": "腾讯新闻",
       "status": "ok",
-      "elapsed_ms": 1270,
+      "elapsed_ms": 105,
       "error": null,
       "data": {
         "type": "qq-news",
@@ -8017,12 +8017,12 @@
           }
         ]
       },
-      "retries": 1
+      "retries": 0
     },
     "netease_news": {
       "label": "网易新闻",
       "status": "ok",
-      "elapsed_ms": 96,
+      "elapsed_ms": 117,
       "error": null,
       "data": {
         "type": "netease-news",
@@ -8105,7 +8105,7 @@
     "thepaper": {
       "label": "澎湃新闻",
       "status": "ok",
-      "elapsed_ms": 107,
+      "elapsed_ms": 108,
       "error": null,
       "data": {
         "type": "thepaper",
@@ -8682,7 +8682,7 @@
     "tieba": {
       "label": "百度贴吧",
       "status": "ok",
-      "elapsed_ms": 128,
+      "elapsed_ms": 100,
       "error": null,
       "data": {
         "type": "tieba",
@@ -8995,7 +8995,7 @@
     "hupu": {
       "label": "虎扑",
       "status": "ok",
-      "elapsed_ms": 107,
+      "elapsed_ms": 126,
       "error": null,
       "data": {
         "type": "hupu",
@@ -9218,7 +9218,7 @@
     "trendsmcp_x": {
       "label": "X/Twitter 热门",
       "status": "ok",
-      "elapsed_ms": 1431,
+      "elapsed_ms": 3640,
       "error": null,
       "data": {
         "statusCode": 200,
@@ -9229,7 +9229,7 @@
     "trendsmcp_youtube": {
       "label": "YouTube 热门",
       "status": "ok",
-      "elapsed_ms": 1461,
+      "elapsed_ms": 5548,
       "error": null,
       "data": {
         "statusCode": 200,
@@ -9240,7 +9240,7 @@
     "trendsmcp_reddit": {
       "label": "Reddit World News",
       "status": "ok",
-      "elapsed_ms": 1487,
+      "elapsed_ms": 1364,
       "error": null,
       "data": {
         "statusCode": 200,
@@ -9256,7 +9256,7 @@
     "timeout": 0
   },
   "retry_stats": {
-    "total_retries": 1,
-    "sources_retried": 1
+    "total_retries": 2,
+    "sources_retried": 2
   }
 }

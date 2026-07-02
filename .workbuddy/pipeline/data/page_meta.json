@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-01T16:44:18+08:00",
-  "display_ts": "2026-07-01 16:44 CST",
+  "generated_at": "2026-07-02T12:24:06+08:00",
+  "display_ts": "2026-07-02 12:24 CST",
   "sources_ok": 22,
   "sources_total": 22,
   "source_bar_text": "22/22 源可用",
@@ -48,7 +48,7 @@
     "smzdm": {
       "label": "什么值得买",
       "ok": true,
-      "count": 49
+      "count": 48
     },
     "xiaohongshu": {
       "label": "小红书",
@@ -88,7 +88,7 @@
     "thepaper": {
       "label": "澎湃新闻",
       "ok": true,
-      "count": 49
+      "count": 47
     },
     "tieba": {
       "label": "百度贴吧",
@@ -119,9 +119,9 @@
   "stocks": {
     "sz000333": {
       "name": "美的集团",
-      "price": 77.4,
-      "pe": 13.33,
-      "pb": 2.89,
+      "price": 77.0,
+      "pe": 13.26,
+      "pb": 2.87,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -129,9 +129,9 @@
     },
     "sz000651": {
       "name": "格力电器",
-      "price": 37.46,
-      "pe": 7.19,
-      "pb": 1.38,
+      "price": 37.99,
+      "pe": 7.29,
+      "pb": 1.4,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -139,8 +139,8 @@
     },
     "sh600690": {
       "name": "海尔智家",
-      "price": 20.3,
-      "pe": 10.17,
+      "price": 20.26,
+      "pe": 10.15,
       "pb": 1.52,
       "chg_5d": null,
       "chg_20d": null,
@@ -149,8 +149,8 @@
     },
     "sh603128": {
       "name": "华贸物流",
-      "price": 5.15,
-      "pe": 14.56,
+      "price": 5.18,
+      "pe": 14.65,
       "pb": 1.07,
       "chg_5d": null,
       "chg_20d": null,
@@ -159,8 +159,8 @@
     },
     "sz300729": {
       "name": "乐歌股份",
-      "price": 9.79,
-      "pe": 16.04,
+      "price": 9.85,
+      "pe": 16.14,
       "pb": 0.94,
       "chg_5d": null,
       "chg_20d": null,
@@ -169,9 +169,9 @@
     },
     "sh600988": {
       "name": "赤峰黄金",
-      "price": 25.81,
-      "pe": 13.67,
-      "pb": 3.59,
+      "price": 28.39,
+      "pe": 15.04,
+      "pb": 3.94,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -179,9 +179,9 @@
     },
     "sh688981": {
       "name": "中芯国际",
-      "price": 154.48,
-      "pe": 262.11,
-      "pb": 6.95,
+      "price": 149.29,
+      "pe": 253.3,
+      "pb": 6.71,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -189,9 +189,9 @@
     },
     "sh603019": {
       "name": "中科曙光",
-      "price": 102.45,
-      "pe": 67.59,
-      "pb": 6.81,
+      "price": 98.66,
+      "pe": 65.09,
+      "pb": 6.56,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -199,9 +199,9 @@
     },
     "sz300750": {
       "name": "宁德时代",
-      "price": 383.84,
-      "pe": 22.49,
-      "pb": 5.43,
+      "price": 387.0,
+      "pe": 22.67,
+      "pb": 5.48,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -209,9 +209,9 @@
     },
     "sh600519": {
       "name": "贵州茅台",
-      "price": 1193.01,
-      "pe": 18.03,
-      "pb": 6.4,
+      "price": 1196.68,
+      "pe": 18.09,
+      "pb": 6.42,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -219,9 +219,9 @@
     },
     "sh600036": {
       "name": "招商银行",
-      "price": 35.91,
-      "pe": 6.01,
-      "pb": 0.8,
+      "price": 36.25,
+      "pe": 6.06,
+      "pb": 0.81,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -229,9 +229,9 @@
     },
     "sz000858": {
       "name": "五 粮 液",
-      "price": 74.52,
-      "pe": 22.96,
-      "pb": 2.26,
+      "price": 73.48,
+      "pe": 22.64,
+      "pb": 2.23,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -239,9 +239,9 @@
     },
     "sz002475": {
       "name": "立讯精密",
-      "price": 66.24,
-      "pe": 28.16,
-      "pb": 5.49,
+      "price": 62.52,
+      "pe": 26.58,
+      "pb": 5.18,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,
@@ -249,9 +249,9 @@
     },
     "sz300274": {
       "name": "阳光电源",
-      "price": 136.92,
-      "pe": 23.8,
-      "pb": 6.01,
+      "price": 131.39,
+      "pe": 22.84,
+      "pb": 5.77,
       "chg_5d": null,
       "chg_20d": null,
       "chg_60d": null,

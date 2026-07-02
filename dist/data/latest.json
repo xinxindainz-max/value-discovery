@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "fetched_at": "2026-07-01T16:41:47.465816+08:00",
+    "fetched_at_unix": 1782895307,
+    "timeout_sec": 15,
+    "pipeline_version": "3.0"
+  },
+  "sources": {
+    "google_trends": {
+      "label": "Google Trends",
+      "status": "fail",
+      "elapsed_ms": 3004,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "weibo": {
+      "label": "微博热搜",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "baidu": {
+      "label": "百度热搜",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "zhihu": {
+      "label": "知乎热榜",
+      "status": "fail",
+      "elapsed_ms": 3005,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "douyin": {
+      "label": "抖音总榜",
+      "status": "fail",
+      "elapsed_ms": 3004,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "bilibili": {
+      "label": "B站全站日榜",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "wechat": {
+      "label": "微信热文",
+      "status": "ok",
+      "elapsed_ms": 1278,
+      "error": null,
+      "data": {
+        "type": "wechat",
+        "update_time": "2026-07-01 16:42:06",
+        "list": [
+          {
+            "index": 1,
+            "title": "天啊，要不是亲眼所见，都不敢相信😣",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzYzNjQ5MDA5OA==&mid=2247486399&idx=1&sn=585b58922420298e79107d0d63e6e896#rd",
+            "hot_value": "242346032",
+            "extra": {}
+          },
+          {
+            "index": 2,
+            "title": "有人说，我长得很像那个唱歌很好听的任素汐！",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzU2MDY2MjkzMQ==&mid=2247489632&idx=1&sn=ec3ad0ff690a89c39de48c457d65b2b2#rd",
+            "hot_value": "242346031",
+            "extra": {}
+          },
+          {
+            "index": 3,
+            "title": "亚足联这回彻底尴尬了！不是因为日本1:2不敌巴西，亚洲球队仅剩澳大利亚，而是日本队在赛前豪言壮志地喊出世界杯夺冠的口号",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzkxOTU3MDMxMA==&mid=2247484934&idx=1&sn=eefcec5e3c7494b59fe912fcbbc937b5#rd",
+            "hot_value": "242346030",
+            "extra": {}
+          },
+          {
+            "index": 4,
+            "title": "你是哪一年买的房？",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzE5MTcxNDAzNg==&mid=2247486787&idx=1&sn=efc9dec0cf780831692c25bcae8c7a73#rd",
+            "hot_value": "242346029",
+            "extra": {}
+          },
+          {
+            "index": 5,
+            "title": "上海\"巨无霸\"商场正式开业！全市第二！两条地铁直达，大雨中排起长队",
+            "url": "https://mp.weixin.qq.com/s/USs7S1YTeKOt4emWe22vPw",
+            "hot_value": "242351952",
+            "extra": {}
+          },
+          {
+            "index": 6,
+            "title": "我宣誓！",
+            "url": "https://mp.weixin.qq.com/s/6gOaEzyyuwobNNRLH8DQOw",
+            "hot_value": "242351951",
+            "extra": {}
+          },
+          {
+            "index": 7,
+            "title": "105岁生日，共同祝福！",
+            "url": "https://mp.weixin.qq.com/s/5skqjSk2sFr7BBnjwTV-mQ",
+            "hot_value": "242351950",
+            "extra": {}
+          },
+          {
+            "index": 8,
+            "title": "105年，这是中国共产党给世界的回答",
+            "url": "https://mp.weixin.qq.com/s/9ajku64MTbxNKx0DkCAa8g",
+            "hot_value": "242339211",
+            "extra": {}
+          },
+          {
+            "index": 9,
+            "title": "全部的你和你的全部",
+            "url": "https://mp.weixin.qq.com/s/zGGDgYith-aYf793rBJQZA",
+            "hot_value": "242338543",
+            "extra": {}
+          },
+          {
+            "index": 10,
+            "title": "外媒称印度驻华使馆最近会见新华社人员讨论中国驻印记者问题，外交部：中方始终愿在平等友好基础上推动同印方各领域合作，包括新闻机构",
+            "url": "https://mp.weixin.qq.com/s/tWQDykeCDVS2s3348o0uIA",
+            "hot_value": "242287402",
+            "extra": {}
+          },
+          {
+            "index": 11,
+            "title": "广州珠江新城发生一起高坠事故，1人死亡，调查报告公布",
+            "url": "https://mp.weixin.qq.com/s/MAFU4uOFkiFr8F1PZyaLXQ",
+            "hot_value": "242287401",
+            "extra": {}
+          },
+          {
+            "index": 12,
+            "title": "云南省委常委、组织部部长赵月霞：2025年，全省共调整不适宜担任现职干部518名，重新使用处分影响期满、实绩突出的干部301名",
+            "url": "https://mp.weixin.qq.com/s/OCjpJTa_6GTujL0J36qQMA",
+            "hot_value": "242287400",
+            "extra": {}
+          },
+          {
+            "index": 13,
+            "title": "马斯里，遇袭身亡",
+            "url": "https://mp.weixin.qq.com/s/u2Og9j5J6dxZ-5NFwkCZQg",
+            "hot_value": "242287399",
+            "extra": {}
+          },
+          {
+            "index": 14,
+            "title": "中国共产党党内统计公报",
+            "url": "https://mp.weixin.qq.com/s/y-PU7tjt5tMAXxHVTeTqIA",
+            "hot_value": "242273272",
+            "extra": {}
+          },
+          {
+            "index": 15,
+            "title": "医生：呦，你耳朵长毛了！是不是去采过耳？",
+            "url": "https://mp.weixin.qq.com/s/2zPU3__RjfXkA8wOPWWm_g",
+            "hot_value": "242273271",
+            "extra": {}
+          },
+          {
+            "index": 16,
+            "title": "中共中央政治局召开会议 习近平主持会议",
+            "url": "https://mp.weixin.qq.com/s/BITf4HcVbxznPbXUI9ES8w",
+            "hot_value": "242273270",
+            "extra": {}
+          },
+          {
+            "index": 17,
+            "title": "今晚三大利好，明天“科技牛”继续！",
+            "url": "https://mp.weixin.qq.com/s?__biz=MjM5MzQ3NDk4Mg==&mid=2658550952&idx=1&sn=9a71045f2b431fd14fb64f83b0f6dced#rd",
+            "hot_value": "242346028",
+            "extra": {}
+          },
+          {
+            "index": 18,
+            "title": "江泽民治丧委员名单，为何没有遗孀和子女?“第一位”另有其人",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzE5MTQ3OTEyNA==&mid=2247487331&idx=1&sn=e71bf6f132cbd313d53031bc65d74379#rd",
+            "hot_value": "242346027",
+            "extra": {}
+          },
+          {
+            "index": 19,
+            "title": "这一届，安徽一下新选出7位女县委书记",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzU3NDQ3MDg3Nw==&mid=2247486563&idx=1&sn=35af2851249855c64faa1d6237219713#rd",
+            "hot_value": "242346026",
+            "extra": {}
+          },
+          {
+            "index": 20,
+            "title": "成都警方发布警情通报",
+            "url": "https://mp.weixin.qq.com/s/_PxV5jeovhd2ilHGJJNIDw",
+            "hot_value": "242351949",
+            "extra": {}
+          },
+          {
+            "index": 21,
+            "title": "宋祖英与丈夫难得亮相，34年深情相伴！",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzkzNDkxODY4Nw==&mid=2247485330&idx=1&sn=39416d9c3373df20cce85ded6474c8f8#rd",
+            "hot_value": "242346025",
+            "extra": {}
+          },
+          {
+            "index": 22,
+            "title": "夏日里的暖身小食，中医教你这样吃",
+            "url": "https://mp.weixin.qq.com/s?__biz=Mzk3NTY4MjM3Nw==&mid=2247484727&idx=1&sn=de171e8815382a4c4b9b35df3018b9d3#rd",
+            "hot_value": "242346024",
+            "extra": {}
+          },
+          {
+            "index": 23,
+            "title": "87年女兵和男兵同时复员，部队红线不能触碰",
+            "url": "https://mp.weixin.qq.com/s?__biz=Mzg2NTI1NzQ5Ng==&mid=2247506484&idx=1&sn=8c59661eb180178ba5251688fb89d987#rd",
+            "hot_value": "242346023",
+            "extra": {}
+          },
+          {
+            "index": 24,
+            "title": "3死1伤！成都深夜发生严重车祸，警方通报",
+            "url": "https://mp.weixin.qq.com/s/_Rprh30dngiqNlo3HHcvXQ",
+            "hot_value": "242351948",
+            "extra": {}
+          },
+          {
+            "index": 25,
+            "title": "一个家庭，如果做饭不用心，对吃的不讲究，甚至特别舍不得吃，那这个家庭，大概率是没有什么和气，财气与福气的。家有热气，日子才有奔头",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzIwNDY4ODEzNw==&mid=2247525551&idx=1&sn=f2e7940a9690af76e14b3766ef97d096#rd",
+            "hot_value": "242346022",
+            "extra": {}
+          },
+          {
+            "index": 26,
+            "title": "看看我家猫是属于那个体型",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzY5MzE3MDU4NA==&mid=2247484416&idx=1&sn=2dd8c66bab7bc44748ad2e0db24c6ec8#rd",
+            "hot_value": "242346021",
+            "extra": {}
+          },
+          {
+            "index": 27,
+            "title": "A股盘前速览：美股高开，半导体板块普涨；白银、原油价格纷纷走高；港股休市；伊朗：暂时没有与美方会晤计划；寒武纪提示股票风险",
+            "url": "https://mp.weixin.qq.com/s/KiX68sdVpwQOMk8wIV5xgw",
+            "hot_value": "242352531",
+            "extra": {}
+          },
+          {
+            "index": 28,
+            "title": "我退休金5600，老伴走后攒了50万，一直没敢跟孩子说。上个…",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzA3NjUzNjk1OQ==&mid=2654873299&idx=1&sn=f523265405c0d38c11de4ac75cbe5162#rd",
+            "hot_value": "242346020",
+            "extra": {}
+          },
+          {
+            "index": 29,
+            "title": "7月新规来了",
+            "url": "https://mp.weixin.qq.com/s/m8Yn-JHUufDZVjahSHCfPQ",
+            "hot_value": "242273864",
+            "extra": {}
+          },
+          {
+            "index": 30,
+            "title": "悄悄靠近一条河涌，惊掉下巴！",
+            "url": "https://mp.weixin.qq.com/s?__biz=MzYzNTkyNTcxNg==&mid=2247484058&idx=1&sn=b5a04704f8ccb18550425061adb459ba#rd",
+            "hot_value": "242346019",
+            "extra": {}
+          }
+        ]
+      },
+      "retries": 0
+    },
+    "toutiao": {
+      "label": "今日头条",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "smzdm": {
+      "label": "什么值得买",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "xiaohongshu": {
+      "label": "小红书",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "kuaishou": {
+      "label": "快手",
+      "status": "fail",
+      "elapsed_ms": 3002,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "36kr": {
+      "label": "36氪",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "ithome": {
+      "label": "IT之家",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "sina": {
+      "label": "新浪热榜",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "qq_news": {
+      "label": "腾讯新闻",
+      "status": "fail",
+      "elapsed_ms": 3004,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "netease_news": {
+      "label": "网易新闻",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "thepaper": {
+      "label": "澎湃新闻",
+      "status": "fail",
+      "elapsed_ms": 3004,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "tieba": {
+      "label": "百度贴吧",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "hupu": {
+      "label": "虎扑",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "trendsmcp_x": {
+      "label": "X/Twitter 热门",
+      "status": "fail",
+      "elapsed_ms": 3003,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "trendsmcp_youtube": {
+      "label": "YouTube 热门",
+      "status": "fail",
+      "elapsed_ms": 3005,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    },
+    "trendsmcp_reddit": {
+      "label": "Reddit World News",
+      "status": "fail",
+      "elapsed_ms": 3004,
+      "error": "InvalidSchema: Missing dependencies for SOCKS support.",
+      "data": null,
+      "retries": 2
+    }
+  },
+  "summary": {
+    "total": 22,
+    "ok": 1,
+    "fail": 21,
+    "timeout": 0
+  },
+  "retry_stats": {
+    "total_retries": 42,
+    "sources_retried": 21
+  }
+}

@@ -71,7 +71,26 @@ jobs:
           cp .workbuddy/pipeline/data/*.json data/
 
       # ----------------------------------------------------------
-      # Step 4.6: 机械卡片更新（信号扫描+源位置+热度标签）
+      # Step 4.6: 运行信号引擎 v4.0（生成 discovery_board.json）
+      # ----------------------------------------------------------
+      - name: 信号引擎 · 三区看板生成
+        id: engine
+        run: python .workbuddy/pipeline/signal_engine.py
+        continue-on-error: true
+
+      # ----------------------------------------------------------
+      # Step 4.7: 复制引擎输出到公开目录
+      # ----------------------------------------------------------
+      - name: 复制引擎输出到公开目录
+        run: |
+          mkdir -p data
+          cp .workbuddy/pipeline/data/discovery_board.json data/ 2>/dev/null || true
+          # 同时复制到 dist/data/ 用于 CloudStudio 部署
+          mkdir -p dist/data
+          cp .workbuddy/pipeline/data/discovery_board.json dist/data/ 2>/dev/null || true
+
+      # ----------------------------------------------------------
+      # Step 4.8: 机械卡片更新（信号扫描+源位置+热度标签）
       # ----------------------------------------------------------
       - name: 信号扫描 · 卡片元数据更新
         id: scanner
@@ -93,7 +112,7 @@ jobs:
         run: |
           git config user.name "价值发现机器人"
           git config user.email "bot@value-discovery.local"
-          git add .workbuddy/pipeline/data/ data/
+          git add .workbuddy/pipeline/data/ data/ dist/
           if git diff --cached --quiet; then
             echo "无变更，跳过推送"
           else

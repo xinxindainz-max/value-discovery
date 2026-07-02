@@ -1,963 +1,273 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>价值发现 · 套利雷达 v14</title>
+<title>价值发现 · 社会套利雷达</title>
 <style>
-/* ============================================================
-   v14 — 彭博/Linear 密度风格 · 无 emoji · 克制
-   + 加速度曲线 / 拥挤度过滤 / 重点词库 / 假设跟踪 / 时间戳
-   ============================================================ */
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#f7f5f0;--card:#fff;
-  --tx:#1a1a2e;--tx2:#5e5e72;--tx3:#8a8a9a;
-  --border:#e4e0d8;
-  --shadow:0 1px 3px rgba(0,0,0,.05);
-  --radius:8px;--radius-sm:6px;
-  --up:#b83a2a;--up-bg:#fdf2f0;
-  --dn:#1a6b3a;--dn-bg:#edf7f1;
-  --accent:#4a7c6b;
-  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",system-ui,sans-serif;
-  --mono:"SF Mono","Cascadia Code",Consolas,"等宽",monospace;
-}
-html{font-size:15px}
-body{font-family:var(--font);background:var(--bg);color:var(--tx);line-height:1.5;max-width:960px;margin:0 auto;padding:12px 18px 40px;-webkit-font-smoothing:antialiased}
-@media(max-width:600px){body{padding:8px 10px 30px}}
+  :root {
+    --bg: #f7f5f0;
+    --card: #fff;
+    --tx: #1a1a2e;
+    --tx2: #3d3d5c;
+    --tx3: #6b6b80;
+    --accent: #2c5aa0;
+    --border: #e0ddd6;
+    --up: #c0392b;
+    --dn: #1a7a3a;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 1px 4px rgba(0,0,0,.06);
+    --mono: "SF Mono","Cascadia Code","Consolas",monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--tx);
+    line-height: 1.6;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 24px 16px 80px;
+  }
 
-/* Header */
-.hdr{text-align:center;padding:14px 0 10px}
-.hdr h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
-.hdr .sub{font-size:13px;color:var(--tx2);margin-top:2px}
-.hdr .ts{font-size:12px;color:var(--tx3);margin-top:4px;font-family:var(--mono)}
+  /* Header */
+  .hdr { margin-bottom: 16px; }
+  .hdr h1 { font-size: 20px; font-weight: 700; letter-spacing: -.3px; }
+  .hdr .sub { font-size: 13px; color: var(--tx3); margin-top: 2px; }
+  .hdr .ts { font-size: 11px; color: var(--tx3); margin-top: 6px; font-family: var(--mono); }
 
-/* Source bar */
-.src-bar{margin:10px 0 14px;padding:10px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.src-bar .lbl{font-size:12px;color:var(--tx2);font-weight:600;margin-bottom:5px;letter-spacing:.02em}
-.src-grid{display:flex;flex-wrap:wrap;gap:5px}
-.src-tag{font-size:12px;padding:3px 8px;border-radius:4px;font-weight:500}
-.src-ok{background:#e8efeb;color:#3a6b56}
-.src-fail{background:#fce8e8;color:#a33}
+  /* Source bar */
+  .src-bar { margin-bottom: 14px; }
+  .src-bar .lbl { font-size: 12px; color: var(--tx2); margin-bottom: 6px; }
+  .src-grid { display: flex; flex-wrap: wrap; gap: 4px; }
+  .src-tag { font-size: 11px; padding: 2px 8px; border-radius: 3px; border: 1px solid var(--border); }
+  .src-ok { background: #e8efeb; color: #1a6b3a; border-color: #c8e6c9; }
+  .src-fail { background: #fdf2f0; color: #c0392b; border-color: #f0c8c0; }
 
-/* Thermo */
-.thermo{margin:0 0 14px;padding:10px 14px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
-.thermo h3{font-size:14px;font-weight:600;margin-bottom:7px}
-.tgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:7px}
-@media(max-width:640px){.tgrid{grid-template-columns:1fr}}
-.tcol-lbl{font-size:12px;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;font-weight:600}
-.titem{font-size:12px;padding:3px 6px;border-radius:4px;line-height:1.4;margin-bottom:2px}
-.thot{background:#fdf2f0;color:var(--up)}
-.tcool{background:#e8eef4;color:#4a6d8c}
-.tval{font-size:12px;padding:6px;background:#faf9f6;border-radius:4px;line-height:1.5}
-.tcross{padding:6px 10px;border-radius:4px;font-size:12px;margin-bottom:3px;line-height:1.4}
-.tcross-opp{background:#edf7f1;color:var(--dn)}
-.tcross-dgr{background:#fdf2f0;color:var(--up)}
-.tnote{font-size:11px;color:var(--tx3);margin-top:4px;font-style:italic}
+  /* Thermo */
+  .thermo { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px 16px; margin-bottom: 16px; border: 1px solid var(--border); }
+  .thermo h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .tgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  @media(max-width:600px){ .tgrid { grid-template-columns: 1fr; } }
+  .tcol-lbl { font-size: 11px; font-weight: 600; color: var(--tx3); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+  .titem { font-size: 12px; line-height: 1.5; padding: 3px 0; }
+  .thot { color: var(--up); }
+  .tcool { color: var(--dn); }
+  .tval { font-size: 12px; line-height: 1.5; color: var(--tx2); }
+  .tcross { font-size: 12px; padding: 6px 10px; border-radius: var(--radius-sm); margin-top: 8px; line-height: 1.5; }
+  .tcross-opp { background: #e8efeb; color: #1a6b3a; }
+  .tcross-dgr { background: #fdf2f0; color: var(--up); }
+  .tnote { font-size: 11px; color: var(--tx3); margin-top: 6px; font-style: italic; }
 
-/* Zone headers */
-.zone-hdr{display:flex;align-items:baseline;gap:8px;margin:20px 0 8px;padding:0 18px}
-.zone-hdr h2{font-size:17px;font-weight:700;letter-spacing:-.01em}
-.zone-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-.zdot-early{background:var(--accent)}
-.zdot-season{background:#c0a050}
-.zdot-priced{background:#a0a0a0}
-.zdot-deep{background:#7088a0}
-.zone-desc{font-size:13px;color:var(--tx2)}
-.zone-cnt{font-size:12px;color:var(--tx3);font-family:var(--mono);margin-left:auto}
-@media(max-width:600px){.zone-hdr{padding:0 12px}}
+  /* Zone header */
+  .zone-hdr { display: flex; align-items: center; gap: 8px; margin: 18px 0 10px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .zone-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .zdot-early { background: var(--dn); }
+  .zdot-season { background: #c0a050; }
+  .zdot-priced { background: var(--up); }
+  .zone-hdr h2 { font-size: 15px; font-weight: 700; }
+  .zone-desc { font-size: 12px; color: var(--tx3); }
+  .zone-cnt { font-size: 12px; color: var(--tx3); margin-left: auto; }
 
-/* Cards */
-.card{margin-bottom:10px;border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);overflow:hidden;padding:0}
-.card-priced{}
-.card-inner{padding:10px 18px}
-@media(max-width:600px){.card-inner{padding:8px 12px}}
+  /* Card */
+  .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 12px; border: 1px solid var(--border); overflow: hidden; }
+  .card-inner { padding: 14px 16px 10px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .tag-ind { font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+  .ind-ac { background: #e8efeb; color: #1a6b3a; }
+  .ind-ai { background: #e8eaf6; color: #283593; }
+  .ind-ecom { background: #faf3e0; color: #8a6d1b; }
+  .ind-chip { background: #fce8e8; color: #c0392b; }
+  .tag-stage { font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 500; }
+  .stage-early { background: #e8efeb; color: #1a6b3a; }
+  .stage-season { background: #faf3e0; color: #8a6d1b; }
+  .stage-priced { background: #fce8e8; color: #c0392b; }
+  .tag-badge { font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+  .badge-new { background: #e8eaf6; color: #283593; }
+  .badge-cont { background: #fce8e8; color: #c0392b; }
+  .tag-accel { font-size: 11px; padding: 1px 7px; border-radius: 3px; }
+  .accel-new { background: #e8efeb; color: #1a6b3a; }
+  .accel-flat { background: #faf3e0; color: #8a6d1b; }
+  .tag-season { font-size: 11px; padding: 1px 7px; border-radius: 3px; background: #faf3e0; color: #8a6d1b; }
+  .crowding-tag { font-size: 11px; padding: 1px 7px; border-radius: 3px; font-weight: 600; }
+  .crowd-0 { background: #e8efeb; color: #1a6b3a; }
+  .crowd-2 { background: #eee; color: #999; }
 
-/* Top tags */
-.card-tags{display:flex;align-items:center;gap:5px;margin-bottom:5px;flex-wrap:wrap}
-.tag-ind{font-size:11px;padding:2px 8px;border-radius:3px;font-weight:600;letter-spacing:.02em}
-.tag-stage{font-size:11px;padding:2px 8px;border-radius:3px;font-weight:500}
-.tag-badge{font-size:11px;padding:1px 6px;border-radius:3px;font-weight:500}
-.tag-accel{font-size:11px;padding:2px 8px;border-radius:3px;font-weight:600;letter-spacing:.02em}
-.tag-season{font-size:11px;padding:2px 8px;border-radius:3px;font-weight:600;background:#faf3e0;color:#8a6d1b}
+  .card-hl { font-size: 15px; font-weight: 700; line-height: 1.35; margin-bottom: 5px; }
+  .card-hl .diff { font-size: 11px; color: var(--tx3); font-weight: 400; }
+  .card-meta { font-size: 12px; color: var(--tx2); margin-bottom: 6px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .src-pill { font-size: 11px; padding: 1px 6px; border-radius: 3px; background: #faf9f6; color: var(--tx2); }
+  .heat-burst { color: var(--up); font-weight: 600; margin-left: auto; font-size: 12px; }
+  .heat-steady { color: var(--tx3); font-size: 12px; }
 
-/* Colors for tags */
-.ind-travel{background:#e8efeb;color:#3a6b56}
-.ind-ac{background:#e6ecf5;color:#3a5a8c}
-.ind-chip{background:#fce8e8;color:#a33}
-.ind-ai{background:#f0e8f5;color:#6b3a8c}
-.ind-auto{background:#e8f2f0;color:#3a6a56}
-.ind-gold{background:#faf3e0;color:#8a6d1b}
-.ind-ecom{background:#e8edf5;color:#3a5a8c}
+  .card-ol { font-size: 13px; font-weight: 600; line-height: 1.4; margin: 6px 0; padding: 6px 14px; background: #faf9f6; border-radius: 4px; }
+  .card-logic { font-size: 12px; color: var(--tx2); line-height: 1.45; padding: 0 14px; margin-bottom: 6px; }
+  .card-logic strong { color: var(--tx); font-weight: 600; }
 
-.stage-early{background:#e8efeb;color:#3a6b56}
-.stage-priced{background:#eee;color:#757575}
-.stage-deep{background:#e8eef4;color:#4a6d8c}
-.stage-season{background:#faf3e0;color:#8a6d1b}
+  .card-foot { padding: 6px 16px; font-size: 11px; color: var(--tx2); border-top: 1px solid var(--border); display: flex; align-items: center; gap: 4px; }
+  .ai-note { font-size: 11px; color: var(--tx3); padding: 5px 16px; background: #faf9f6; font-style: italic; line-height: 1.4; }
 
-.badge-new{background:#e8efeb;color:#3a6b56}
-.badge-cont{background:#eee;color:#999}
+  .red-warn { padding: 5px 16px; background: #fdf2f0; color: var(--up); font-size: 12px; font-weight: 600; border-top: 1px solid #f0c8c0; }
 
-.accel-up{background:#e8efeb;color:#1a6b3a}
-.accel-burst{background:#fdf2f0;color:#b83a2a}
-.accel-new{background:#faf3e0;color:#8a6d1b}
+  /* Empty state */
+  .empty-zone { text-align: center; padding: 20px; color: var(--tx3); font-size: 13px; }
 
-/* Headline */
-.card-hl{font-size:15px;font-weight:700;line-height:1.35;margin-bottom:3px}
-.card-hl .diff{font-size:11px;color:var(--tx3);font-weight:400}
-
-/* Meta */
-.card-meta{font-size:12px;color:var(--tx2);margin-bottom:4px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.src-pill{font-size:11px;padding:1px 6px;border-radius:3px;background:#faf9f6;color:var(--tx2)}
-.heat-burst{color:#d4452a;font-weight:600;margin-left:auto}
-.heat-rising{color:#c0561a;font-weight:600;margin-left:auto}
-.heat-steady{color:var(--tx3)}
-.accel-stat{font-family:var(--mono);font-weight:600;font-size:12px}
-
-/* One-liner */
-.card-ol{font-size:13px;font-weight:600;line-height:1.4;margin:5px 0;padding:5px 18px;background:#faf9f6;border-radius:4px}
-@media(max-width:600px){.card-ol{padding:5px 12px}}
-
-/* Logic */
-.card-logic{font-size:12px;color:var(--tx2);line-height:1.45;padding:0 18px;margin-bottom:6px}
-@media(max-width:600px){.card-logic{padding:0 12px}}
-.card-logic strong{color:var(--tx);font-weight:600}
-
-/* Revenue materiality */
-.mat-tag{font-size:11px;padding:1px 6px;border-radius:3px;font-weight:500;display:inline;margin-left:4px}
-.mat-hi{background:#e8efeb;color:#3a6b56}
-.mat-md{background:#faf3e0;color:#8a6d1b}
-.mat-lo{background:#fdf2f0;color:var(--up)}
-
-/* Company data table */
-.cmp-tbl{width:100%;border-collapse:collapse;font-size:12px;margin:4px 0}
-.cmp-tbl td{padding:2px 4px;vertical-align:middle;line-height:1.4}
-.cmp-tbl .cl{color:var(--tx3);font-size:11px;text-align:left}
-.cmp-tbl .cv{text-align:left;color:var(--tx);font-size:12px;white-space:nowrap;padding-left:4px;padding-right:4px;min-width:24px}
-.cmp-tbl .cn{font-size:11px;color:var(--tx2);text-align:left;padding-left:2px;white-space:nowrap}
-.cmp-tbl .cup{color:var(--up)}
-.cmp-tbl .cdn{color:var(--dn)}
-.cmp-tbl .badge-sm{font-size:11px;padding:1px 5px;border-radius:3px;font-weight:500;white-space:nowrap;display:inline}
-.bg-lo{background:#e8efeb;color:#3a6b56}
-.bg-eq{background:#faf3e0;color:#8a6d1b}
-.bg-hi{background:#fce8e8;color:#a33}
-.bg-sus{background:#fff3e0;color:#c6630a}
-
-/* Company cards in grid */
-.cc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin-top:8px;padding:0 18px}
-@media(max-width:600px){.cc-grid{grid-template-columns:1fr;padding:0 12px}}
-.cc{background:#faf9f6;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px}
-.cc-name{font-size:13px;font-weight:700;margin-bottom:1px}
-.cc-code{font-size:11px;color:var(--tx3);font-family:var(--mono)}
-.cc-risk{font-size:11px;padding:1px 6px;border-radius:3px;display:inline;font-weight:500;margin:3px 0}
-.r-lo{background:#e8efeb;color:#3a6b56}
-.r-md{background:#faf3e0;color:#8a6d1b}
-.r-hi{background:#fce8e8;color:#a33}
-
-.src-note{font-size:11px;color:var(--tx3);font-style:italic}
-
-/* Why-drop */
-.why-drop{padding:6px 18px;background:#fdf8f5;border-top:1px solid #f0e0d4;font-size:12px;color:#8a5540;line-height:1.45}
-@media(max-width:600px){.why-drop{padding:6px 12px}}
-.why-drop .wt{font-weight:600;font-size:12px;display:flex;align-items:center;gap:4px;margin-bottom:2px;color:var(--tx)}
-.why-drop .ws{font-size:11px;color:var(--tx3);font-style:italic}
-.why-drop .trap{font-size:11px;color:var(--up);font-weight:500;margin-top:2px}
-
-/* Card foot */
-.card-foot{padding:5px 18px;font-size:11px;color:var(--tx2);border-top:1px solid var(--border);display:flex;align-items:center;gap:4px}
-@media(max-width:600px){.card-foot{padding:5px 12px}}
-
-/* AI note */
-.ai-note{font-size:11px;color:var(--tx3);padding:5px 18px;background:#faf9f6;font-style:italic;line-height:1.4}
-@media(max-width:600px){.ai-note{padding:5px 12px}}
-
-/* Red warn */
-.red-warn{padding:5px 18px;background:#fdf2f0;color:var(--up);font-size:12px;font-weight:600;border-top:1px solid #f0c8c0}
-@media(max-width:600px){.red-warn{padding:5px 12px}}
-
-/* Sparse note */
-.sparse{font-size:12px;color:var(--tx3);padding:6px 18px;border:1px dashed var(--border);border-radius:4px;margin-bottom:10px;font-style:italic}
-@media(max-width:600px){.sparse{padding:6px 12px}}
-
-/* Seasonal alert section */
-.season-bar{font-size:12px;padding:6px 12px;background:#faf9f6;border:1px dashed #d4a84b;border-radius:var(--radius-sm);margin-top:12px;color:var(--tx2);line-height:1.45}
-
-/* Observe */
-.observe{margin:12px 0;padding:0 18px}
-.observe h3{font-size:14px;font-weight:600;margin-bottom:6px}
-@media(max-width:600px){.observe{padding:0 12px}}
-.obs-item{padding:6px 12px;background:var(--card);border-radius:var(--radius-sm);border:1px solid var(--border);margin-bottom:4px;font-size:13px;color:var(--tx2);display:flex;align-items:baseline;gap:6px}
-.obs-tag{font-size:11px;padding:1px 6px;border-radius:3px;background:#eee;color:var(--tx3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-
-/* Discard */
-.discard{margin:14px 0;padding:10px 12px;background:#faf9f6;border-radius:var(--radius-sm);font-size:12px;color:var(--tx3);line-height:1.5}
-.discard h4{font-size:13px;color:var(--tx2);margin-bottom:4px;font-weight:600}
-
-/* Method & footer */
-.method{margin:14px 0;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:12px;color:var(--tx2);line-height:1.5}
-.method summary{list-style:none;cursor:pointer;user-select:none}
-.method summary::-webkit-details-marker{display:none}
-.method summary h4{display:inline;font-size:13px;color:var(--tx);font-weight:600}
-.method table{width:100%;border-collapse:collapse;margin:6px 0}
-.method th,.method td{padding:3px 8px;border:1px solid var(--border);font-size:12px;text-align:left}
-.method th{background:#faf9f6;font-weight:600;color:var(--tx)}
-.dsc{margin:10px 0;padding:8px;border-top:1px solid var(--border);font-size:11px;color:var(--tx3);line-height:1.5}
-.unavail{font-size:11px;color:var(--tx3);margin:6px 0}
-.unavail s{color:#c0392b}
-.ft{text-align:center;font-size:11px;color:var(--tx3);margin-top:14px;padding:8px;border-top:1px solid var(--border);line-height:1.5}
-
-/* Core principle box */
-.core-principle{padding:8px 14px;background:#faf9f6;border-radius:var(--radius-sm);border:1px solid var(--border);font-size:12px;color:var(--tx2);line-height:1.45;margin-top:10px}
-
-/* ═══ v14 New: Timestamp bar ═══ */
-.ts-bar{text-align:center;padding:8px 14px;margin:0 0 10px;background:var(--card);border-radius:var(--radius-sm);font-size:13px;color:var(--tx);font-family:var(--mono);font-weight:600;box-shadow:var(--shadow)}
-.ts-bar .ts-label{font-size:11px;color:var(--tx3);font-weight:400;margin-left:8px}
-.ts-expired{color:var(--up)!important;background:#fdf2f0;border:1px solid #f0c8c0}
-.ts-expired .ts-label{color:var(--up)!important}
-
-/* ═══ v14 New: Focus keyword match alert ═══ */
-.focus-alert{background:#fdf2f0;border:2px solid #b83a2a;border-radius:var(--radius-sm);padding:8px 14px;margin-bottom:10px;font-size:13px;font-weight:600;color:var(--up);display:flex;align-items:center;gap:8px}
-.focus-alert .fa-label{background:var(--up);color:#fff;font-size:11px;padding:1px 8px;border-radius:3px;white-space:nowrap}
-.focus-alert .fa-terms{font-weight:400;color:var(--up)}
-@media(max-width:600px){.focus-alert{flex-wrap:wrap;font-size:12px;padding:6px 10px}}
-
-/* ═══ v14 New: Crowding score ═══ */
-.crowding-tag{font-size:11px;padding:2px 8px;border-radius:3px;font-weight:600;display:inline;margin-left:4px}
-.crowd-0{background:#e8efeb;color:#3a6b56}
-.crowd-1{background:#faf3e0;color:#8a6d1b}
-.crowd-2,.crowd-3{background:#eee;color:#999}
-/* Gray-out the whole card when crowding ≥2 */
-.card-crowded{opacity:.6;filter:grayscale(30%)}
-.card-crowded .card-hl{color:var(--tx3)}
-.card-crowded .card-ol{background:#f5f5f5;color:var(--tx3)}
-
-/* ═══ v14 New: Trend curve ═══ */
-<omitted />
-
-
-/* Fold — not used in v13 */
-.fold-toggle{display:none}
-
-/* ═══ Mobile: CC card compact (<600px) ═══ */
-@media(max-width:600px){
-  .cc{padding:12px;min-height:unset;line-height:1.5}
-
-  /* Hide column widths */
-  .cc .cmp-tbl colgroup{display:none}
-
-  /* Table → flex row layout, label fixed-width */
-  .cc .cmp-tbl{display:block;margin:3px 0}
-  .cc .cmp-tbl tbody{display:block}
-  .cc .cmp-tbl tr{display:flex;align-items:baseline;margin-bottom:2px}
-  .cc .cmp-tbl td{display:block;padding:0;font-size:12px;line-height:1.6}
-  .cc .cmp-tbl td.cl{flex:0 0 52px;color:var(--tx3);white-space:nowrap}
-  .cc .cmp-tbl td.cl::after{content:":";margin-left:2px}
-  .cc .cmp-tbl td.cv{flex:0 0 auto;text-align:left;font-family:var(--mono);font-weight:500;white-space:normal}
-  .cc .cmp-tbl td.cn{flex:1;min-width:0;font-size:11px;padding-left:4px}
-
-  /* colspan note rows (PB存疑 etc) */
-  .cc .cmp-tbl td[colspan]{display:block;flex:1 0 100%;font-size:11px;color:var(--tx3);font-style:italic;padding:1px 0 1px 52px}
-
-  /* Price rows: merged single line — contents-flatten tr so all td flow inline */
-  .cc .cmp-tbl tbody.price-rows{display:block!important;margin-top:3px}
-  .cc .cmp-tbl tbody.price-rows tr{display:contents!important}
-  .cc .cmp-tbl tbody.price-rows td{display:inline!important;padding:0 1px!important;font-size:12px!important;line-height:1.5!important;flex:unset!important}
-  .cc .cmp-tbl tbody.price-rows td.cl{display:inline!important;flex:unset!important;width:auto!important}
-  .cc .cmp-tbl tbody.price-rows td.cl::after{content:" "!important}
-  .cc .cmp-tbl tbody.price-rows td.cv{white-space:nowrap;font-weight:500}
-  .cc .cmp-tbl tbody.price-rows td.cn{display:none!important}
-  .cc .cmp-tbl tbody.price-rows tr:not(:last-child) td.cv::after{content:" · ";color:var(--tx3);font-size:11px}
-
-  /* Revenue + info line compact */
-  .cc-rev{font-size:11px!important;color:var(--tx3)!important;margin-top:2px!important;line-height:1.5}
-
-  /* Risk tag compact */
-  .cc-risk{font-size:11px;margin:1px 0;display:inline}
-
-  /* Badges */
-  .cc .badge-sm{font-size:10px;padding:0 4px;margin-left:2px;white-space:nowrap;display:inline}
-
-  /* Source notes */
-  .cc .src-note{font-size:10px}
-
-  /* Name + code row compact */
-  .cc-name{font-size:13px}
-
-  /* Trend curve on mobile */
-<omitted />
-
-  /* Crowding badges compact */
-  .crowding-tag{font-size:10px;padding:1px 6px}
-}
+  /* Footer */
+  .ft { text-align: center; font-size: 11px; color: var(--tx3); margin-top: 24px; padding: 10px; border-top: 1px solid var(--border); line-height: 1.5; }
 </style>
 </head>
 <body>
 
-<!-- Header -->
 <div class="hdr">
   <h1>价值发现</h1>
   <div class="sub">社会套利雷达 · Chris Camillo 中国版</div>
-  <div class="ts" id="head-ts">数据刷新：06-30 12:26 CST · 自动化管道 · GitHub Actions</div>
+  <div class="ts" id="head-ts">数据加载中...</div>
 </div>
 
-<!-- 数据时间戳 -->
-<div class="ts-bar">
-  本页数据截至 2026-06-30 12:26 CST
-  <span class="ts-label">UAPIs 9/9 OK · Google Trends OK · 微信热文 OK · 管道原生 0/15 Fail（SOCKS 依赖缺失）· westock 休市</span>
+<div id="app">
+  <div class="empty-zone">加载中...</div>
 </div>
 
-<!-- Source status -->
-<div class="src-bar">
-  <div class="lbl">数据源状态 · 实时抓取 · 2026-06-30 12:26 CST · <span style="color:#1a7a3a">22源在线</span> · Google Trends 已通过 TrendsMCP 修复</div>
-  <div class="src-grid">
-    <span class="src-tag src-ok" data-source="weibo">微博热搜</span>
-    <span class="src-tag src-ok" data-source="baidu">百度热搜</span>
-    <span class="src-tag src-ok" data-source="zhihu">知乎热榜</span>
-    <span class="src-tag src-ok" data-source="douyin">抖音总榜</span>
-    <span class="src-tag src-ok" data-source="bilibili">B站全站日榜</span>
-    <span class="src-tag src-fail" data-source="wechat">微信热文</span>
-    <span class="src-tag src-ok" data-source="toutiao">今日头条</span>
-    <span class="src-tag src-ok" data-source="smzdm">什么值得买</span>
-    <span class="src-tag src-ok" data-source="xiaohongshu">小红书</span>
-    <span class="src-tag src-ok" data-source="kuaishou">快手</span>
-    <span class="src-tag src-ok" data-source="36kr">36氪</span>
-    <span class="src-tag src-ok" data-source="ithome">IT之家</span>
-    <span class="src-tag src-ok" data-source="sina">新浪热榜</span>
-    <span class="src-tag src-ok" data-source="qq_news">腾讯新闻</span>
-    <span class="src-tag src-ok" data-source="netease_news">网易新闻</span>
-    <span class="src-tag src-ok" data-source="thepaper">澎湃新闻</span>
-    <span class="src-tag src-ok" data-source="tieba">百度贴吧</span>
-    <span class="src-tag src-ok" data-source="hupu">虎扑</span>
-    <span class="src-tag src-ok" data-source="google_trends">Google Trends</span>
-    <span class="src-tag src-ok" data-source="trendsmcp_x">X/Twitter 热门</span>
-    <span class="src-tag src-ok" data-source="trendsmcp_yt">YouTube 热门</span>
-    <span class="src-tag src-ok" data-source="reddit">Reddit World News</span>
-  </div>
-</div>
-
-<!-- 重点关注词命中 -->
-<!-- 每日刷新时自动检查；无命中时不显示此块 -->
-<!-- 当前无命中 · 请提供关注词清单后激活 -->
-<div style="font-size:11px;color:var(--tx3);margin-top:6px">注：数据由 Python 管道每轮自动抓取，源状态实时同步。22 源全部国内直连，无需梯子。</div>
-
-<!-- Thermo -->
-<div class="thermo">
-  <h3>市场温度计</h3>
-  <div class="tgrid">
-    <div>
-      <div class="tcol-lbl">升温 Top3</div>
-      <div class="titem thot">1. 欧洲空调需求 — 头条#22/#30 欧洲抢购空调 / 知乎#23 法国医院下单3万台 / B站#12/#83</div>
-      <div class="titem thot">2. 存储芯片/出口管制 — 微博#30 管制直指日本命脉 / #28 存储龙头提示风险 / 快手#50 三星海力士美光遭诉讼</div>
-      <div class="titem thot">3. 人形机器人 — 知乎#16 宇树R1降至2.99万元 / 价格从高端进入消费级</div>
-    </div>
-    <div>
-      <div class="tcol-lbl">降温 Top3</div>
-      <div class="titem tcool">1. 国际金价/金价跳水 — 百度#30 水贝市场两重天 / 情绪恐慌</div>
-      <div class="titem tcool">2. 世界杯赛事消费 — 全平台霸榜但消遣资讯，无投资信号</div>
-      <div class="titem tcool">3. 白电内销 — 零售额-6.1% [产业在线, 6.18]</div>
-    </div>
-    <div>
-      <div class="tcol-lbl">板块估值</div>
-      <div class="tval">
-        白电 PE-TTM 14.6x<br>5年分位 48% · 中等偏低<br>
-        <span style="font-size:11px;color:var(--tx3)">[westock 休市，沿用旧数据]</span>
-      </div>
-    </div>
-  </div>
-  <div class="tcross tcross-opp">降温 x 低估 = 机会区：白电内销降温 + 格力PE7.17/海尔PE10.15远低于行业14.6 — 但欧洲热浪已扩散至主流媒体●●●信息差消失；金价恐慌跳水或创造金饰零售/金矿错杀时机</div>
-  <div class="tcross tcross-dgr">升温 x 新高 = 危险区：存储芯片持续升温 + 美光/海力士创新高 — 已充分定价；世界杯全平台霸榜属消遣，无投资信号</div>
-  <div class="tnote">当前最拥挤共识：世界杯足球 — 微博/抖音/百度/知乎/快手/头条全平台Top，散户情绪已到极致。新增关注：宇树机器人R1降至2.99万消费级、东鹏特饮品牌保护。欧洲热浪已扩散至主流媒体，移出早期区。</div>
-</div>
-
-<!-- 信号扫描 · JS动态加载 from data/auto_flash.json -->
-<div id="flash-section"><div style="padding:12px 16px;color:var(--tx3);font-size:12px">▲ 自动快讯加载中...</div></div>
-
-<!-- ══════════════════ ZONE 1: EARLY / ANOMALY ══════════════════ -->
-<div class="zone-hdr">
-  <div class="zone-dot zdot-early"></div>
-  <h2>早期/异动</h2>
-  <span class="zone-desc">非日历可预测加速 · 信息差窗口</span>
-  <span class="zone-cnt">1 信号</span>
-</div>
-
-<!-- Early: Unitree robot only (Europe heat moved to 已起飞) -->
-<div class="card card-priced">
-  <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-ac">白电/空调</span>
-      <span class="tag-stage stage-priced">已扩散·信息差收窄</span>
-      <span class="tag-badge badge-cont">持续信号</span>
-      <span class="tag-accel accel-flat">⚠ 季节性 · 欧洲每年6月高温</span>
-      <span class="crowding-tag crowd-2">温门 · 拥挤度2</span>
-    </div>
-    <div class="card-hl">欧洲热浪→空调出口需求持续升温 — 法国医院急订3万台 · 玫瑰空调5万台 · 中国猪圈装空调欧洲破防<span class="diff"> · 扩散度 ●●● 已扩散至主流媒体</span><span style="font-size:11px;color:#c0392b;margin-left:6px">中新网/腾讯/搜狐/WHO 全面报道 · 信息差已消失</span></div>
-    <div class="card-meta">
-      <span class="src-pill">中新网置顶「欧洲多国气温纷纷飙升至历史新高」</span>
-      <span class="src-pill">腾讯新闻「热浪侵袭欧洲多国 多地刷新6月高温纪录」</span>
-      <span class="src-pill">雪球「美的移动分体空调欧洲热销·中欧班列补货」</span>
-      <span class="src-pill">东方财富「6.29空调板块涨幅达3%」</span>
-      <span class="src-pill">头条#22「欧洲民众抢购空调降温」</span>
-      <span class="heat-burst">已扩散至主流媒体 · 热度峰值或已过</span>
-    </div>
-
-  <div class="card-ol"><span style="color:var(--up)">不再早期——欧洲热浪已入中新网/腾讯/搜狐/WHO主流媒体报道，雪球东方财富已联动，扩散度●●●信息差消失。格力PE7.17仍极低提供安全边际，但事件已price in，7月海关出口数据为最后证伪窗口。</span></div>
-
-  <div class="card-logic">
-    <strong>利好：白电/空调出口</strong> · <span style="color:#c6630a">⚠季节性：欧洲6月高温为年度周期性事件，去年同期亦有热浪报道。今年极端程度空前（法国147城镇破纪录、WHO 1300+超额死亡）但框架判据满足，属周期信号非信息差。</span>热浪→空调出口逻辑仍成立：格力1-6月欧洲实际销售额同比+40%以上、TCL部分产品卖断货。此为出口驱动，单一方向。
-  </div>
-
-  <div class="cc-grid">
-    <div class="cc">
-      <div class="cc-name">格力电器</div>
-      <div class="cc-code">sz000651 · A股</div>
-      <span class="cc-risk r-md">风险：中 · 内销承压</span>
-      <table class="cmp-tbl" data-stock="sz000651"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">7.17 <span class="badge-sm bg-lo">远低于行业14.6</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">PB</td><td class="cv">1.38 <span class="src-note">[腾讯自选股, 6.30]</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">当下 · 欧洲订单6月数据</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cup">+0.16%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-4.48%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cdn">-1.27%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：出口约15% · 欧洲<10%</div>
-    </div>
-    <div class="cc">
-      <div class="cc-name">美的集团</div>
-      <div class="cc-code">sz000333 · A股</div>
-      <span class="cc-risk r-lo">风险：低 · 多元 <span style="color:#c6630a;font-weight:600">⚠ 季+3.89% · 近52w高</span></span>
-      <table class="cmp-tbl" data-stock="sz000333"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">13.00 <span class="badge-sm bg-eq">持平行业14.6</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">PB</td><td class="cv">2.82 <span class="src-note">[腾讯自选股, 6.30]</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">当下 · 出口+机器人</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cup">+1.48%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-3.24%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cup">+3.89%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：出口约20% · 欧洲<15%</div>
-    </div>
-    <div class="cc">
-      <div class="cc-name">海尔智家</div>
-      <div class="cc-code">sh600690 · A股 / hk0669 港股通</div>
-      <span class="cc-risk r-md">风险：中 · YTD -22.35%</span>
-      <table class="cmp-tbl" data-stock="sh600690"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">10.15 <span class="badge-sm bg-lo">远低于行业14.6</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">PB</td><td class="cv">1.52 <span class="src-note">[腾讯自选股, 6.30]</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">当下 · 欧洲出口+618增10~15%</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cup">+2.74%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-3.89%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cdn">-5.24%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：海外约52% · 欧洲约20%</div>
-    </div>
-  </div>
-
-  <div class="why-drop">
-    <div class="wt">为什么在跌？</div>
-    <div><strong>格力月跌-4.48%：</strong>白电零售额-6.1%，空调-6.1%；6月排产-18.9% <span class="ws">[产业在线, 2026.5.27]</span></div>
-    <div><strong>海尔YTD -22.35%：</strong>行业承压+科网股跳水+从52周高点28.31大幅回撤至19.25低点 <span class="ws">[快手, 2026.6.26]</span></div>
-    <div class="trap">⚠ 季节性提醒：欧洲6月高温为年度周期性事件，去年同期亦有热浪报道。今年极端但框架判据满足季节性条件。出口增量能否覆盖内销下滑仍需验证 · 工具初判·待我核实</div>
-  </div>
-
-  <div class="card-foot">
-    <span style="color:var(--up);font-weight:600">已扩散至主流媒体</span> — 扩散度●●●，中新网/腾讯/搜狐/WHO全面报道。信息差已消失，不应再标早期。格力PE7.17仍极低提供安全边际，但事件已price in。7月海关数据为最后证伪点
-  </div>
-  <div class="ai-note">AI 注释：2026.6.30 判断——扩散度从●●○升级为●●●。中新网置顶报道、腾讯新闻、雪球（美的移动分体空调欧洲热销）、东方财富（6.29空调板块涨3%后6.30跌2%）全部联动。世界天气归因联盟：欧洲高温概率已是20年前的200倍，但夏季热浪本身为周期性事件，按v13日历排除层应标⚠季节性。格力PE7.17/海尔PE10.15仍远低于行业14.6，但信号已扩散至主流媒体，不满足"早期"条件。当前仅剩7月海关出口数据未出为信息差窗口。</div>
-</div>
-
-<!-- Early: Unitree robot -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-ai">人形机器人</span>
-      <span class="tag-stage stage-early">早期信号</span>
-      <span class="tag-badge badge-new">新信号</span>
-      <span class="tag-accel accel-new">异动 · 价格降至消费级</span>
-      <span class="crowding-tag crowd-0">冷门 · 拥挤度0</span>
-    </div>
-    <div class="card-hl">宇树机器人R1起售价降至2.99万元 · 人形机器人进入消费级<span class="diff"> · 扩散度 ●○○ 早期</span></div>
-    <div class="card-meta">
-      <span class="src-pill">知乎#16</span>
-      <span class="heat-steady">早期 · 单平台</span>
-    </div>
-  </div>
-  <div class="card-ol">早期异动——宇树机器人R1从高端价格降至2.99万元，进入普通消费者可负担区间。价格下探是放量前提，类似当年大疆无人机/小米机器人普及路径。目前仅知乎#16单平台信号，扩散度●○○，候选公司需进一步搜索验证。</div>
-  <div class="card-logic">
-    <strong>利好：人形机器人/零部件/供应链</strong> · 价格降至消费级意味着潜在市场空间从B端工业/科研扩展至C端家庭。若销量放量，电机、减速器、传感器、结构件供应链受益。映射链：宇树降价 — 销量预期 — 国产机器人供应链。但宇树未上市，A股映射多为二阶供应商，待核实。
-  </div>
-  <div class="card-foot">
-    <span style="color:var(--dn);font-weight:600">早期信号</span> — 仅知乎#16单平台，扩散度●○○。候选公司需搜索
-  </div>
-  <div class="ai-note">AI 注释：宇树机器人R1降价至2.99万元是新增早期异动。价格从高端降至消费级是核心催化，当下现货发售。目前仅知乎#16一条信号，拥挤度0，信息差窗口最大。候选公司未搜索，不编造。若扩散至抖音/微博/消费平台，需升级至持续升温。产业链：电机、减速器、传感器、结构件等国产供应商。</div>
-</div>
-
-<!-- Sparse note -->
-<div class="sparse">早期/异动区信号：宇树机器人降价至消费级（扩散度●○○）为唯一早期信号。欧洲热浪空调已升至●●●已扩散，移至已起飞区。世界杯足球全平台霸榜但属消遣资讯，无投资信号。存储芯片/出口管制持续升温已置已起飞区。金价跳水情绪仍在但已入深跌烟蒂区。</div>
-
-
-<!-- ══════════════════ ZONE 2: SEASONAL ALERTS ══════════════════ -->
-<div class="zone-hdr">
-  <div class="zone-dot zdot-season"></div>
-  <h2>季节性提醒</h2>
-  <span class="zone-desc">日历可预测 · 非信息差</span>
-  <span class="zone-cnt">2 条</span>
-</div>
-
-<div class="season-bar">
-  <strong>判据：</strong>该热词去年同期是否也出现过？是 — 季节性，排除出早期异动区。此类信号可预测但仍有交易价值，仅作为提醒参考。
-</div>
-
-<!-- 高考志愿填报 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-ecom">教育/季节性</span>
-      <span class="tag-stage stage-season">季节性</span>
-      <span class="tag-badge badge-new">新信号</span>
-      <span class="tag-season">季节性 · 非信息差</span>
-    </div>
-    <div class="card-hl">高考志愿填报 · 每年6月底季节性高峰<span class="diff"> · 扩散度 ●●● 全平台</span></div>
-    <div class="card-meta">
-      <span class="src-pill">抖音#1</span>
-      <span class="src-pill">百度热搜</span>
-      <span class="src-pill">快手热搜</span>
-      <span class="heat-burst">爆发式</span>
-    </div>
-  </div>
-  <div class="card-ol">季节性提醒——高考志愿填报每年6月底如期出现，去年同周期同样霸榜。7月初自然消退。志愿填报服务/教育机构短期有流量，但多为一次性收入，非信息差。</div>
-  <div class="card-logic">
-    <strong>利好：教育服务/志愿填报</strong> · 高考放榜后志愿填报需求集中释放，但为季节性脉冲，非持续增量。此类日历可预测事件禁止标早期。
-  </div>
-  <div class="card-foot"><span style="color:#c0a050;font-weight:600">季节性</span> — 日历可预测，7月初自然消退</div>
-</div>
-
-<!-- 温网 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-travel">体育/赛事</span>
-      <span class="tag-stage stage-season">季节性</span>
-      <span class="tag-badge badge-new">新信号</span>
-      <span class="tag-season">季节性 · 非信息差</span>
-    </div>
-    <div class="card-hl">温布尔登网球锦标赛（温网）<span class="diff"> · 扩散度 ●●○ 赛事周期</span></div>
-    <div class="card-meta">
-      <span class="src-pill">知乎热榜</span>
-      <span class="src-pill">今日头条</span>
-      <span class="heat-rising">赛事升温</span>
-    </div>
-  </div>
-  <div class="card-ol">季节性提醒——温网为每年6-7月固定网球大满贯赛事，非突发信息差。赛事期间体育用品/转播/博彩相关情绪脉冲，但难以映射到具体公司收入。</div>
-  <div class="card-logic">
-    <strong>利好：体育用品/转播平台</strong> · 赛事周期固定，相关话题在赛事期间升温。映射链过长（赛事热度 → 观赛 → 平台流量 → 广告收入），且不连二阶。
-  </div>
-  <div class="card-foot"><span style="color:#c0a050;font-weight:600">季节性</span> — 固定赛事周期，非投资信号</div>
-</div>
-
-
-<!-- ══════════════════ ZONE 3: PRICED-IN ══════════════════ -->
-<div class="zone-hdr">
-  <div class="zone-dot zdot-priced"></div>
-  <h2>已起飞</h2>
-  <span class="zone-desc">已充分定价 · 追入风险高</span>
-  <span class="zone-cnt">3 信号</span>
-</div>
-
-<!-- 存储芯片 -->
-<div class="card card-priced">
-    <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-chip">存储芯片</span>
-      <span class="tag-stage stage-priced">已充分定价</span>
-      <span class="tag-badge badge-cont">持续信号</span>
-      <span class="crowding-tag crowd-2">拥挤 · 拥挤度2</span>
-    </div>
-    <div class="card-hl">出口管制→存储芯片 — 管制直指日本命脉 · 存储龙头提示风险 · 三巨头遭诉讼<span class="diff"> · 扩散度 ●●● 已扩散至财经媒体</span></div>
-    <div class="card-meta">
-      <span class="src-pill">微博#30「中国新一轮出口管制直指日本命脉」</span>
-      <span class="src-pill">微博#28「存储芯片龙头提示风险」</span>
-      <span class="src-pill">微博#49「三星投资计划」</span>
-      <span class="src-pill">快手#50「三星海力士美光遭集体诉讼」</span>
-      <span class="src-pill">知乎热榜</span>
-      <span class="heat-burst">爆发式</span>
-    </div>
-  </div>
-  <div class="card-ol"><span style="color:var(--up)">不看——出口管制+HBM超级周期已持续扩散，美光/闪迪/SK海力士创新高，价格已充分反映预期。</span></div>
-  <div class="red-warn">已涨勿追：已充分定价 · 禁止标早期机会</div>
-  <div class="card-foot"><span style="color:var(--up);font-weight:600">已充分定价</span> — 出口管制持续催化，但股价已充分反映，追入=接飞刀</div>
-</div>
-
-<!-- 智谱AI -->
-<div class="card card-priced">
-  <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-ai">港股AI</span>
-      <span class="tag-stage stage-priced">已充分定价</span>
-      <span class="tag-badge badge-cont">持续信号</span>
-      <span class="crowding-tag crowd-3">拥挤 · 拥挤度3</span>
-    </div>
-    <div class="card-hl">智谱盘中市值一度破万亿 + 年内翻20倍<span class="diff"> · 扩散度 ●●● 已扩散</span></div>
-    <div class="card-meta">
-      <span class="src-pill">知乎热榜#22</span>
-      <span class="heat-rising">持续升温</span>
-    </div>
-  </div>
-  <div class="card-ol"><span style="color:var(--up)">不看——年内翻20倍+估值泡沫风险极高。</span></div>
-  <div class="red-warn">已涨勿追：年内翻20倍 · 估值泡沫风险</div>
-  <div class="card-foot"><span style="color:var(--up);font-weight:600">已充分定价</span></div>
-</div>
-
-
-<!-- ══════════════════ ZONE 4: DEEP VALUE ══════════════════ -->
-<div class="zone-hdr">
-  <div class="zone-dot zdot-deep"></div>
-  <h2>深跌烟蒂</h2>
-  <span class="zone-desc">价投错杀候选 · 非早期套利</span>
-  <span class="zone-cnt">3 信号</span>
-</div>
-
-<!-- 自动驾驶国标 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-auto">智能驾驶</span>
-      <span class="tag-stage stage-deep">深跌待判</span>
-      <span class="tag-badge badge-new">新信号</span>
-      <span class="crowding-tag crowd-1">轻度关注 · 拥挤度1</span>
-    </div>
-    <div class="card-hl">自动驾驶强制国标公示 — 行业规范化<span class="diff"> · 扩散度 ●○○ 政策驱动</span></div>
-    <div class="card-meta">
-      <span class="src-pill">快手热榜#40</span>
-      <span class="heat-steady">脉冲 · 单平台</span>
-    </div>
-  </div>
-  <div class="card-ol">远期逻辑——强制国标提升行业门槛利好龙头，但德赛西威年跌-32.59%，催化时点远(1年+)，非短期套利。</div>
-  <div class="card-logic"><strong>利好：智能驾驶/汽车电子</strong> · 强制国标推动智驾从概念进入业绩兑现期，龙头受益。此为远期逻辑(1年+)，标"深跌待判"非早期。</div>
-
-  <div class="cc-grid">
-    <div class="cc">
-      <div class="cc-name">德赛西威</div>
-      <div class="cc-code">sz002920 · A股</div>
-      <span class="cc-risk r-hi">风险：高 · 年跌-33.98%</span>
-      <table class="cmp-tbl"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">20.11 <span class="badge-sm bg-lo">低于行业30x</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">远期 · 国标落地+1年</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cdn">-9.59%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-22.76%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cdn">-24.25%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：智驾约40% <span class="mat-tag mat-hi">高</span></div>
-    </div>
-  </div>
-
-  <div class="why-drop">
-    <div class="wt">为什么在跌？</div>
-    <div>德赛西威年跌-33.98%/从152.93跌至76.93：概念退潮+业绩兑现分歧 <span class="ws">[东财, 2026]</span></div>
-    <div class="trap">接近52周低点不等于见底，国标催化是远期逻辑(1年+)，短期无收入支撑 · 二次刷新：PE从20.53修正为20.11，月跌幅从-25.82%收窄至-22.76%，季跌幅从-23.41%扩大至-24.25% · 工具初判·待我核实</div>
-  </div>
-  <div class="card-foot"><span style="color:var(--tx3);font-weight:600">深跌待判</span> — 价投错杀候选，非早期套利信号</div>
-</div>
-
-<!-- 携程同程 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-travel">旅游/商旅</span>
-      <span class="tag-stage stage-deep">深跌待判</span>
-      <span class="tag-badge badge-cont">持续信号</span>
-      <span class="crowding-tag crowd-0">冷门 · 拥挤度0</span>
-    </div>
-    <div class="card-hl">携程/同程YTD跌超40%<span class="diff"> · 扩散度 ●○○ 讨论中</span></div>
-    <div class="card-meta">
-      <span class="src-pill">微博</span>
-      <span class="src-pill">百度热搜</span>
-      <span class="heat-steady">持续承压</span>
-    </div>
-  </div>
-  <div class="card-ol">年跌超40%，PE极低(携程5.55)但可能含一次性损益——标记"PE存疑"，需核实Q2经营数据后再判断。</div>
-  <div class="card-logic"><strong>行业承压中</strong> · 出境游恢复慢于预期+抖音/美团切入酒旅竞争+全球旅游消费转弱。此为单一方向(竞争加剧+需求不确定)，无短期催化。</div>
-
-  <div class="cc-grid">
-    <div class="cc">
-      <div class="cc-name">携程集团</div>
-      <div class="cc-code">09961.HK · 港股通</div>
-      <span class="cc-risk r-hi">风险：高 · 年跌-43%</span>
-      <table class="cmp-tbl"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">5.55 <span class="badge-sm bg-sus">⚠ 存疑</span></td><td class="cn"></td></tr>
-      <tr><td colspan="3"><span style="font-size:11px;color:#c6630a;font-style:italic">可能含一次性损益 · 参考PB 5.85 [公司财报, FY2026]</span></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">当下 · 中日商旅恢复</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cdn">-14.3%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-14.8%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cdn">-21.3%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：旅游100% <span class="mat-tag mat-hi">高</span></div>
-    </div>
-    <div class="cc">
-      <div class="cc-name">同程旅行</div>
-      <div class="cc-code">00780.HK · 港股通</div>
-      <span class="cc-risk r-hi">风险：高 · 年跌-43.9%</span>
-      <table class="cmp-tbl"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">10.55 <span class="badge-sm bg-lo">低于行业18x</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">当下 · 中日商旅</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cdn">-7.9%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-19.5%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cdn">-33.7%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：旅游100% <span class="mat-tag mat-hi">高</span></div>
-    </div>
-  </div>
-
-  <div class="why-drop">
-    <div class="wt">为什么在跌？</div>
-    <div>出境游恢复慢于预期、抖音/美团切入酒旅竞争、全球旅游消费预期转弱。PE5.55属历史极端低位。暂未发现携程自身重大利空公告。 <span class="ws">[行业数据, 2026]</span></div>
-    <div class="trap">未找到明确利空·疑似普跌。以上为可检索实据。工具初判·待我核实</div>
-  </div>
-  <div class="card-foot"><span style="color:var(--tx3);font-weight:600">深跌待判</span> — 价投错杀候选，非早期套利信号</div>
-</div>
-
-<!-- 周大福/六福 -->
-<div class="card">
-  <div class="card-inner">
-    <div class="card-tags">
-      <span class="tag-ind ind-gold">金饰零售</span>
-      <span class="tag-stage stage-deep">深跌待判</span>
-      <span class="tag-badge badge-cont">持续信号</span>
-      <span class="crowding-tag crowd-1">轻度关注 · 拥挤度1</span>
-    </div>
-    <div class="card-hl">国际金价跳水 · 水贝市场两重天 · 银条跌至13元/克<span class="diff"> · 扩散度 ●●● 百度#30/抖音/快手霸榜</span></div>
-    <div class="card-meta">
-      <span class="src-pill">百度#30「金价跳水水贝市场两重天」</span>
-      <span class="src-pill">抖音/快手 情绪霸榜</span>
-      <span class="src-pill">知乎热榜</span>
-      <span class="src-pill">微博热搜</span>
-      <span class="heat-burst">爆发式 · 恐慌情绪</span>
-    </div>
-  </div>
-  <div class="card-ol">金价跳水持续——百度#30「金价跳水水贝市场两重天」，银条跌至13元/克刷新低点。短期恐慌性抛售vs长期消费者福利。金饰零售商短期受益成本下降，但金矿股被错杀幅度最大(赤峰黄金季跌37%)。</div>
-  <div class="card-logic">
-    <strong>双向逻辑</strong> · 利好金饰零售(成本降+消费回暖)，利空金矿企业(产品价跌)。此为逆向布局逻辑，分两路看：周大福/六福(受益方) vs 赤峰黄金(被错杀方)。<br>
-    <span style="font-size:12px;color:var(--tx3)">注：金价跳水属宏观驱动，非纯消费行为。百度#30水贝市场两重天印证情绪已扩散至产业端。</span>
-  </div>
-
-  <div class="cc-grid">
-    <div class="cc">
-      <div class="cc-name">周大福</div>
-      <div class="cc-code">01929.HK · 港股通</div>
-      <span class="cc-risk r-md">风险：中 · 金价不确定</span>
-      <table class="cmp-tbl"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">12.08 <span class="badge-sm bg-lo">低于行业16x</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">当下 · 金价回落刺激消费</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cdn">-2.1%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-5.8%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cdn">-8.2%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：金饰99% <span class="mat-tag mat-hi">高</span></div>
-    </div>
-    <div class="cc">
-      <div class="cc-name">六福集团</div>
-      <div class="cc-code">00590.HK · 港股通</div>
-      <span class="cc-risk r-md">风险：中</span>
-      <table class="cmp-tbl"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">9.34 <span class="badge-sm bg-lo">显著低于行业16x</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">近期 · 金饰消费旺季</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cdn">-1.5%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-4.2%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cdn">-6.5%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：金饰95%+ <span class="mat-tag mat-hi">高</span></div>
-    </div>
-    <div class="cc">
-      <div class="cc-name">赤峰黄金</div>
-      <div class="cc-code">sh600988 · A股</div>
-      <span class="cc-risk r-hi">风险：高 · 季跌-37%</span>
-      <table class="cmp-tbl" data-stock="sh600988"><colgroup><col style="width:48px"><col><col></colgroup><tr><td class="cl">PE TTM</td><td class="cv">14.13 <span class="badge-sm bg-lo">低于行业18x</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">PB</td><td class="cv">3.71 <span class="src-note">[腾讯自选股, 6.29]</span></td><td class="cn"></td></tr>
-      <tr><td class="cl">催化剂</td><td class="cv">近期 · 金价触底反弹</td><td class="cn"></td></tr>
-      </tbody><tbody class="price-rows"><tr><td class="cl">周</td><td class="cv cdn">-14.18%</td><td class="cn"></td></tr>
-      <tr><td class="cl">月</td><td class="cv cdn">-20.05%</td><td class="cn"></td></tr>
-      <tr><td class="cl">季</td><td class="cv cdn">-37.40%</td><td class="cn"></td></tr></tbody></table>
-      <div class="cc-rev" style="font-size:12px;color:var(--tx3);margin-top:4px">营收占比：金矿100% <span class="mat-tag mat-hi">高</span> <span style="color:var(--up);font-weight:600">⚠ 深跌-37%</span></div>
-    </div>
-  </div>
-  <div class="why-drop">
-    <div class="wt">为什么在跌？</div>
-    <div>赤峰黄金季跌-37.40%：国际金价跌幅传导至国内金企+52周高点51.18跌至26.68，年内跌-13.71%。金价跳水虽利空矿企，但14倍PE+3.71倍PB已处于历史中低位 <span class="ws">[腾讯自选股, 6.29]</span></div>
-    <div class="trap">接飞刀收线：金价跳水仍在进行中，不排除继续下探。赤峰黄金60日跌幅远超金饰零售股，弹性更高风险更大 · 工具初判·待我核实</div>
-  </div>
-  <div class="card-foot"><span style="color:var(--tx3);font-weight:600">深跌烟蒂</span> — 价投错杀候选，非早期套利。行业降温但个股逆向逻辑需独立判断。</div>
-</div>
-
-
-<!-- Observe -->
-<div class="observe">
-  <h3>消费观察 · 暂未映射</h3>
-  <div class="obs-item"><span class="obs-tag">观察</span><span><strong>东鹏特饮造谣被拘：品牌保护/消费观察</strong></span><span style="font-size:12px;color:var(--tx3)">— 头条#11 + 知乎#24 — 男子造谣东鹏老板不喝自家饮料被拘 / 创始人不喝自家饮料造谣者被刑拘 — 东鹏特饮(605499)可能受短期情绪波动影响</span></div>
-  <div class="obs-item"><span class="obs-tag">观察</span><span><strong>iPhone18/新手机：消费趋势</strong></span><span style="font-size:12px;color:var(--tx3)">— 微博#10 iPhone18e曝光 / #19 iPhone18Pro机密文件现身暗网 / #25 iPhoneUltra黑色机模 — 什么值得买 Top iPhone 17 Pro — 映射链太长</span></div>
-  <div class="obs-item"><span class="obs-tag">噪音</span><span><strong>世界杯足球：消遣资讯</strong></span><span style="font-size:12px;color:var(--tx3)">— 微博/抖音/百度/知乎/快手/头条全平台Top — 巴西2:1绝杀日本 / 德国4:5巴拉圭 — 有热度无投资信号</span></div>
-  <div class="obs-item"><span class="obs-tag">观察</span><span><strong>入境游：外国游客涌入中国农村 + 文旅融合消费热潮</strong></span><span style="font-size:12px;color:var(--tx3)">— 跨平台2条信号 — 入境消费逻辑成立但个股映射弱(免税/酒店龙头体量已大)</span></div>
-  <div class="obs-item"><span class="obs-tag">观察</span><span><strong>国际金价跳水 · 水贝市场两重天</strong></span><span style="font-size:12px;color:var(--tx3)">— 百度#30/抖音/快手 — 已升级至深跌烟蒂区独立卡，宏观驱动非纯消费行为</span></div>
-</div>
-
-<!-- Discard -->
-<div class="discard">
-  <h4>弃用池 · 五层筛选未通过</h4>
-  <div>世界杯足球 — 消遣资讯 — 全平台Top但无消费行为映射</div>
-  <div>iPhone18/新手机 — 苹果供应链 — 映射链过长 · 不连二阶</div>
-  <div>东鹏特饮造谣 — 品牌事件 — 短期情绪 · 无持续收入影响</div>
-  <div>金价跳水 — 黄金股 — 宏观驱动非消费行为 · 已升级至深跌烟蒂区独立卡</div>
-  <div>笔记本电脑涨价 — 联想/惠普 — 映射链过长 · 不连二阶</div>
-  <div>SK海力士/美光/三星 — 已涨10倍 · 已充分定价</div>
-  <div>智谱港股AI — 年内翻20倍 · 已充分定价</div>
-  <div>高考志愿填报/温网 — 季节性 · 日历可预测</div>
-  <div>入境游/挪威订购海鲜 — 海外消费行为 · 映射链过长</div>
-</div>
-
-
-<!-- Method -->
-<details class="method">
-  <summary><h4 style="display:inline;cursor:pointer;user-select:none">方法论 & 字段说明 ▸ 点击展开</h4></summary>
-  <table>
-    <tr><th>字段</th><th>说明</th><th>来源</th></tr>
-    <tr><td>烟蒂/成长分类</td><td>烟蒂=PE极低被市场嫌弃；成长=高增速PEG合理</td><td>林奇+用户</td></tr>
-    <tr><td>扩散度</td><td>仅消费平台=早期；投资圈=扩散中；财经媒体=晚期</td><td>游资共识</td></tr>
-    <tr><td>加速度</td><td>环比增速+绝对热度排名；加速且绝对热度低=异动</td><td>Chris Camillo</td></tr>
-    <tr><td>日历排除</td><td>Prime Day/618/双11/财报季等周期性事件 — 标季节性，移出早期区</td><td>Chris Camillo</td></tr>
-    <tr><td>营收占比</td><td>该业务占营收比重：高>30%/中10-30%/低<10%；低占比标"物质性薄"</td><td>用户自定</td></tr>
-    <tr><td>PE存疑</td><td>trailing PE低于行业一半 — 可能含一次性损益，补PB交叉参考</td><td>用户自定</td></tr>
-    <tr><td>风险定性</td><td>冯柳"弱者体系"：低/中/高</td><td>冯柳</td></tr>
-    <tr><td>催化剂时点</td><td>当下/近期(6月内)/远期(1年+)</td><td>Chris Camillo</td></tr>
-    <tr><td>PE vs 行业</td><td>低于/持平/远超/未盈利</td><td>westock-data</td></tr>
-    <tr><td>拥挤度</td><td>0-3分：财经媒体+1、研报+1、机构持仓高+1；≥2自动灰化沉底</td><td>WebSearch+westock</td></tr>
-<omitted />    <tr><td>重点关注词</td><td>命中用户词库+加速度陡升→自动置顶红框"命中关注词"</td><td>用户自定</td></tr>
-  </table>
-  <table>
-    <tr><th>硬护栏</th><th>触发条件</th><th>动作</th></tr>
-    <tr><td>已涨勿追</td><td>创新高/年内大涨/PE远超行业</td><td>已起飞区 · 禁止标早期</td></tr>
-    <tr><td>不连二阶</td><td>收入映射链超一步</td><td>砍掉</td></tr>
-    <tr><td>不编候选</td><td>连不到合适公司</td><td>留空 · 消费观察</td></tr>
-    <tr><td>接飞刀收线</td><td>任一项为负</td><td>为什么在跌栏 · 只列实据不下结论</td></tr>
-    <tr><td>年内跌>30%</td><td>价格大幅回撤</td><td>禁止标早期 · 深跌烟蒂区</td></tr>
-    <tr><td>日历排除</td><td>去年同期也出现</td><td>季节性提醒 · 降级非早期</td></tr>
-    <tr><td>物质性闸</td><td>营收占比<10%</td><td>标"物质性薄"· 不排前列</td></tr>
-  </table>
-
-<!-- Core principle -->
-<div class="core-principle">
-  <strong>核心原则：</strong>上了主榜=信息差已消失。绝对热度已进各平台前10的禁止标早期。早期只属于加速中但绝对排名仍靠后的信号。1条真早期优于10条已扩散。信号稀疏是常态，不硬凑。
-</div>
-
-<!--
-  AI 操作指引 v14
-  ===
-  v14 新增：
-<omitted />
-  - 冷门度/拥挤度硬过滤：财经媒体+1、券商研报+1、机构持仓高+1，≥2自动灰化沉底
-  - 重点关注词库：命中用户词库+加速中 → 置顶红框
-  - 数据时间戳：顶部醒目时间戳+过期标红
-  
-  核心升级：
-  - 日历排除层：凡 Prime Day/618/双11/财报季等周期性事件 — 标"季节性"，移入独立区
-  - 物质性闸：每公司标营收占比(高/中/低)，<10%标"物质性薄"
-  - 核心原则：上主榜=信息差消失，Top10禁止标早期
-  - 去 emoji：全页无 emoji，靠文字标签+小圆点区分四区
-  - 紧凑密度：卡片 padding 14-18px，间距 12px，数据表格化
-  - 数字等宽(mno)+右对齐，标签列+数值列对齐
-  
-  保留规则：
-  - PE存疑/接飞刀只列实据/不连二阶>1步/温度计一致/价格挡板/单一驱动
--->
-</details>
-
-<!-- Disclaimer -->
-<div class="dsc">
-  免责声明：本看板仅为深度研究入口，不构成投资建议。所有数据标注来源和日期，数字错则判断全错。"工具初判·待我核实"=尚未人工核实，请独立验证。投资决策需自行判断，亏损自负。异动榜采用 Google Trends rising/breakout + Reddit rising，信号稀疏是常态——不编造、不硬凑。
-</div>
-
-<div class="ft">
-  价值发现 v14 · 社会套利雷达 · Chris Camillo 中国版 · 数据源仅免费渠道 · 成本红线：0元<br>
-  更新时间: 2026-06-30 12:28 CST · UAPIs 9/9 OK · 管道原生 0/15 Fail · westock 实时 · 分区：早期异动 1信号 | 季节性提醒 | 已起飞 3信号 | 深跌烟蒂<br>
-  <div style="margin-top:6px">© 2026 价值发现 · 个人研究工具 · 仅供参考，不构成任何投资建议</div>
+<div class="ft" id="ft">
+  生成时间 <span id="gen-time">—</span> · <span id="src-note">—</span>
 </div>
 
 <script>
-/* ════════════════════════════════════════════════════════════════
-   客户端自动加载器 — 从 data/*.json 加载自动生成内容
-   自动管道永不修改此 HTML 文件 → 彻底消除 git 冲突
-   ════════════════════════════════════════════════════════════════ */
+(function() {
+  var container = document.getElementById('app');
 
-(async function() {
-  const BASE = 'data';
+  fetch('data/discovery_board.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      render(data);
+      updateMeta(data);
+    })
+    .catch(function(err) {
+      container.innerHTML = '<div class="empty-zone">无法加载数据，请检查 data/discovery_board.json</div>';
+      console.error('Load error:', err);
+    });
 
-  // ── 1. 加载 page_meta.json ──────────────────────────────
-  try {
-    const metaResp = await fetch(BASE + '/page_meta.json');
-    if (metaResp.ok) {
-      const meta = await metaResp.json();
+  function render(data) {
+    var thermo = data.thermo || {};
+    var zones = data.zones || [];
+    var meta = data.meta || {};
 
-      // 1a. 更新时间戳
-      const tsEl = document.getElementById('head-ts');
-      if (tsEl) tsEl.textContent = '数据刷新：' + meta.display_ts + ' CST · 自动化管道 · GitHub Actions';
+    // Update header ts
+    document.getElementById('head-ts').textContent = '数据刷新：' + (data.generated_at || '').substring(5, 16).replace('T', ' ') + ' CST · 自动化管道';
 
-      // 1b. 更新源标签状态
-      if (meta.sources) {
-        document.querySelectorAll('.src-tag[data-source]').forEach(tag => {
-          const key = tag.getAttribute('data-source');
-          const src = meta.sources[key];
-          if (src) {
-            tag.classList.remove('src-ok', 'src-fail');
-            tag.classList.add(src.ok ? 'src-ok' : 'src-fail');
-          }
-        });
+    // Build HTML
+    var html = '';
+
+    // ── Source bar (static for now) ──
+    html += '<div class="src-bar"><div class="lbl">数据源状态 · 实时抓取 · ' + (meta.data_time || '—') + ' · <span style="color:#1a7a3a">' + (meta.sources_online || '?') + '源在线</span></div>' +
+      '<div class="src-grid">' +
+      '<span class="src-tag src-ok">微博热搜</span>' +
+      '<span class="src-tag src-ok">百度热搜</span>' +
+      '<span class="src-tag src-ok">知乎热榜</span>' +
+      '<span class="src-tag src-ok">抖音总榜</span>' +
+      '<span class="src-tag src-ok">B站全站日榜</span>' +
+      '<span class="src-tag src-ok">微信热文</span>' +
+      '<span class="src-tag src-ok">今日头条</span>' +
+      '<span class="src-tag src-ok">什么值得买</span>' +
+      '<span class="src-tag src-ok">小红书</span>' +
+      '<span class="src-tag src-ok">快手</span>' +
+      '<span class="src-tag src-ok">Google Trends</span>' +
+      '<span class="src-tag src-ok">X/Twitter 热门</span>' +
+      '</div></div>';
+
+    // ── Thermometer ──
+    html += '<div class="thermo"><h3>市场温度计</h3><div class="tgrid">';
+    html += '<div><div class="tcol-lbl">升温 Top3</div>';
+    (thermo.heating || []).forEach(function(item) {
+      html += '<div class="titem thot">' + item.rank + '. ' + esc(item.text) + '</div>';
+    });
+    html += '</div><div><div class="tcol-lbl">降温 Top3</div>';
+    (thermo.cooling || []).forEach(function(item) {
+      html += '<div class="titem tcool">' + item.rank + '. ' + esc(item.text) + '</div>';
+    });
+    html += '</div><div><div class="tcol-lbl">板块估值</div>';
+    var sv = thermo.sector_valuation || {};
+    html += '<div class="tval">' + esc(sv.name || '') + ' PE-TTM ' + (sv.pe || '—') + 'x<br>5年分位 ' + (sv.percentile_5y || '—') + '% · 中等偏低<br><span style="font-size:11px;color:var(--tx3)">' + esc(sv.note || '') + '</span></div>';
+    html += '</div></div>';
+    if (thermo.cross_opportunity) html += '<div class="tcross tcross-opp">' + esc(thermo.cross_opportunity) + '</div>';
+    if (thermo.cross_danger) html += '<div class="tcross tcross-dgr">' + esc(thermo.cross_danger) + '</div>';
+    if (thermo.crowded_consensus) html += '<div class="tnote">' + esc(thermo.crowded_consensus) + '</div>';
+    html += '</div>';
+
+    // ── Zones ──
+    zones.forEach(function(zone) {
+      html += '<div class="zone-hdr"><div class="zone-dot zdot-' + zone.id + '"></div><h2>' + esc(zone.label) + '</h2>' +
+        '<span class="zone-desc">' + esc(zone.desc) + '</span>' +
+        '<span class="zone-cnt">' + (zone.cards ? zone.cards.length : 0) + ' 信号</span></div>';
+
+      if (!zone.cards || !zone.cards.length) {
+        html += '<div class="empty-zone">暂无信号</div>';
+        return;
       }
 
-      // 1c. 更新源计数（src-bar label）
-      if (meta.source_bar_text) {
-        const barLbl = document.querySelector('.src-bar .lbl');
-        if (barLbl) {
-          barLbl.innerHTML = barLbl.innerHTML.replace(
-            /<span[^>]*>[^<]*<\/span>/,
-            '<span style="color:#1a7a3a">' + meta.source_bar_text + '</span>'
-          );
-        }
-      }
+      zone.cards.forEach(function(card) {
+        html += buildCard(card);
+      });
+    });
 
-      // 1d. 更新 PE / PB
-      if (meta.stocks) {
-        document.querySelectorAll('table.cmp-tbl[data-stock]').forEach(tbl => {
-          const code = tbl.getAttribute('data-stock');
-          const s = meta.stocks[code];
-          if (!s) return;
-          // PE row: first td.cv after PE TTM
-          const peCell = tbl.querySelector('td.cv');
-          if (peCell && s.pe != null) {
-            const peText = peCell.textContent;
-            const m = peText.match(/^([\d.]+)(.*)$/);
-            if (m) {
-              peCell.innerHTML = s.pe.toFixed(2) + m[2];
-            }
-          }
-          // PB row: second td.cv
-          const cvCells = tbl.querySelectorAll('td.cv');
-          if (cvCells.length > 1 && s.pb != null) {
-            const pbCell = cvCells[1];
-            const pbText = pbCell.textContent;
-            const m = pbText.match(/^([\d.]+)(.*)$/);
-            if (m) {
-              pbCell.innerHTML = s.pb.toFixed(2) + m[2];
-            }
-          }
-          // 周/月/季涨跌幅
-          const priceRows = tbl.querySelectorAll('tbody.price-rows td.cv');
-          if (priceRows.length >= 3) {
-            const chgs = [s.chg_5d, s.chg_20d, s.chg_60d];
-            chgs.forEach((chg, i) => {
-              if (chg != null) {
-                const cls = chg >= 0 ? 'cup' : 'cdn';
-                priceRows[i].className = 'cv ' + cls;
-                priceRows[i].textContent = (chg >= 0 ? '+' : '') + chg.toFixed(2) + '%';
-              }
-            });
-          }
-        });
-      }
-    }
-  } catch (e) { /* 数据文件未生成，保持硬编码默认值 */ }
+    container.innerHTML = html;
+  }
 
-  // ── 2. 加载 auto_flash.json ──────────────────────────────
-  try {
-    const flashResp = await fetch(BASE + '/auto_flash.json');
-    if (flashResp.ok) {
-      const flash = await flashResp.json();
-      const el = document.getElementById('flash-section');
-      if (el && flash.flash_html) {
-        el.innerHTML = flash.flash_html;
-      }
-    }
-  } catch (e) { /* keep loading placeholder */ }
+  function buildCard(card) {
+    var tags = card.tags || {};
+    var html = '<div class="card">';
 
+    // Tags
+    html += '<div class="card-inner"><div class="card-tags">';
+    if (tags.industry) html += '<span class="tag-ind ind-' + (tags.industry.indexOf('机器人') >= 0 ? 'ai' : tags.industry.indexOf('芯片') >= 0 ? 'chip' : tags.industry.indexOf('教育') >= 0 ? 'ecom' : 'ac') + '">' + esc(tags.industry) + '</span>';
+    if (tags.stage) html += '<span class="tag-stage stage-' + (tags.stage === '早期信号' ? 'early' : tags.stage === '季节性' ? 'season' : 'priced') + '">' + esc(tags.stage) + '</span>';
+    if (tags.badge) html += '<span class="tag-badge badge-' + (tags.badge === '新信号' ? 'new' : 'cont') + '">' + esc(tags.badge) + '</span>';
+    if (tags.accel) html += '<span class="tag-accel accel-new">' + esc(tags.accel) + '</span>';
+    if (tags.seasonal) html += '<span class="tag-season">' + esc(tags.seasonal) + '</span>';
+    if (tags.crowding) html += '<span class="crowding-tag crowd-0">拥挤度待算</span>';
+    html += '</div>';
+
+    // Headline
+    html += '<div class="card-hl">' + esc(card.headline || '') + (card.diffusion ? '<span class="diff"> · 扩散度 ' + esc(card.diffusion) + '</span>' : '') + '</div>';
+
+    // Sources
+    html += '<div class="card-meta">';
+    (card.sources || []).forEach(function(s) {
+      if (s.type === 'pill') html += '<span class="src-pill">' + esc(s.text) + '</span>';
+      else if (s.type === 'burst') html += '<span class="heat-burst">' + esc(s.text) + '</span>';
+      else if (s.type === 'steady') html += '<span class="heat-steady">' + esc(s.text) + '</span>';
+    });
+    html += '</div></div>';
+
+    // One-liner
+    if (card.one_liner) html += '<div class="card-ol">' + esc(card.one_liner) + '</div>';
+
+    // Red warn
+    if (card.red_warn) html += '<div class="red-warn">' + esc(card.red_warn) + '</div>';
+
+    // Logic
+    if (card.logic) html += '<div class="card-logic">' + esc(card.logic) + '</div>';
+
+    // Foot
+    if (card.foot) html += '<div class="card-foot">' + esc(card.foot) + '</div>';
+
+    // AI note
+    if (card.ai_note) html += '<div class="ai-note">' + esc(card.ai_note) + '</div>';
+
+    html += '</div>';
+    return html;
+  }
+
+  function esc(s) {
+    return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function updateMeta(data) {
+    var meta = data.meta || {};
+    document.getElementById('gen-time').textContent = (data.generated_at || '').substring(0, 19);
+    document.getElementById('src-note').textContent = (meta.note || '').substring(0, 60) + '...';
+  }
 })();
 </script>
 

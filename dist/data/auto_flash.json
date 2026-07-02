@@ -1,0 +1,90 @@
+{
+  "scan_time": "2026-07-01T16:43:03+08:00",
+  "display_time": "07-01 16:43",
+  "total_titles": 30,
+  "signal_count": 2,
+  "seasonal_count": 0,
+  "entertainment_count": 1,
+  "summary": "🔥 2 组跨平台信号：芯片/半导体 1平台 · 原油/能源 1平台",
+  "flash_html": "<div class=\"flash-section\" style=\"margin:10px 0 16px;padding:16px 20px;background:linear-gradient(135deg,#f9fafb,#f0f4f8);border:1px solid #dfe6e9;border-radius:var(--radius);font-size:13px;line-height:1.6\">\n<div style=\"display:flex;align-items:center;gap:10px;margin-bottom:10px\">\n<span style=\"font-size:15px;font-weight:700;color:var(--tx)\">自动快讯</span>\n<span style=\"font-size:11px;color:var(--tx3);font-weight:400\">07-01 16:43 CST · 全自动采集 · 本次扫描 30 条热词</span>\n<span style=\"font-size:11px;color:var(--accent);margin-left:auto\">2 组跨平台信号</span>\n</div>\n<div style=\"font-size:11px;color:var(--tx3);margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap\">\n<span style=\"color:#1a7a3a\">↓ 芯片/半导体 · 1平台</span>\n<span style=\"color:#1a7a3a\">↓ 原油/能源 · 1平台</span>\n</div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #1a7a3a;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">芯片/半导体</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#1a7a3a15;color:#1a7a3a;font-weight:600\">平台 -3</span><span style=\"font-size:11px;color:var(--tx3)\">1平台 · 1条 · Top: 微信热文#27</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 微信热文</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">A股盘前速览：美股高开，半导体板块普涨；白银、原油价格纷纷走高；港股休市；伊朗：暂时没有与美方会晤计划；寒武纪提示股票风险</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 中芯国际 港股通 · 北方华创 A股 · 韦尔股份 A股</div></div>\n<div style=\"padding:10px 14px;margin:6px 0;background:#fff;border-radius:6px;border-left:3px solid #1a7a3a;box-shadow:0 1px 3px rgba(0,0,0,.04)\"><div style=\"display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px\"><span style=\"font-weight:700;font-size:14px;color:var(--tx)\">原油/能源</span><span style=\"font-size:11px;padding:1px 6px;border-radius:3px;background:#1a7a3a15;color:#1a7a3a;font-weight:600\">平台 -2</span><span style=\"font-size:11px;color:var(--tx3)\">1平台 · 1条 · Top: 微信热文#27</span></div><div style=\"font-size:11px;color:var(--tx3);margin-bottom:3px\">平台: 微信热文</div><div style=\"font-size:12px;color:var(--tx2);margin-bottom:4px;max-height:36px;overflow:hidden\">A股盘前速览：美股高开，半导体板块普涨；白银、原油价格纷纷走高；港股休市；伊朗：暂时没有与美方会晤计划；寒武纪提示股票风险</div><div style=\"font-size:11px;color:var(--tx3)\">候选: 中国石油 A股 · 中国海油 A股</div></div>\n<details style=\"margin-top:4px;font-size:11px;color:var(--tx3)\"><summary style=\"cursor:pointer\">消遣资讯 · 1 组 · 无投资信号</summary>\n<span style=\"margin-left:12px\">足球 1平台</span> · \n</details>\n<div style=\"margin-top:12px;padding-top:8px;border-top:1px solid #dfe6e9;font-size:11px;color:var(--tx3)\">以上为规则引擎自动扫描结果，候选股票为静态映射仅供提示。深度投资分析请使用 WorkBuddy 说\"今天有什么新信号\"。</div>\n</div>",
+  "trends": {
+    "芯片/半导体": [
+      "down",
+      "平台 -3"
+    ],
+    "原油/能源": [
+      "down",
+      "平台 -2"
+    ]
+  },
+  "signals": [
+    {
+      "name": "芯片/半导体",
+      "category": "潜在信号",
+      "platform_count": 1,
+      "total_mentions": 1,
+      "top_positions": "微信热文#27",
+      "stocks": [
+        [
+          "hk0981",
+          "中芯国际",
+          "港股通",
+          "晶圆代工龙头"
+        ],
+        [
+          "sz002371",
+          "北方华创",
+          "A股",
+          "半导体设备"
+        ],
+        [
+          "sh603501",
+          "韦尔股份",
+          "A股",
+          "CIS芯片"
+        ]
+      ],
+      "trend": [
+        "down",
+        "平台 -3"
+      ]
+    },
+    {
+      "name": "原油/能源",
+      "category": "潜在信号",
+      "platform_count": 1,
+      "total_mentions": 1,
+      "top_positions": "微信热文#27",
+      "stocks": [
+        [
+          "sh601857",
+          "中国石油",
+          "A股",
+          "上游开采"
+        ],
+        [
+          "sh600938",
+          "中国海油",
+          "A股",
+          "海上油气"
+        ]
+      ],
+      "trend": [
+        "down",
+        "平台 -2"
+      ]
+    },
+    {
+      "name": "足球",
+      "category": "消遣",
+      "platform_count": 1,
+      "total_mentions": 1,
+      "top_positions": "微信热文#3",
+      "stocks": [],
+      "trend": [
+        "stable",
+        ""
+      ]
+    }
+  ]
+}

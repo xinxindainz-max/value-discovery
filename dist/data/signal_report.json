@@ -1,0 +1,54 @@
+{
+  "scan_time": "2026-07-01T16:43:03.296086+08:00",
+  "total_titles": 30,
+  "sources_ok": 1,
+  "sources_total": 22,
+  "signals": [
+    {
+      "name": "芯片/半导体",
+      "platform_count": 1,
+      "category": "潜在信号",
+      "trend": "down",
+      "top": "微信热文#27",
+      "stocks": [
+        [
+          "hk0981",
+          "中芯国际"
+        ],
+        [
+          "sz002371",
+          "北方华创"
+        ],
+        [
+          "sh603501",
+          "韦尔股份"
+        ]
+      ]
+    },
+    {
+      "name": "原油/能源",
+      "platform_count": 1,
+      "category": "潜在信号",
+      "trend": "down",
+      "top": "微信热文#27",
+      "stocks": [
+        [
+          "sh601857",
+          "中国石油"
+        ],
+        [
+          "sh600938",
+          "中国海油"
+        ]
+      ]
+    },
+    {
+      "name": "足球",
+      "platform_count": 1,
+      "category": "消遣",
+      "trend": "stable",
+      "top": "微信热文#3",
+      "stocks": []
+    }
+  ]
+}

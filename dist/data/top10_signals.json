@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-07-01T16:41:36.739751+08:00",
+  "behavior_shifts": [
+    {
+      "behavior_shift": "People are evaluating and comparing 真零 有机酸奶 for purchase on social commerce platforms",
+      "evidence": "Increase in L3 purchase-intent activity on 什么值得买 with 4 related discussions",
+      "why_early": "Not yet present in L5/L6 media, still confined to early adopters",
+      "confidence": "Medium",
+      "sources": [
+        "什么值得买"
+      ],
+      "layers": [
+        3
+      ],
+      "mentions": 4
+    },
+    {
+      "behavior_shift": "People are evaluating and comparing 酷态科 for purchase on social commerce platforms",
+      "evidence": "Increase in L3 purchase-intent activity on 什么值得买 with 3 related discussions (百亿补贴：酷态科 65W 2C1A 氮化镓充电器 AD653C · 88VIP：奥睿科 GN30 30W氮化镓充电器+1米双C线)",
+      "why_early": "Not yet present in L5/L6 media, still confined to early adopters",
+      "confidence": "Medium",
+      "sources": [
+        "什么值得买"
+      ],
+      "layers": [
+        3
+      ],
+      "mentions": 3
+    },
+    {
+      "behavior_shift": "People are evaluating and comparing 1号会员店 精选进口原切牛肋条肉 for purchase on social commerce platforms",
+      "evidence": "Increase in L3 purchase-intent activity on 什么值得买 with 3 related discussions (今日必买：1号会员店 精选进口原切牛肋条肉1kg · 今日必买：1号会员店 精选整根和牛 牛腱子1kg)",
+      "why_early": "Not yet present in L5/L6 media, still confined to early adopters",
+      "confidence": "Medium",
+      "sources": [
+        "什么值得买"
+      ],
+      "layers": [
+        3
+      ],
+      "mentions": 3
+    }
+  ],
+  "meta": {
+    "total_scanned": 801,
+    "non_behavior_filtered": 104,
+    "action_verb_matched": 30,
+    "total_clusters": 20
+  }
+}

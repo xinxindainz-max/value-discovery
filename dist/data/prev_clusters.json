@@ -1,0 +1,653 @@
+{
+  "date": "2026-06-30",
+  "day_number": 2,
+  "clusters": [
+    {
+      "signal_label": "恋与深空",
+      "titles": [
+        "恋与深空承认犯错就那么难吗",
+        "bw 恋与深空",
+        "小嗷 恋与深空",
+        "恋与深空",
+        "恋与深空道歉就够了吗",
+        "bw 恋与深空"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "新浪热榜",
+        "微博热搜",
+        "抖音总榜"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 6,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 5,
+        "4": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "中国共产党党员总数达10128.6万名",
+      "titles": [
+        "中国共产党党员总数为10128.6万名",
+        "中国共产党党员总数达10128.6万名",
+        "中国共产党党员总数达10128.6万名",
+        "中国共产党党员总数达10128.6万",
+        "中国共产党党员总数为10128.6万名",
+        "中国共产党党员总数为10128.6万名"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "百度热搜",
+        "新浪热榜",
+        "微博热搜",
+        "今日头条",
+        "澎湃新闻",
+        "快手"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 6,
+      "platform_count": 6,
+      "layer_mention_counts": {
+        "6": 5,
+        "4": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "马宁多次提醒主裁向替补席出牌",
+      "titles": [
+        "马宁多次提醒主裁向替补席出牌",
+        "没牌照样管 马宁多次提醒主裁判出牌",
+        "马宁多次提醒主裁判出牌",
+        "马宁多次提醒主裁向替补席出牌",
+        "“卡牌大师”名不虚传！作为第四官员的马宁，多次提醒主裁向替补席出牌"
+      ],
+      "layers": [
+        6
+      ],
+      "sources": [
+        "百度热搜",
+        "新浪热榜",
+        "微博热搜",
+        "今日头条",
+        "腾讯新闻"
+      ],
+      "min_layer": 6,
+      "max_layer": 6,
+      "total_mentions": 5,
+      "platform_count": 5,
+      "layer_mention_counts": {
+        "6": 5
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "锐评：网红不能困在无底线逐利里",
+      "titles": [
+        "人民锐评：网红不能困在无底线逐利里",
+        "锐评：网红不能困在无底线逐利里",
+        "锐评：网红不能困在无底线逐利里",
+        "网红不能困在无底线逐利里",
+        "人民锐评：诋毁袁隆平、造谣企业家……网红不能困在无底线逐利里"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "百度热搜",
+        "抖音总榜",
+        "今日头条",
+        "腾讯新闻",
+        "快手"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 5,
+      "platform_count": 5,
+      "layer_mention_counts": {
+        "6": 3,
+        "4": 2
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "巴拉圭赢德国全国放假一天",
+      "titles": [
+        "巴拉圭赢德国全国放假一天",
+        "感谢德国老铁 又送“全国放假一天”",
+        "巴拉圭全国放假1天",
+        "巴拉圭赢德国全国放假一天"
+      ],
+      "layers": [
+        6
+      ],
+      "sources": [
+        "新浪热榜",
+        "百度热搜",
+        "微博热搜",
+        "今日头条"
+      ],
+      "min_layer": 6,
+      "max_layer": 6,
+      "total_mentions": 4,
+      "platform_count": 4,
+      "layer_mention_counts": {
+        "6": 4
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "2026年广州中考开考",
+      "titles": [
+        "2026年广州中考开考",
+        "【剧情】心间错（2026）14【 朱正廷 / 哈妮克孜 】",
+        "歌剧老师锐评《歌手2026》第六期（下）",
+        "聊聊2026自由市场"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "虎扑",
+        "B站全站日榜",
+        "抖音总榜"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 4,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "4": 3,
+        "6": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "papi酱已退出papitube关联公司",
+      "titles": [
+        "papi酱已退出papitube关联公司",
+        "自然光｜papi酱&窦文涛：驴与跑步机",
+        "papi酱已退出papitube关联公司"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "新浪热榜",
+        "微博热搜",
+        "B站全站日榜"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 2,
+        "4": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "巴西绝杀日本",
+      "titles": [
+        "巴西绝杀视频被ESPN转发",
+        "巴西绝杀日本",
+        "惊险翻盘,巴西绝杀日本"
+      ],
+      "layers": [
+        6
+      ],
+      "sources": [
+        "百度贴吧",
+        "微博热搜",
+        "今日头条"
+      ],
+      "min_layer": 6,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 3
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "荷兰vs摩洛哥",
+      "titles": [
+        "荷兰vs摩洛哥",
+        "荷兰vs摩洛哥",
+        "荷兰vs摩洛哥"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "新浪热榜",
+        "微博热搜",
+        "快手"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 2,
+        "4": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "摩洛哥点球大战淘汰荷兰",
+      "titles": [
+        "荷兰点球大战输给摩洛哥 淘汰出局",
+        "摩洛哥点球大战淘汰荷兰",
+        "摩洛哥点球大战淘汰荷兰"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "百度热搜",
+        "快手",
+        "抖音总榜"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 1,
+        "4": 2
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "荷兰又又又一次倒在点球大战",
+      "titles": [
+        "荷兰又又又一次倒在点球大战",
+        "荷兰又一次倒在点球大战",
+        "荷兰近3届全部倒在点球大战"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "百度热搜",
+        "今日头条",
+        "快手"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 2,
+        "4": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "日本球迷被强行披上巴西国旗",
+      "titles": [
+        "输球后日本球迷被强行披上巴西国旗",
+        "日本球迷被强行披上巴西国旗",
+        "日本球迷被穿上巴西队服崩溃磕头"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "百度热搜",
+        "今日头条",
+        "快手"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 2,
+        "4": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "爆冷出局！德国点球大战不敌巴拉圭",
+      "titles": [
+        "爆冷出局！德国点球大战不敌巴拉圭",
+        "爆冷出局！德国点球大战不敌巴拉圭",
+        "德国点球不敌巴拉圭无缘16强"
+      ],
+      "layers": [
+        4,
+        6
+      ],
+      "sources": [
+        "百度热搜",
+        "今日头条",
+        "快手"
+      ],
+      "min_layer": 4,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 2,
+        "4": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "只有诺伊尔可以昂首走出球场",
+      "titles": [
+        "他们本可以准时下班，却为你扛下了风险和麻烦",
+        "只有诺伊尔可以昂首走出球场",
+        "你可以永远相信赛里木湖的美景"
+      ],
+      "layers": [
+        3,
+        4,
+        6
+      ],
+      "sources": [
+        "今日头条",
+        "B站全站日榜",
+        "小红书"
+      ],
+      "min_layer": 3,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "4": 1,
+        "6": 1,
+        "3": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "甜到心坎里！个大多汁：京鲜生 国产黄金油桃 4.5斤",
+      "titles": [
+        "甜到心坎里！个大多汁：京鲜生 国产黄金油桃 4.5斤",
+        "京鲜生 软糯香甜超粉面！贝贝南瓜4.5斤入口即化",
+        "力度升级、每斤8.3元！：京鲜生 大号蜂糖李 净重4.5-5斤（单果30-35g）"
+      ],
+      "layers": [
+        3
+      ],
+      "sources": [
+        "什么值得买"
+      ],
+      "min_layer": 3,
+      "max_layer": 3,
+      "total_mentions": 3,
+      "platform_count": 1,
+      "layer_mention_counts": {
+        "3": 3
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "他们节俭了一辈子，临走前捐出500万",
+      "titles": [
+        "他们节俭一辈子，捐出500万",
+        "他们节俭了一辈子，临走前捐出500万",
+        "1他们节俭了一辈子，临走前捐出500万"
+      ],
+      "layers": [
+        6
+      ],
+      "sources": [
+        "澎湃新闻",
+        "新浪热榜",
+        "腾讯新闻"
+      ],
+      "min_layer": 6,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 3,
+      "layer_mention_counts": {
+        "6": 3
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "庆祝中国共产党成立105周年音乐会在京举行",
+      "titles": [
+        "庆祝中国共产党成立105周年音乐会在京举行",
+        "庆祝中国共产党成立105周年",
+        "庆祝中国共产党成立105周年音乐会在京举行"
+      ],
+      "layers": [
+        6
+      ],
+      "sources": [
+        "澎湃新闻",
+        "腾讯新闻"
+      ],
+      "min_layer": 6,
+      "max_layer": 6,
+      "total_mentions": 3,
+      "platform_count": 2,
+      "layer_mention_counts": {
+        "6": 3
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "这一刀 会很帅",
+      "titles": [
+        "这一刀 会很帅",
+        "定格这一刻的日照金山"
+      ],
+      "layers": [
+        3,
+        4
+      ],
+      "sources": [
+        "B站全站日榜",
+        "小红书"
+      ],
+      "min_layer": 3,
+      "max_layer": 4,
+      "total_mentions": 2,
+      "platform_count": 2,
+      "layer_mention_counts": {
+        "4": 1,
+        "3": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "淘金币可用、88VIP、今日必买：富德 FG87 夜阑·海王轴 三模机械键盘 1.14寸TF显屏款 RGB 全键热插拔",
+      "titles": [
+        "淘金币可用、88VIP、今日必买：富德 FG87 夜阑·海王轴 三模机械键盘 1.14寸TF显屏款 RGB 全键热插拔",
+        "淘金币可用、88VIP、今日必买：富德 FG87 青瓷·太空轴 三模机械键盘 1.14寸TF显屏款 RGB 全键热插拔"
+      ],
+      "layers": [
+        3
+      ],
+      "sources": [
+        "什么值得买"
+      ],
+      "min_layer": 3,
+      "max_layer": 3,
+      "total_mentions": 2,
+      "platform_count": 1,
+      "layer_mention_counts": {
+        "3": 2
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "今日必买：都乐 树熟泰国金枕榴莲肉 净重700g*2袋",
+      "titles": [
+        "今日必买：都乐 树熟泰国金枕榴莲肉 净重700g*2袋",
+        "今日必买：鲜惠源 泰国进口金枕榴莲 3-4斤"
+      ],
+      "layers": [
+        3
+      ],
+      "sources": [
+        "什么值得买"
+      ],
+      "min_layer": 3,
+      "max_layer": 3,
+      "total_mentions": 2,
+      "platform_count": 1,
+      "layer_mention_counts": {
+        "3": 2
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "今日必买：参半 洁白牙膏 西柚味 120g",
+      "titles": [
+        "今日必买：参半 洁白牙膏 西柚味 120g",
+        "今日必买：参半 洁白牙膏 氨基酸美白亮白去黄清新去渍防渍月光青柠味120g 洁白牙膏青柠味120g"
+      ],
+      "layers": [
+        3
+      ],
+      "sources": [
+        "什么值得买"
+      ],
+      "min_layer": 3,
+      "max_layer": 3,
+      "total_mentions": 2,
+      "platform_count": 1,
+      "layer_mention_counts": {
+        "3": 2
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "耗时三年拍下古诗词里的中国",
+      "titles": [
+        "耗时三年拍下古诗词里的中国",
+        "原来古诗词里的河南真的存在"
+      ],
+      "layers": [
+        3
+      ],
+      "sources": [
+        "小红书"
+      ],
+      "min_layer": 3,
+      "max_layer": 3,
+      "total_mentions": 2,
+      "platform_count": 1,
+      "layer_mention_counts": {
+        "3": 2
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "我拍到了海鸥雨",
+      "titles": [
+        "我拍到了海鸥雨",
+        "拍到了洱海的丁达尔效应"
+      ],
+      "layers": [
+        3
+      ],
+      "sources": [
+        "小红书"
+      ],
+      "min_layer": 3,
+      "max_layer": 3,
+      "total_mentions": 2,
+      "platform_count": 1,
+      "layer_mention_counts": {
+        "3": 2
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "拼豆上也可以作画了",
+      "titles": [
+        "拼豆上也可以作画了",
+        "拼豆也能当火漆印章玩"
+      ],
+      "layers": [
+        3
+      ],
+      "sources": [
+        "小红书"
+      ],
+      "min_layer": 3,
+      "max_layer": 3,
+      "total_mentions": 2,
+      "platform_count": 1,
+      "layer_mention_counts": {
+        "3": 2
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "蒸出了奶香爆米花馒头",
+      "titles": [
+        "蒸出了奶香爆米花馒头",
+        "乱血馒头真香,太监作登热榜"
+      ],
+      "layers": [
+        3,
+        6
+      ],
+      "sources": [
+        "百度贴吧",
+        "小红书"
+      ],
+      "min_layer": 3,
+      "max_layer": 6,
+      "total_mentions": 2,
+      "platform_count": 2,
+      "layer_mention_counts": {
+        "3": 1,
+        "6": 1
+      },
+      "universe": "B"
+    },
+    {
+      "signal_label": "我来当旅行中的颜色猎手",
+      "titles": [
+        "我来当旅行中的颜色猎手",
+        "在你哭泣的时候我来临"
+      ],
+      "layers": [
+        3,
+        4
+      ],
+      "sources": [
+        "快手",
+        "小红书"
+      ],
+      "min_layer": 3,
+      "max_layer": 4,
+      "total_mentions": 2,
+      "platform_count": 2,
+      "layer_mention_counts": {
+        "3": 1,
+        "4": 1
+      },
+      "universe": "B"
+    }
+  ]
+}

@@ -15,6 +15,11 @@ KEYS_FILE = ROOT / ".workbuddy" / "pipeline" / "trends_keys.json"
 USAGE_FILE = ROOT / ".workbuddy" / "pipeline" / "data" / "trends_usage.json"
 
 def load_config():
+    import os
+    env_keys = os.environ.get("TRENDSMCP_KEYS")
+    if env_keys:
+        keys = json.loads(env_keys)
+        return {"keys": keys, "dead_keys": [], "daily_limit_per_key": 5, "monthly_limit_per_key": 100, "api_url": "https://api.trendsmcp.ai/api"}
     with open(KEYS_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 

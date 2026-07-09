@@ -1,0 +1,14 @@
+{
+  "keys": [
+    "tmcp_live_oe6olfrkya7wr501l8r2qjjrp715jg3g",
+    "tmcp_live_94simpdwfsijfv4100kcj791tw5k1h4h",
+    "tmcp_live_4dg0340wsgav10fiznkdtevabutc79ti",
+    "tmcp_live_rl5x9g3gvyux2nwhfsgvkmfn9bw0nl2s",
+    "tmcp_live_0flu457c1mxeucmn1m7sxbd1orgqg7ci",
+    "tmcp_live_b6010lckm8jugm38zcs6yz3uzkt0lgfa"
+  ],
+  "dead_keys": [3],
+  "daily_limit_per_key": 5,
+  "monthly_limit_per_key": 100,
+  "api_url": "https://api.trendsmcp.ai/api"
+}

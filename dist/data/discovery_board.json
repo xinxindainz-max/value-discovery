@@ -1,551 +1,806 @@
 {
-  "generated_at": "2026-07-02T14:51:40.631196+08:00",
-  "thermo": {
-    "heating": [
-      {
-        "rank": 1,
-        "text": "机器人伴侣价格 11.98 万至 99 万，不同价格之间有啥"
-      },
-      {
-        "rank": 2,
-        "text": "Apple iPhone"
-      },
-      {
-        "rank": 3,
-        "text": "苹果 全球涨价"
-      },
-      {
-        "rank": 4,
-        "text": "小鹏 MONA L03"
-      },
-      {
-        "rank": 5,
-        "text": "20万买9系？零跑D19增程全网首拆"
-      }
-    ],
-    "cooling": [
-      {
-        "rank": 1,
-        "text": "卖了一万台的情感陪伴机器人"
-      },
-      {
-        "rank": 2,
-        "text": "日本市民大排长龙买中国相机"
-      },
-      {
-        "rank": 3,
-        "text": "熬不过夏天的欧洲人 疯抢中国空调"
-      },
-      {
-        "rank": 4,
-        "text": "空调省电话术14年后卷土重来"
-      },
-      {
-        "rank": 5,
-        "text": "Made in China"
-      }
-    ],
-    "sector_valuation": {
-      "name": "待更新",
-      "pe": "—",
-      "percentile_5y": "—",
-      "note": "自动生成·待核实"
-    },
-    "cross_opportunity": "早期区信号存在信息差机会",
-    "cross_danger": "已起飞区信号追入风险高",
-    "crowded_consensus": "待分析"
-  },
-  "zones": [
+  "generated_at": "2026-07-10T19:23:09.284769+08:00",
+  "system": "中国上市公司消费者行为雷达 v6.0",
+  "brand_count": 15,
+  "brands": [
     {
-      "id": "early",
-      "label": "早期/异动",
-      "desc": "非日历可预测加速 · 信息差窗口",
-      "cards": [
-        {
-          "id": "early-机器人伴侣价格 11.98 万至 99 ",
-          "tags": {
-            "industry": "机器人伴侣价格 11.98 万",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "机器人伴侣价格 11.98 万至 99 万，不同价格之间有啥",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "百度贴吧",
-              "type": "pill"
-            },
-            {
-              "text": "知乎热榜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——机器人伴侣价格 11.98 万至 99 万，不同价格之间有啥区别？定价合理吗？你看好它的市场前景吗？。来源：百度贴吧、知乎热榜，扩散度●●● 已扩散。",
-          "logic": "利好：机器人伴侣价格 11.98 万至 99 万，不同价格之间有啥讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "2 条相关 · 百度贴吧, 知乎热榜 | 跨2个平台",
-          "ai_note": "工具初判·待我核实"
+      "name": "腾讯控股",
+      "code": "0700",
+      "market": "港股",
+      "industry": "互联网",
+      "google": {
+        "growth_1m": -27.9,
+        "growth_3m": -14.9,
+        "recent_value": 57.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 1,
+          "titles": [
+            "微信红包转账有新变化"
+          ]
         },
-        {
-          "id": "early-Apple iPhone",
-          "tags": {
-            "industry": "Apple iPhone",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "Apple iPhone",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "IT之家",
-              "type": "pill"
-            },
-            {
-              "text": "澎湃新闻",
-              "type": "pill"
-            },
-            {
-              "text": "什么值得买",
-              "type": "pill"
-            },
-            {
-              "text": "36氪",
-              "type": "pill"
-            },
-            {
-              "text": "知乎热榜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——因印度供应商遭网络攻击，iPhone18 Pro Max 银灰色曝光，有哪些亮点？此泄露暴露出哪些问题？。来源：IT之家、澎湃新闻、什么值得买，扩散度●●● 已扩散。",
-          "logic": "利好：Apple iPhone讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "22 条相关 · IT之家, 澎湃新闻, 什么值得买 | 跨5个平台",
-          "ai_note": "工具初判·待我核实"
+        "百度热搜": {
+          "count": 1,
+          "titles": [
+            "微信回应“别笑你也过不了第二关”"
+          ]
         },
-        {
-          "id": "early-苹果 全球涨价",
-          "tags": {
-            "industry": "苹果 全球涨价",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "苹果 全球涨价",
-          "diffusion": "●●○ 扩散中",
-          "sources": [
-            {
-              "text": "知乎热榜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——苹果全球涨价，授权店要求已预付消费者「补差价」，这合理吗？。来源：知乎热榜，扩散度●●○ 扩散中。",
-          "logic": "利好：苹果 全球涨价讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · 知乎热榜",
-          "ai_note": "工具初判·待我核实"
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
         },
-        {
-          "id": "early-小鹏 MONA L03",
-          "tags": {
-            "industry": "小鹏 MONA L03",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "小鹏 MONA L03",
-          "diffusion": "●●○ 扩散中",
-          "sources": [
-            {
-              "text": "B站全站日榜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——实拍小鹏MONA L03，半价特斯拉来了！。来源：B站全站日榜，扩散度●●○ 扩散中。",
-          "logic": "利好：小鹏 MONA L03讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · B站全站日榜",
-          "ai_note": "工具初判·待我核实"
-        },
-        {
-          "id": "early-20万买9系？零跑D19增程全网首拆",
-          "tags": {
-            "industry": "20万买9系？零跑D19增程全",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "20万买9系？零跑D19增程全网首拆",
-          "diffusion": "●●○ 扩散中",
-          "sources": [
-            {
-              "text": "B站全站日榜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——20万买9系？零跑D19增程全网首拆。来源：B站全站日榜，扩散度●●○ 扩散中。",
-          "logic": "利好：20万买9系？零跑D19增程全网首拆讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · B站全站日榜",
-          "ai_note": "工具初判·待我核实"
-        },
-        {
-          "id": "early-【2026·7月电脑配置推荐】爆肝3万字",
-          "tags": {
-            "industry": "【2026·7月电脑配置推荐】",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "【2026·7月电脑配置推荐】爆肝3万字！自费教你性价比装机",
-          "diffusion": "●●○ 扩散中",
-          "sources": [
-            {
-              "text": "B站全站日榜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——【2026·7月电脑配置推荐】爆肝3万字！自费教你性价比装机，全实拍实测，2千~4万预算21套性价比电脑配置，小白建议收。来源：B站全站日榜，扩散度●●○ 扩散中。",
-          "logic": "利好：【2026·7月电脑配置推荐】爆肝3万字！自费教你性价比装机讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · B站全站日榜",
-          "ai_note": "工具初判·待我核实"
-        },
-        {
-          "id": "early-荣耀 手表Fit 活力版 蓝牙通话 智能",
-          "tags": {
-            "industry": "荣耀 手表Fit 活力版 蓝牙",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "荣耀 手表Fit 活力版 蓝牙通话 智能手表 海风蓝",
-          "diffusion": "●●○ 扩散中",
-          "sources": [
-            {
-              "text": "什么值得买",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——国家补贴、今日必买：荣耀 手表Fit 活力版 蓝牙通话 智能手表 海风蓝。来源：什么值得买，扩散度●●○ 扩散中。",
-          "logic": "利好：荣耀 手表Fit 活力版 蓝牙通话 智能手表 海风蓝讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "7 条相关 · 什么值得买 | 跨1个平台",
-          "ai_note": "工具初判·待我核实"
-        },
-        {
-          "id": "early-ROG 夜魔extremeE20周年限定",
-          "tags": {
-            "industry": "ROG 夜魔extremeE2",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "ROG 夜魔extremeE20周年限定版",
-          "diffusion": "●●○ 扩散中",
-          "sources": [
-            {
-              "text": "什么值得买",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——ROG 夜魔extremeE20周年限定版。来源：什么值得买，扩散度●●○ 扩散中。",
-          "logic": "利好：ROG 夜魔extremeE20周年限定版讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "2 条相关 · 什么值得买 | 跨1个平台",
-          "ai_note": "工具初判·待我核实"
-        },
-        {
-          "id": "early-酷态科 CP桌面模块风扇 大风力轻音 立",
-          "tags": {
-            "industry": "酷态科 CP桌面模块风扇 大风",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "酷态科 CP桌面模块风扇 大风力轻音 立式充电风扇",
-          "diffusion": "●●○ 扩散中",
-          "sources": [
-            {
-              "text": "什么值得买",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——百亿补贴：酷态科 CP桌面模块风扇 大风力轻音 立式充电风扇。来源：什么值得买，扩散度●●○ 扩散中。",
-          "logic": "利好：酷态科 CP桌面模块风扇 大风力轻音 立式充电风扇讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "4 条相关 · 什么值得买 | 跨1个平台",
-          "ai_note": "工具初判·待我核实"
-        },
-        {
-          "id": "early-京东云 无线宝 AX6600 雅典娜 1",
-          "tags": {
-            "industry": "京东云 无线宝 AX6600 ",
-            "stage": "早期信号",
-            "badge": "新信号",
-            "crowding": "待算"
-          },
-          "headline": "京东云 无线宝 AX6600 雅典娜 128G 三频6600M 家用",
-          "diffusion": "●●○ 扩散中",
-          "sources": [
-            {
-              "text": "什么值得买",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "早期异动——京东云 无线宝 AX6600 雅典娜 128G 三频6600M 家用千兆Mesh无线路由器 Wi-Fi 6 单个装 黑色。来源：什么值得买，扩散度●●○ 扩散中。",
-          "logic": "利好：京东云 无线宝 AX6600 雅典娜 128G 三频6600M 家用讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · 什么值得买",
-          "ai_note": "工具初判·待我核实"
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
         }
-      ]
+      },
+      "platform_count": 2,
+      "trends": {
+        "google_1m": -27.9,
+        "google_3m": -14.9,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
     },
     {
-      "id": "seasonal",
-      "label": "季节性提醒",
-      "desc": "日历可预测 · 非信息差",
-      "cards": []
-    },
-    {
-      "id": "priced",
-      "label": "已起飞",
-      "desc": "已充分定价 · 追入风险高",
-      "cards": [
-        {
-          "id": "priced-卖了一万台的情感陪伴机器人",
-          "tags": {
-            "industry": "卖了一万台的情感陪伴机器人",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "卖了一万台的情感陪伴机器人",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "微博热搜",
-              "type": "pill"
-            },
-            {
-              "text": "新浪热榜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——卖了一万台的情感陪伴机器人。已扩散至微博热搜、新浪热榜，价格大概率已反映。",
-          "logic": "利好：卖了一万台的情感陪伴机器人讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "2 条相关 · 微博热搜, 新浪热榜 | 跨2个平台",
-          "ai_note": ""
+      "name": "泡泡玛特",
+      "code": "9992",
+      "market": "港股",
+      "industry": "潮玩",
+      "google": {
+        "growth_1m": -32.1,
+        "growth_3m": -44.1,
+        "recent_value": 19.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
         },
-        {
-          "id": "priced-日本市民大排长龙买中国相机",
-          "tags": {
-            "industry": "日本市民大排长龙买中国相机",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "日本市民大排长龙买中国相机",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "微博热搜",
-              "type": "pill"
-            },
-            {
-              "text": "百度热搜",
-              "type": "pill"
-            },
-            {
-              "text": "新浪热榜",
-              "type": "pill"
-            },
-            {
-              "text": "今日头条",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——日本市民大排长龙买中国相机。已扩散至微博热搜、百度热搜、新浪热榜，价格大概率已反映。",
-          "logic": "利好：日本市民大排长龙买中国相机讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "4 条相关 · 微博热搜, 百度热搜, 新浪热榜 | 跨4个平台",
-          "ai_note": ""
+        "百度热搜": {
+          "count": 0,
+          "titles": []
         },
-        {
-          "id": "priced-熬不过夏天的欧洲人 疯抢中国空调",
-          "tags": {
-            "industry": "熬不过夏天的欧洲人 疯抢中国空",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "熬不过夏天的欧洲人 疯抢中国空调",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "百度热搜",
-              "type": "pill"
-            },
-            {
-              "text": "新浪热榜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——熬不过夏天的欧洲人 疯抢中国空调。已扩散至百度热搜、新浪热榜，价格大概率已反映。",
-          "logic": "利好：熬不过夏天的欧洲人 疯抢中国空调讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "2 条相关 · 百度热搜, 新浪热榜 | 跨2个平台",
-          "ai_note": ""
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
         },
-        {
-          "id": "priced-空调省电话术14年后卷土重来",
-          "tags": {
-            "industry": "空调省电话术14年后卷土重来",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "空调省电话术14年后卷土重来",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "百度热搜",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——空调省电话术14年后卷土重来。已扩散至百度热搜，价格大概率已反映。",
-          "logic": "利好：空调省电话术14年后卷土重来讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · 百度热搜",
-          "ai_note": ""
-        },
-        {
-          "id": "priced-Made in China",
-          "tags": {
-            "industry": "Made in China",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "Made in China",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "微信热文",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——火爆欧洲的中国空调，曾被提醒“别贴Made in China”。已扩散至微信热文，价格大概率已反映。",
-          "logic": "利好：Made in China讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · 微信热文",
-          "ai_note": ""
-        },
-        {
-          "id": "priced-一台空调为什么会让法国“难以承受”",
-          "tags": {
-            "industry": "一台空调为什么会让法国“难以承",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "一台空调为什么会让法国“难以承受”",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "今日头条",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——一台空调为什么会让法国“难以承受”。已扩散至今日头条，价格大概率已反映。",
-          "logic": "利好：一台空调为什么会让法国“难以承受”讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · 今日头条",
-          "ai_note": ""
-        },
-        {
-          "id": "priced-比亚迪赢了销量却困在盈利泥潭",
-          "tags": {
-            "industry": "比亚迪赢了销量却困在盈利泥潭",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "比亚迪赢了销量却困在盈利泥潭",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "今日头条",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——博主：比亚迪赢了销量却困在盈利泥潭。已扩散至今日头条，价格大概率已反映。",
-          "logic": "利好：比亚迪赢了销量却困在盈利泥潭讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · 今日头条",
-          "ai_note": ""
-        },
-        {
-          "id": "priced-华为 鸿蒙 HarmonyOS 7",
-          "tags": {
-            "industry": "华为 鸿蒙 HarmonyOS",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "华为 鸿蒙 HarmonyOS 7",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "IT之家",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——卓易通官宣全面支持华为鸿蒙 HarmonyOS 7.0 系统。已扩散至IT之家，价格大概率已反映。",
-          "logic": "利好：华为 鸿蒙 HarmonyOS 7讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "4 条相关 · IT之家 | 跨1个平台",
-          "ai_note": ""
-        },
-        {
-          "id": "priced-家电不改为格力",
-          "tags": {
-            "industry": "家电不改为格力",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "家电不改为格力",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "IT之家",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——消息称董明珠大会喊话现场股东：家电不改为格力，凭什么分红？。已扩散至IT之家，价格大概率已反映。",
-          "logic": "利好：家电不改为格力讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · IT之家",
-          "ai_note": ""
-        },
-        {
-          "id": "priced-苹果 被曝正洽谈采购长鑫 + 长江存储芯",
-          "tags": {
-            "industry": "苹果 被曝正洽谈采购长鑫 + ",
-            "stage": "已充分定价",
-            "badge": "充分定价",
-            "crowding": "待算"
-          },
-          "headline": "苹果 被曝正洽谈采购长鑫 + 长江存储芯片",
-          "diffusion": "●●● 已扩散",
-          "sources": [
-            {
-              "text": "IT之家",
-              "type": "pill"
-            }
-          ],
-          "one_liner": "已充分定价——苹果被曝正洽谈采购长鑫 + 长江存储芯片，供应中国市场设备。已扩散至IT之家，价格大概率已反映。",
-          "logic": "利好：苹果 被曝正洽谈采购长鑫 + 长江存储芯片讨论热度上升 → 相关公司下季度收入有望超预期 · 需验证营收占比",
-          "foot": "1 条相关 · IT之家",
-          "ai_note": ""
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
         }
-      ]
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -32.1,
+        "google_3m": -44.1,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "蜜雪集团",
+      "code": "2097",
+      "market": "港股",
+      "industry": "餐饮饮品",
+      "google": {
+        "growth_1m": 0.0,
+        "growth_3m": 6.7,
+        "recent_value": 16.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": 0.0,
+        "google_3m": 6.7,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "小米集团",
+      "code": "1810",
+      "market": "港股",
+      "industry": "消费电子",
+      "google": {
+        "growth_1m": -25.0,
+        "growth_3m": -20.3,
+        "recent_value": 51.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -25.0,
+        "google_3m": -20.3,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "东方甄选",
+      "code": "1797",
+      "market": "港股",
+      "industry": "直播电商",
+      "google": {
+        "growth_1m": -56.2,
+        "growth_3m": -12.5,
+        "recent_value": 7.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -56.2,
+        "google_3m": -12.5,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "阿里巴巴",
+      "code": "9988",
+      "market": "港股",
+      "industry": "互联网",
+      "google": {
+        "growth_1m": -12.0,
+        "growth_3m": -8.3,
+        "recent_value": 22.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -12.0,
+        "google_3m": -8.3,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "小鹏汽车",
+      "code": "9868",
+      "market": "港股",
+      "industry": "新能源车",
+      "google": {
+        "growth_1m": -2.2,
+        "growth_3m": 8.4,
+        "recent_value": 90.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -2.2,
+        "google_3m": 8.4,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "美团",
+      "code": "3690",
+      "market": "港股",
+      "industry": "本地生活",
+      "google": {
+        "growth_1m": -60.4,
+        "growth_3m": -46.3,
+        "recent_value": 36.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -60.4,
+        "google_3m": -46.3,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "携程",
+      "code": "9961",
+      "market": "港股",
+      "industry": "在线旅游",
+      "google": {
+        "growth_1m": -18.2,
+        "growth_3m": -16.3,
+        "recent_value": 36.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -18.2,
+        "google_3m": -16.3,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "老铺黄金",
+      "code": "6181",
+      "market": "港股",
+      "industry": "黄金珠宝",
+      "google": {
+        "growth_1m": -38.0,
+        "growth_3m": 72.2,
+        "recent_value": 62.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -38.0,
+        "google_3m": 72.2,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "中芯国际",
+      "code": "0981",
+      "market": "港股",
+      "industry": "半导体",
+      "google": {
+        "growth_1m": -41.9,
+        "growth_3m": -12.2,
+        "recent_value": 43.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -41.9,
+        "google_3m": -12.2,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "农夫山泉",
+      "code": "9633",
+      "market": "港股",
+      "industry": "饮品",
+      "google": {
+        "growth_1m": 4.8,
+        "growth_3m": 109.5,
+        "recent_value": 44.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": 4.8,
+        "google_3m": 109.5,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "华虹宏力",
+      "code": "1347",
+      "market": "港股",
+      "industry": "半导体",
+      "google": {
+        "growth_1m": -45.0,
+        "growth_3m": -23.3,
+        "recent_value": 33.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -45.0,
+        "google_3m": -23.3,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "宁德时代",
+      "code": "300750",
+      "market": "A股",
+      "industry": "电池",
+      "google": {
+        "growth_1m": -60.9,
+        "growth_3m": -54.4,
+        "recent_value": 36.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -60.9,
+        "google_3m": -54.4,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
+    },
+    {
+      "name": "智谱",
+      "code": "—",
+      "market": "未上市",
+      "industry": "AI",
+      "google": {
+        "growth_1m": 4.7,
+        "growth_3m": -10.0,
+        "recent_value": 45.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": 4.7,
+        "google_3m": -10.0,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 1,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 1,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 1,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 1,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 1
+      }
     }
   ],
+  "discovery": {
+    "抖音总榜": [
+      {
+        "rank": 1,
+        "title": "“巴威”台风眼变模糊"
+      },
+      {
+        "rank": 2,
+        "title": "台风巴威实时路径"
+      },
+      {
+        "rank": 3,
+        "title": "“十五五”循环经济明确路线图"
+      },
+      {
+        "rank": 4,
+        "title": "我国成功实施火箭一子级可控回收"
+      },
+      {
+        "rank": 5,
+        "title": "新闻联播"
+      },
+      {
+        "rank": 6,
+        "title": "陈泽杯S2开赛"
+      },
+      {
+        "rank": 7,
+        "title": "北京大雨"
+      },
+      {
+        "rank": 8,
+        "title": "茶啊二中第六季定档暑期"
+      },
+      {
+        "rank": 9,
+        "title": "LYON横扫G2"
+      },
+      {
+        "rank": 10,
+        "title": "召集全网懂球人再解姆巴佩悖论"
+      }
+    ]
+  },
   "meta": {
-    "total_scanned": 798,
-    "non_behavior_filtered": 713,
-    "clusters": 42,
-    "zones_count": {
-      "early": 20,
-      "seasonal": 0,
-      "priced": 22
-    },
-    "data_time": "2026-07-02 14:51 CST"
+    "data_time": "2026-07-10 19:23 CST",
+    "platforms": [
+      "抖音总榜",
+      "小红书热榜",
+      "微博热搜",
+      "知乎热榜",
+      "百度热搜"
+    ],
+    "history": {
+      "total_records": 120,
+      "date_range": "2026-07-10 ~ 2026-07-10",
+      "days": 1,
+      "companies": 15
+    }
   }
 }

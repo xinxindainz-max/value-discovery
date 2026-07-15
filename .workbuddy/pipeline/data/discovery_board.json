@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T15:24:05.452409+08:00",
+  "generated_at": "2026-07-15T15:30:04.718979+08:00",
   "system": "中国上市公司消费者行为雷达 v6.0",
   "brand_count": 15,
   "brands": [
@@ -15,10 +15,9 @@
       },
       "platforms": {
         "微博热搜": {
-          "count": 2,
+          "count": 1,
           "titles": [
-            "雷军称小米澎程空间布局与GL8相似",
-            "小米高管回应澎程为何测试三年"
+            "小伙家有200台小米设备不满手机售后"
           ]
         },
         "百度热搜": {
@@ -26,137 +25,33 @@
           "titles": []
         },
         "知乎热榜": {
-          "count": 1,
-          "titles": [
-            "小米回应网传澎程价格推测，称部分推测显著低于成本，推测要讲科学，你认为多少钱可以接受？"
-          ]
+          "count": 0,
+          "titles": []
         },
         "抖音总榜": {
           "count": 0,
           "titles": []
         }
       },
-      "platform_count": 2,
+      "platform_count": 1,
       "trends": {
         "google_1m": -25.0,
         "google_3m": -20.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
-      }
-    },
-    {
-      "name": "蜜雪集团",
-      "code": "2097",
-      "market": "港股",
-      "industry": "餐饮饮品",
-      "google": {
-        "growth_1m": 0.0,
-        "growth_3m": 6.7,
-        "recent_value": 16.0
-      },
-      "platforms": {
-        "微博热搜": {
-          "count": 0,
-          "titles": []
-        },
-        "百度热搜": {
-          "count": 1,
-          "titles": [
-            "朱之文回应网友称其为蜜雪冰城"
-          ]
-        },
-        "知乎热榜": {
-          "count": 0,
-          "titles": []
-        },
-        "抖音总榜": {
-          "count": 0,
-          "titles": []
-        }
-      },
-      "platform_count": 1,
-      "trends": {
-        "google_1m": 0.0,
-        "google_3m": 6.7,
-        "抖音_7d": null,
-        "抖音_30d": null,
-        "抖音_days": 5,
-        "小红书_7d": null,
-        "小红书_30d": null,
-        "小红书_days": 5,
-        "微博_7d": null,
-        "微博_30d": null,
-        "微博_days": 5,
-        "知乎_7d": null,
-        "知乎_30d": null,
-        "知乎_days": 5,
-        "百度_7d": null,
-        "百度_30d": null,
-        "百度_days": 5
-      }
-    },
-    {
-      "name": "东方甄选",
-      "code": "1797",
-      "market": "港股",
-      "industry": "直播电商",
-      "google": {
-        "growth_1m": -56.2,
-        "growth_3m": -12.5,
-        "recent_value": 7.0
-      },
-      "platforms": {
-        "微博热搜": {
-          "count": 0,
-          "titles": []
-        },
-        "百度热搜": {
-          "count": 0,
-          "titles": []
-        },
-        "知乎热榜": {
-          "count": 1,
-          "titles": [
-            "孙东旭再创业，与前东方甄选主播石明、天权合伙开公司，以 1% 微弱优势成为最大股东，你看好他们的发展"
-          ]
-        },
-        "抖音总榜": {
-          "count": 0,
-          "titles": []
-        }
-      },
-      "platform_count": 1,
-      "trends": {
-        "google_1m": -56.2,
-        "google_3m": -12.5,
-        "抖音_7d": null,
-        "抖音_30d": null,
-        "抖音_days": 5,
-        "小红书_7d": null,
-        "小红书_30d": null,
-        "小红书_days": 5,
-        "微博_7d": null,
-        "微博_30d": null,
-        "微博_days": 5,
-        "知乎_7d": null,
-        "知乎_30d": null,
-        "知乎_days": 5,
-        "百度_7d": null,
-        "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -177,7 +72,7 @@
         "百度热搜": {
           "count": 1,
           "titles": [
-            "电脑端微信截图已支持“一键打码”"
+            "微信公告：下架近百部违规微短剧"
           ]
         },
         "知乎热榜": {
@@ -195,19 +90,19 @@
         "google_3m": -14.9,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": -100.0,
         "微博_30d": -100.0,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": 0.0,
         "百度_30d": 0.0,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -226,18 +121,18 @@
           "titles": []
         },
         "百度热搜": {
-          "count": 1,
-          "titles": [
-            "燃油车的世界正在崩塌 电车也不好过"
-          ]
+          "count": 0,
+          "titles": []
         },
         "知乎热榜": {
           "count": 0,
           "titles": []
         },
         "抖音总榜": {
-          "count": 0,
-          "titles": []
+          "count": 1,
+          "titles": [
+            "“新能源车平均车龄1.8年”系误读"
+          ]
         }
       },
       "platform_count": 1,
@@ -246,19 +141,19 @@
         "google_3m": -54.4,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -295,19 +190,117 @@
         "google_3m": -44.1,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
+      }
+    },
+    {
+      "name": "蜜雪集团",
+      "code": "2097",
+      "market": "港股",
+      "industry": "餐饮饮品",
+      "google": {
+        "growth_1m": 0.0,
+        "growth_3m": 6.7,
+        "recent_value": 16.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": 0.0,
+        "google_3m": 6.7,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 6,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 6,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 6,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 6,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 6
+      }
+    },
+    {
+      "name": "东方甄选",
+      "code": "1797",
+      "market": "港股",
+      "industry": "直播电商",
+      "google": {
+        "growth_1m": -56.2,
+        "growth_3m": -12.5,
+        "recent_value": 7.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -56.2,
+        "google_3m": -12.5,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 6,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 6,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 6,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 6,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 6
       }
     },
     {
@@ -344,19 +337,19 @@
         "google_3m": -8.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -393,19 +386,19 @@
         "google_3m": 8.4,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -442,19 +435,19 @@
         "google_3m": -46.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -491,19 +484,19 @@
         "google_3m": -16.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -540,19 +533,19 @@
         "google_3m": 72.2,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -589,19 +582,19 @@
         "google_3m": -12.2,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -638,19 +631,19 @@
         "google_3m": 109.5,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -687,19 +680,19 @@
         "google_3m": -23.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     },
     {
@@ -736,19 +729,19 @@
         "google_3m": -10.0,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 5,
+        "抖音_days": 6,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 5,
+        "小红书_days": 6,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 5,
+        "微博_days": 6,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 5,
+        "知乎_days": 6,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 5
+        "百度_days": 6
       }
     }
   ],
@@ -756,48 +749,48 @@
     "抖音总榜": [
       {
         "rank": 1,
-        "title": "法国举办二战以来最大规模国庆阅兵"
+        "title": "今日入伏"
       },
       {
         "rank": 2,
-        "title": "马兴瑞被双开"
+        "title": "上半年我国GDP同比增长4.7%"
       },
       {
         "rank": 3,
-        "title": "未来5年消费发展路线图来了"
+        "title": "我国货物贸易进出口连续增长"
       },
       {
         "rank": 4,
-        "title": "今年或将形成超强厄尔尼诺事件"
+        "title": "感受云南菌子的N种打开方式"
       },
       {
         "rank": 5,
-        "title": "台风巴威继续北上"
+        "title": "暑假学习做饭成果展"
       },
       {
         "rank": 6,
-        "title": "直击沈阳暴雨现场"
+        "title": "未成年如何申领网号网证"
       },
       {
         "rank": 7,
-        "title": "欧洲高温"
+        "title": "318最动人的是出发的勇气"
       },
       {
         "rank": 8,
-        "title": "陈泽杯7月14日复活投票"
+        "title": "全国文旅把户外亲子卷起来了"
       },
       {
         "rank": 9,
-        "title": "辽宁全省43座水库超汛限水位"
+        "title": "日常不费力的复古氛围感穿搭"
       },
       {
         "rank": 10,
-        "title": "杨瀚森打出夏季联赛最佳一战"
+        "title": "蔡赴朝被查"
       }
     ]
   },
   "meta": {
-    "data_time": "2026-07-14 15:24 CST",
+    "data_time": "2026-07-15 15:30 CST",
     "platforms": [
       "抖音总榜",
       "小红书热榜",
@@ -806,9 +799,9 @@
       "百度热搜"
     ],
     "history": {
-      "total_records": 600,
-      "date_range": "2026-07-10 ~ 2026-07-14",
-      "days": 5,
+      "total_records": 720,
+      "date_range": "2026-07-10 ~ 2026-07-15",
+      "days": 6,
       "companies": 15
     }
   }

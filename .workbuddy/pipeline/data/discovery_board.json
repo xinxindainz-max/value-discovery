@@ -1,28 +1,79 @@
 {
-  "generated_at": "2026-07-22T17:17:20.058654+08:00",
+  "generated_at": "2026-07-23T09:49:33.268135+08:00",
   "system": "中国上市公司消费者行为雷达 v6.0",
   "brand_count": 15,
   "brands": [
     {
-      "name": "腾讯控股",
-      "code": "0700",
+      "name": "携程",
+      "code": "9961",
       "market": "港股",
-      "industry": "互联网",
+      "industry": "在线旅游",
       "google": {
-        "growth_1m": -27.9,
-        "growth_3m": -14.9,
-        "recent_value": 57.0
+        "growth_1m": -18.2,
+        "growth_3m": -16.3,
+        "recent_value": 36.0
       },
       "platforms": {
         "微博热搜": {
-          "count": 1,
-          "titles": [
-            "王者荣耀"
-          ]
+          "count": 0,
+          "titles": []
         },
         "百度热搜": {
           "count": 0,
           "titles": []
+        },
+        "知乎热榜": {
+          "count": 1,
+          "titles": [
+            "携程黑钻会员吐槽 1.5 万元机票仅退 432 元，称没想到扣那么狠，这种退票政策合理吗？"
+          ]
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 1,
+      "trends": {
+        "google_1m": -18.2,
+        "google_3m": -16.3,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 14,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 14,
+        "微博_7d": null,
+        "微博_30d": null,
+        "微博_days": 14,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 14,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 14
+      }
+    },
+    {
+      "name": "宁德时代",
+      "code": "300750",
+      "market": "A股",
+      "industry": "电池",
+      "google": {
+        "growth_1m": -60.9,
+        "growth_3m": -54.4,
+        "recent_value": 36.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 1,
+          "titles": [
+            "新能源车跨境自驾遭远程锁车30小时"
+          ]
         },
         "知乎热榜": {
           "count": 0,
@@ -35,23 +86,23 @@
       },
       "platform_count": 1,
       "trends": {
-        "google_1m": -27.9,
-        "google_3m": -14.9,
+        "google_1m": -60.9,
+        "google_3m": -54.4,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
-        "微博_30d": 0.0,
-        "微博_days": 13,
+        "微博_30d": null,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
-        "百度_7d": -100.0,
-        "百度_30d": -100.0,
-        "百度_days": 13
+        "知乎_days": 14,
+        "百度_7d": null,
+        "百度_30d": null,
+        "百度_days": 14
       }
     },
     {
@@ -88,19 +139,19 @@
         "google_3m": -44.1,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -137,19 +188,19 @@
         "google_3m": 6.7,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -186,19 +237,19 @@
         "google_3m": -20.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
-        "微博_7d": -100.0,
+        "小红书_days": 14,
+        "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -235,19 +286,19 @@
         "google_3m": -12.5,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -284,19 +335,68 @@
         "google_3m": -8.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
-        "知乎_7d": null,
+        "微博_days": 14,
+        "知乎_7d": -100.0,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
+      }
+    },
+    {
+      "name": "腾讯控股",
+      "code": "0700",
+      "market": "港股",
+      "industry": "互联网",
+      "google": {
+        "growth_1m": -27.9,
+        "growth_3m": -14.9,
+        "recent_value": 57.0
+      },
+      "platforms": {
+        "微博热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "百度热搜": {
+          "count": 0,
+          "titles": []
+        },
+        "知乎热榜": {
+          "count": 0,
+          "titles": []
+        },
+        "抖音总榜": {
+          "count": 0,
+          "titles": []
+        }
+      },
+      "platform_count": 0,
+      "trends": {
+        "google_1m": -27.9,
+        "google_3m": -14.9,
+        "抖音_7d": null,
+        "抖音_30d": null,
+        "抖音_days": 14,
+        "小红书_7d": null,
+        "小红书_30d": null,
+        "小红书_days": 14,
+        "微博_7d": null,
+        "微博_30d": -100.0,
+        "微博_days": 14,
+        "知乎_7d": null,
+        "知乎_30d": null,
+        "知乎_days": 14,
+        "百度_7d": null,
+        "百度_30d": -100.0,
+        "百度_days": 14
       }
     },
     {
@@ -333,19 +433,19 @@
         "google_3m": 8.4,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -382,68 +482,19 @@
         "google_3m": -46.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
-      }
-    },
-    {
-      "name": "携程",
-      "code": "9961",
-      "market": "港股",
-      "industry": "在线旅游",
-      "google": {
-        "growth_1m": -18.2,
-        "growth_3m": -16.3,
-        "recent_value": 36.0
-      },
-      "platforms": {
-        "微博热搜": {
-          "count": 0,
-          "titles": []
-        },
-        "百度热搜": {
-          "count": 0,
-          "titles": []
-        },
-        "知乎热榜": {
-          "count": 0,
-          "titles": []
-        },
-        "抖音总榜": {
-          "count": 0,
-          "titles": []
-        }
-      },
-      "platform_count": 0,
-      "trends": {
-        "google_1m": -18.2,
-        "google_3m": -16.3,
-        "抖音_7d": null,
-        "抖音_30d": null,
-        "抖音_days": 13,
-        "小红书_7d": null,
-        "小红书_30d": null,
-        "小红书_days": 13,
-        "微博_7d": null,
-        "微博_30d": null,
-        "微博_days": 13,
-        "知乎_7d": null,
-        "知乎_30d": null,
-        "知乎_days": 13,
-        "百度_7d": null,
-        "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -480,19 +531,19 @@
         "google_3m": 72.2,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -529,19 +580,19 @@
         "google_3m": -12.2,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -578,19 +629,19 @@
         "google_3m": 109.5,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -627,68 +678,19 @@
         "google_3m": -23.3,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
-      }
-    },
-    {
-      "name": "宁德时代",
-      "code": "300750",
-      "market": "A股",
-      "industry": "电池",
-      "google": {
-        "growth_1m": -60.9,
-        "growth_3m": -54.4,
-        "recent_value": 36.0
-      },
-      "platforms": {
-        "微博热搜": {
-          "count": 0,
-          "titles": []
-        },
-        "百度热搜": {
-          "count": 0,
-          "titles": []
-        },
-        "知乎热榜": {
-          "count": 0,
-          "titles": []
-        },
-        "抖音总榜": {
-          "count": 0,
-          "titles": []
-        }
-      },
-      "platform_count": 0,
-      "trends": {
-        "google_1m": -60.9,
-        "google_3m": -54.4,
-        "抖音_7d": -100.0,
-        "抖音_30d": null,
-        "抖音_days": 13,
-        "小红书_7d": null,
-        "小红书_30d": null,
-        "小红书_days": 13,
-        "微博_7d": null,
-        "微博_30d": null,
-        "微博_days": 13,
-        "知乎_7d": null,
-        "知乎_30d": null,
-        "知乎_days": 13,
-        "百度_7d": null,
-        "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     },
     {
@@ -725,19 +727,19 @@
         "google_3m": -10.0,
         "抖音_7d": null,
         "抖音_30d": null,
-        "抖音_days": 13,
+        "抖音_days": 14,
         "小红书_7d": null,
         "小红书_30d": null,
-        "小红书_days": 13,
+        "小红书_days": 14,
         "微博_7d": null,
         "微博_30d": null,
-        "微博_days": 13,
+        "微博_days": 14,
         "知乎_7d": null,
         "知乎_30d": null,
-        "知乎_days": 13,
+        "知乎_days": 14,
         "百度_7d": null,
         "百度_30d": null,
-        "百度_days": 13
+        "百度_days": 14
       }
     }
   ],
@@ -745,7 +747,7 @@
     "抖音总榜": [
       {
         "rank": 1,
-        "title": "我在豆包养宠物"
+        "title": "外交部再回应菲方蓄意挑衅"
       },
       {
         "rank": 2,
@@ -753,40 +755,40 @@
       },
       {
         "rank": 3,
-        "title": "十五五交通蓝图出炉"
+        "title": "引力一号一箭九星发射"
       },
       {
         "rank": 4,
-        "title": "广州早茶已经next level了"
-      },
-      {
-        "rank": 5,
-        "title": "这届非遗手作太好玩了"
-      },
-      {
-        "rank": 6,
         "title": "抖火杯反三之夜有多燃"
       },
       {
+        "rank": 5,
+        "title": "今年菲尔兹奖候选人都在研究啥"
+      },
+      {
+        "rank": 6,
+        "title": "当我在暑假和crush表白成功后"
+      },
+      {
         "rank": 7,
-        "title": "苗凯获大田赛十项全能冠军"
+        "title": "这届非遗手作太好玩了"
       },
       {
         "rank": 8,
-        "title": "我收到高考录取通知书了"
+        "title": "iPhone18系列已量产"
       },
       {
         "rank": 9,
-        "title": "沿虚线撕开我的旅行日记"
+        "title": "在家也能复刻成吉思鸡"
       },
       {
         "rank": 10,
-        "title": "俄远程战略轰炸机巡航日本海"
+        "title": "王毅会见菲律宾外长拉扎罗"
       }
     ]
   },
   "meta": {
-    "data_time": "2026-07-22 17:17 CST",
+    "data_time": "2026-07-23 09:49 CST",
     "platforms": [
       "抖音总榜",
       "小红书热榜",
@@ -795,9 +797,9 @@
       "百度热搜"
     ],
     "history": {
-      "total_records": 1560,
-      "date_range": "2026-07-10 ~ 2026-07-22",
-      "days": 13,
+      "total_records": 1680,
+      "date_range": "2026-07-10 ~ 2026-07-23",
+      "days": 14,
       "companies": 15
     }
   }
